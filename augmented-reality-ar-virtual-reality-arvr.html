@@ -19,20 +19,20 @@
             <h2 class="modal-title">SHAPE YOUR CAREER WITH <span class="text-gradient">COGNIZA</span></h2>
             <p class="modal-subtitle">Connect with industry mentors, join high-demand programs, and unlock exciting opportunities for your future career.</p>
             
-            <form id="enquiryForm" class="modal-form">
+            <script>var formSubmitted = false;</script><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { document.getElementById('enquiryModal').classList.remove('show'); alert('Thank you! Your enquiry has been submitted successfully.'); }"></iframe><form id="enquiryForm" class="modal-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecvb1_L_hGK0VTXsNxdIaizP9nSGE9PbzrsPonJ01lSrnVHg/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted=true; setTimeout(() => this.reset(), 500);">
                 <div class="form-row">
                     <div class="form-group">
                         <label>Full Name</label>
                         <div class="input-wrapper">
                             <i class="far fa-user"></i>
-                            <input type="text" placeholder="Enter your full name" required>
+                            <input type="text" name="entry.19428930" placeholder="Enter your full name" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email Address</label>
                         <div class="input-wrapper">
                             <i class="far fa-envelope"></i>
-                            <input type="email" placeholder="Enter your email" required>
+                            <input type="email" name="emailAddress" placeholder="Enter your email" required>
                         </div>
                     </div>
                 </div>
@@ -41,14 +41,14 @@
                         <label>Phone Number</label>
                         <div class="input-wrapper">
                             <i class="fas fa-phone-alt"></i>
-                            <input type="tel" placeholder="+91 8884456745" required>
+                            <input type="tel" name="entry.1872168905" placeholder="+91 8884456745" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Interested Course</label>
                         <div class="input-wrapper">
                             <i class="fas fa-book-open"></i>
-                            <select id="courseSelect" required>
+                            <select name="entry.330684132" id="courseSelect" required>
                                 <option value="" disabled selected>Select a course</option>
                             </select>
                         </div>
@@ -59,14 +59,14 @@
                         <label>College / University</label>
                         <div class="input-wrapper">
                             <i class="fas fa-graduation-cap"></i>
-                            <input type="text" placeholder="e.g. IIT Bombay" required>
+                            <input type="text" name="entry.309849495" placeholder="e.g. IIT Bombay" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Preferred Language</label>
                         <div class="input-wrapper">
                             <i class="fas fa-language"></i>
-                            <input type="text" placeholder="e.g. English, Hindi" required>
+                            <input type="text" name="entry.1686906330" placeholder="e.g. English, Hindi" required>
                         </div>
                     </div>
                 </div>
@@ -90,24 +90,24 @@
             <div class="nav-container">
                 <nav class="pill-nav">
                     <ul class="nav-links">
-                        <li><a href="/#home" >Home</a></li>
-                        <li><a href="/about">About</a></li>
-                        <li><a href="/#programs">Programs</a></li>
-                        <li><a href="/#offers">Offer Plans</a></li>
+                        <li><a href="index.html#home" >Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#programs">Programs</a></li>
+                        <li><a href="index.html#offers">Offer Plans</a></li>
                         <li class="nav-dropdown">
-                            <a href="/#careers">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                            <a href="index.html#careers">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="/ambassador">Become Cogniza Campus Ambassador</a></li>
-                                <li><a href="/careers">Looking for job</a></li>
+                                <li><a href="ambassador.html">Become Cogniza Campus Ambassador</a></li>
+                                <li><a href="careers.html">Looking for job</a></li>
                             </ul>
                         </li>
-                        <li><a href="/#contact">Contact</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="nav-actions" style="display: flex; align-items: center; gap: 20px;">
-                <a href="/register" class="btn btn-outline">Register</a>
+                <a href="register.html" class="btn btn-outline">Register</a>
             </div>
             
             <button class="mobile-menu-btn" aria-label="Toggle navigation">
@@ -129,12 +129,12 @@
                     <div class="highlight-pill"><i class="fas fa-check-circle"></i> Interview Prep</div>
                 </div>
                 <div style="margin-top: 40px; display: flex; gap: 20px;">
-                    <a href="/register" style="background: #3b82f6; color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; text-decoration: none;">Enroll Now</a>
+                    <a href="register.html" style="background: #3b82f6; color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; text-decoration: none;">Enroll Now</a>
                     <a href="#curriculum" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; text-decoration: none;">View Curriculum</a>
                 </div>
             </div>
             <div class="course-hero-image">
-                <img src="images/programs/Augmented_Reality_(AR)_&_Virtual_Reality_(ARVR).png" alt="Augmented Reality (AR) & Virtual Reality (ARVR)" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'">
+                <img src="images/programs/Augmented_Reality_AR_Virtual_Reality_ARVR.png" alt="Augmented Reality (AR) & Virtual Reality (ARVR)" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80'">
             </div>
         </div>
     </div>
@@ -348,15 +348,15 @@
             <div class="roles-grid">
                 <div class="role-card">
                     <div class="role-title">Business Analyst</div>
-                    <div class="role-salary">₹6 LPA - ₹15 LPA</div>
+                    <div class="role-salary">?6 LPA - ?15 LPA</div>
                 </div>
                 <div class="role-card">
                     <div class="role-title">Data Analyst</div>
-                    <div class="role-salary">₹5 LPA - ₹12 LPA</div>
+                    <div class="role-salary">?5 LPA - ?12 LPA</div>
                 </div>
                 <div class="role-card">
                     <div class="role-title">Systems Analyst</div>
-                    <div class="role-salary">₹4 LPA - ₹10 LPA</div>
+                    <div class="role-salary">?4 LPA - ?10 LPA</div>
                 </div>
             </div>
         </div>
@@ -371,39 +371,39 @@
                 <!-- Plan 1 -->
                 <div class="price-card">
                     <div class="price-title">Self-Paced</div>
-                    <div class="price-amount">₹5,999</div>
+                    <div class="price-amount">?5,999</div>
                     <ul class="price-features">
                         <li><i class="fas fa-check-circle"></i> Lifetime Recorded Sessions</li>
                         <li><i class="fas fa-check-circle"></i> Assignments & Quizzes</li>
                         <li><i class="fas fa-check-circle"></i> Industry Projects</li>
                         <li><i class="fas fa-check-circle"></i> LMS Access</li>
                     </ul>
-                    <a href="/register" class="btn-price">Get Started</a>
+                    <a href="register.html" class="btn-price">Get Started</a>
                 </div>
                 <!-- Plan 2 -->
                 <div class="price-card popular">
                     <div class="popular-badge">Most Popular</div>
                     <div class="price-title">Mentor Led</div>
-                    <div class="price-amount">₹8,999</div>
+                    <div class="price-amount">?8,999</div>
                     <ul class="price-features">
                         <li><i class="fas fa-check-circle"></i> Everything in Self-Paced</li>
                         <li><i class="fas fa-check-circle"></i> Live Mentorship Sessions</li>
                         <li><i class="fas fa-check-circle"></i> 1:1 Doubt Clearing</li>
                         <li><i class="fas fa-check-circle"></i> Mentor Guidance</li>
                     </ul>
-                    <a href="/register" class="btn-price">Get Started</a>
+                    <a href="register.html" class="btn-price">Get Started</a>
                 </div>
                 <!-- Plan 3 -->
                 <div class="price-card">
                     <div class="price-title">Professional</div>
-                    <div class="price-amount">₹14,999</div>
+                    <div class="price-amount">?14,999</div>
                     <ul class="price-features">
                         <li><i class="fas fa-check-circle"></i> Everything in Mentor Led</li>
                         <li><i class="fas fa-check-circle"></i> Placement Support</li>
                         <li><i class="fas fa-check-circle"></i> Interview Preparation</li>
                         <li><i class="fas fa-check-circle"></i> Portfolio Review</li>
                     </ul>
-                    <a href="/register" class="btn-price">Get Started</a>
+                    <a href="register.html" class="btn-price">Get Started</a>
                 </div>
             </div>
         </div>
@@ -443,10 +443,10 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about">About Us</a></li>
-                        <li><a href="/privacy-policy">Privacy Policy & Refund Policy</a></li>
-                        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy & Refund Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
                 <!-- Courses --><div class="footer-col"><h4>Courses</h4><ul id="footer-course-list" style="list-style:none;padding:0;margin:0;"><li id="fc-slot-1" class="fc-slot"></li><li id="fc-slot-2" class="fc-slot"></li><li id="fc-slot-3" class="fc-slot"></li><li id="fc-slot-4" class="fc-slot"></li></ul><style>.fc-slot{padding:2px 0;font-size:.87rem;line-height:1.4;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}.fc-slot a{color:rgba(255,255,255,.7);text-decoration:none;}.fc-slot a:hover{color:#fff;}</style></div>
@@ -518,13 +518,13 @@
   var s=[document.getElementById("fc-slot-1"),document.getElementById("fc-slot-2"),document.getElementById("fc-slot-3"),document.getElementById("fc-slot-4")];
   if(!s[0])return;
   var o=4,p=0;
-  s.forEach(function(x,i){x.innerHTML='<a href="/#programs">'+c[i]+'</a>';});
+  s.forEach(function(x,i){x.innerHTML='<a href="index.html#programs">'+c[i]+'</a>';});
   o=o%c.length;
   setInterval(function(){
     var x=s[p];
     x.style.cssText="opacity:0;transform:translateY(-7px);transition:opacity .28s ease,transform .28s ease;";
     setTimeout(function(){
-      x.innerHTML='<a href="/#programs">'+c[o]+'</a>';
+      x.innerHTML='<a href="index.html#programs">'+c[o]+'</a>';
       x.style.cssText="opacity:0;transform:translateY(7px);transition:none;";
       requestAnimationFrame(function(){requestAnimationFrame(function(){
         x.style.cssText="opacity:1;transform:translateY(0);transition:opacity .32s ease,transform .32s ease;";
