@@ -1,0 +1,765 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - COGNIZA</title>
+    <meta name="description" content="Learn about Cogniza â€” our mission, vision, leadership, and the values that drive us to transform tech education.">
+    <link rel="icon" href="logos/favicon.svg" type="image/svg+xml">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ===== Page-level layout ===== */
+        .page-hero {
+            padding: 80px 20px 60px;
+            text-align: center;
+        }
+        .page-hero .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #e1ccff, #cce4ff);
+            color: #5a00d1;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+        .page-hero h2 {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            color: #130f26;
+            margin: 0 0 20px;
+            line-height: 1.15;
+        }
+        .page-hero p {
+            font-size: 1.15rem;
+            color: #555;
+            max-width: 680px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        .page-hero-img {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .page-hero-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== Section helpers ===== */
+        .section-band {
+            padding: 80px 0;
+        }
+        .section-band.grey {
+            background: #fafbfe;
+        }
+        .section-label {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-label h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #130f26;
+            margin: 0 0 12px;
+        }
+        .section-label p {
+            font-size: 1rem;
+            color: #666;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* ===== Impact Stats ===== */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        .stat-item {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.09);
+        }
+        .stat-num {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-item p {
+            color: #555;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin: 0;
+        }
+
+        /* ===== Mission & Vision ===== */
+        .mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .mission-card {
+            background: #fafbfe;
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid #eef1f8;
+        }
+        .mission-card .icon-box {
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .mission-card .icon-box i {
+            color: white;
+            font-size: 1.5rem;
+        }
+        .mission-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #130f26;
+            margin: 0 0 15px;
+        }
+        .mission-card p {
+            color: #555;
+            line-height: 1.75;
+            font-size: 1.02rem;
+            margin: 0;
+        }
+
+        /* ===== Why Choose ===== */
+        .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .why-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+        .why-item i {
+            color: #4CAF50;
+            font-size: 1.3rem;
+            margin-top: 4px;
+            flex-shrink: 0;
+        }
+        .why-item h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: #130f26;
+            margin: 0 0 6px;
+        }
+        .why-item p {
+            font-size: 0.95rem;
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        /* ===== Core Values ===== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            text-align: center;
+        }
+        .value-item {
+            background: white;
+            padding: 35px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            transition: transform 0.3s ease;
+        }
+        .value-item:hover { transform: translateY(-4px); }
+        .value-item i { font-size: 2rem; margin-bottom: 15px; display: block; }
+        .value-item h4 { font-weight: 700; color: #130f26; margin: 0 0 8px; font-size: 1.05rem; }
+        .value-item p { font-size: 0.9rem; color: #666; margin: 0; line-height: 1.5; }
+
+        /* ===== LEADERSHIP CARD STYLES ===== */
+        .leadership-section { 
+            padding: 80px 0; 
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .leadership-section::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: rgba(157, 0, 255, 0.15);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .leadership-section::after {
+            content: '';
+            position: absolute;
+            bottom: -150px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: rgba(0, 132, 255, 0.15);
+            filter: blur(100px);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .leadership-section-header {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .leadership-section-header .section-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #a855f7, #3b82f6);
+            color: #ffffff;
+            padding: 6px 22px;
+            border-radius: 24px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.4px;
+            margin-bottom: 14px;
+            box-shadow: 0 4px 14px rgba(168,85,247,0.25);
+        }
+        .leadership-section-header h3 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(90deg, #111827, #4f46e5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 0 12px;
+        }
+        .leadership-section-header p {
+            color: #4b5563;
+            font-size: 1.05rem;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .ldr-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .ldr-row {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.4s ease;
+            
+            /* Glassmorphism Effect */
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+        .ldr-row.visible { 
+            opacity: 1; 
+            transform: translateY(0); 
+            transition: opacity 0.6s ease, transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .ldr-row.visible:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px rgba(26, 115, 232, 0.12);
+        }
+        .ldr-row:nth-child(even) { flex-direction: row-reverse; }
+        .ldr-photo-wrapper { width: 450px; height: 350px; border-radius: 35px; flex-shrink: 0; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.12); transition: box-shadow 0.4s ease; }
+        .ldr-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease; display: block; }
+        .ldr-row:hover .ldr-photo-wrapper { box-shadow: 0 25px 50px rgba(0,0,0,0.18); }
+        .ldr-photo-wrapper:hover .ldr-photo { transform: scale(1.05); }
+        .ldr-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; text-align: left; }
+        .ldr-badge { background: #e8f0fe; color: #1a73e8; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; align-self: flex-start; margin-bottom: 20px; }
+        .ldr-name { font-size: 2.2rem; font-weight: 800; color: #000; margin: 0 0 15px 0; }
+        .ldr-divider { width: 60px; height: 4px; background: linear-gradient(90deg, #1a73e8, #8b5cf6); border-radius: 2px; margin-bottom: 25px; }
+        .ldr-bio { font-size: 1.05rem; color: #555; line-height: 1.7; margin: 0 0 35px 0; }
+        
+        .ldr-profile-block { display: flex; align-items: center; justify-content: flex-start; gap: 15px; }
+        .ldr-profile-icon { width: 48px; height: 48px; background: #0077b5; color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2); }
+        .ldr-profile-icon:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 119, 181, 0.35); color: white; }
+        .ldr-profile-icon.no-link { pointer-events: none; opacity: 0.5; filter: grayscale(100%); }
+        .ldr-profile-text { display: flex; flex-direction: column; }
+        .ldr-profile-name { font-size: 1rem; font-weight: 700; color: #000; line-height: 1.2; margin-bottom: 4px; }
+        .ldr-profile-role { font-size: 0.85rem; color: #64748b; line-height: 1.2; }
+
+        @media (max-width: 900px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .mission-grid { grid-template-columns: 1fr; }
+            .why-grid { grid-template-columns: 1fr; }
+            .values-grid { grid-template-columns: 1fr 1fr; }
+            .ldr-row, .ldr-row:nth-child(even) { flex-direction: column; align-items: flex-start; gap: 30px; text-align: left; }
+            .ldr-photo-wrapper { width: 100%; height: auto; aspect-ratio: 45/35; max-width: 450px; margin: 0 auto; display: block; }
+        }
+        @media (max-width: 768px) {
+            .page-hero { padding: 40px 15px 30px; }
+            .page-hero h2 { font-size: 1.8rem; }
+            .page-hero p { font-size: 1rem; margin-bottom: 25px; }
+            .section-band { padding: 50px 0; }
+            .section-label { margin-bottom: 30px; }
+            .section-label h2 { font-size: 1.6rem; }
+            .stat-num { font-size: 2rem; }
+            .mission-card { padding: 25px; }
+            .mission-card h3 { font-size: 1.2rem; }
+            .ldr-name { font-size: 1.6rem; }
+            .ldr-badge { font-size: 0.78rem; padding: 6px 12px; }
+            .ldr-bio { font-size: 0.95rem; margin-bottom: 25px; }
+            .leadership-section { padding: 50px 0; }
+            .leadership-section-header h3 { font-size: 1.8rem; }
+            .ldr-grid { gap: 40px; }
+        }
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .values-grid { grid-template-columns: 1fr; }
+        }
+        
+        @supports (-webkit-touch-callout: none) {
+            .leadership-section-header h3 { background-clip: text; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container top-bar">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                    <div class="logo-icon-wrapper">
+                        <img src="logos/c_logo.jpeg" alt="Cogniza Icon">
+                    </div>
+                    <div class="logo-text">
+                        <h1>COGNIZA</h1>
+                        <p class="slogan-gradient">"Beyond Learning. Beyond Limits."</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="nav-container">
+                <nav class="pill-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="index.html#programs">Programs</a></li>
+                        <li><a href="index.html#offers">Offer Plans</a></li>
+                        <li class="nav-dropdown">
+                            <a href="index.html#careers">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ambassador.html">Become Cogniza Campus Ambassador</a></li>
+                                <li><a href="careers.html">Looking For A Job ?</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-actions">
+                <a href="register.html" class="btn btn-outline">Register</a>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container page-hero">
+        <div class="badge">Our Story</div>
+        <h2>About <span class="text-gradient">Cogniza</span></h2>
+        <p>Empowering individuals and institutions to succeed in the rapidly evolving digital environment through innovative educational technology.</p>
+        <div class="page-hero-img">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80" alt="Cogniza Learning Hub">
+        </div>
+    </section>
+
+    <!-- Impact Stats -->
+    <section class="section-band grey">
+        <div class="container">
+            <div class="section-label">
+                <h2>Our <span class="text-gradient">Impact</span></h2>
+                <p>Numbers that reflect the trust thousands of learners place in us every day.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-num">10k+</div>
+                    <p>Students Trained</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">50+</div>
+                    <p>Expert Mentors</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">95%</div>
+                    <p>Placement Rate</p>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-num">100+</div>
+                    <p>Hiring Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="section-band">
+        <div class="container">
+            <div class="section-label">
+                <h2>Mission &amp; <span class="text-gradient">Vision</span></h2>
+                <p>The purpose that drives every program, every mentor, and every learner at Cogniza.</p>
+            </div>
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="icon-box"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To utilize innovative technological tools to bridge the gap between academia and the corporate world, equipping our community of passionate learners with hands-on skills, practical experience, and the confidence to stand out from the crowd.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="icon-box"><i class="fas fa-eye"></i></div>
+                    <h3>Our Vision</h3>
+                    <p>To create boundless economic opportunity for every learner globally, cultivating a future where access to advanced technical training and professional mentorship is limitless.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="leadership-section" style="background: #fafbfe;">
+        <div class="container">
+            <div class="leadership-section-header">
+                <span class="section-badge">Our Team</span>
+                <h3>The People<span class="text-gradient"> Behind us</span></h3>
+                <p>The passionate visionaries behind Cogniza &mdash; united by a single mission: to transform lives through world-class education.</p>
+            </div>
+
+            <div class="ldr-grid">
+
+                <!-- Veena Kumanan -->
+                <div class="ldr-row">
+                    <div class="ldr-photo-wrapper">
+                        <img class="ldr-photo" src="images/Veena Kumanan.jpeg" alt="Veena Kumanan">
+                    </div>
+                    <div class="ldr-info">
+                        <span class="ldr-badge">Chief Executive Officer (CEO) &amp; Managing Director</span>
+                        <h4 class="ldr-name">Veena Kumanan</h4>
+                        <div class="ldr-divider"></div>
+                        <p class="ldr-bio">Veena Kumanan leads Cogniza with a vision to redefine learning through innovation, quality, and industry-driven education. She oversees the company's strategic direction, fosters organizational growth, and ensures every initiative empowers students and professionals to achieve their career aspirations.</p>
+                        <div class="ldr-profile-block">
+                            <a class="ldr-profile-icon" href="https://www.linkedin.com/in/veena-murugesh-7b4145402/" target="_blank" rel="noopener" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="ldr-profile-text">
+                                <span class="ldr-profile-name">Veena Kumanan</span>
+                                <span class="ldr-profile-role">CEO &amp; Managing Director</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Murugesan -->
+                <div class="ldr-row">
+                    <div class="ldr-photo-wrapper">
+                        <img class="ldr-photo" src="images/Murugesan.jpeg" alt="Murugesan">
+                    </div>
+                    <div class="ldr-info">
+                        <span class="ldr-badge">Chairperson &amp; Founder</span>
+                        <h4 class="ldr-name">Murugesan</h4>
+                        <div class="ldr-divider"></div>
+                        <p class="ldr-bio">Murugesan provides strategic leadership and long-term vision for Cogniza, guiding the organization toward sustainable growth and excellence. With a strong commitment to innovation, governance, and educational impact, he ensures Cogniza remains focused on creating meaningful opportunities and delivering lasting value to learners and partners.</p>
+                        <div class="ldr-profile-block">
+                            <span class="ldr-profile-icon no-link"><i class="fab fa-linkedin-in"></i></span>
+                            <div class="ldr-profile-text">
+                                <span class="ldr-profile-name">Murugesan</span>
+                                <span class="ldr-profile-role">Chairperson &amp; Founder</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logesh Kannaa -->
+                <div class="ldr-row">
+                    <div class="ldr-photo-wrapper">
+                        <img class="ldr-photo" src="images/lokesh.jpeg" alt="Logesh Kannaa">
+                    </div>
+                    <div class="ldr-info">
+                        <span class="ldr-badge">Chief Sales Officer</span>
+                        <h4 class="ldr-name">Logesh Kannaa</h4>
+                        <div class="ldr-divider"></div>
+                        <p class="ldr-bio">Logesh Kannaa leads Cogniza's sales strategy, business development, and institutional partnerships. With a strong focus on building meaningful relationships and driving sustainable growth, he is committed to expanding Cogniza's reach across colleges, universities, and industry partners. His vision is to create impactful learning opportunities that bridge the gap between education and employability.</p>
+                        <div class="ldr-profile-block">
+                            <a class="ldr-profile-icon" href="https://www.linkedin.com/in/logesh-kannaa-a89738305" target="_blank" rel="noopener" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="ldr-profile-text">
+                                <span class="ldr-profile-name">Logesh Kannaa</span>
+                                <span class="ldr-profile-role">Chief Sales Officer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mohammed Wasim -->
+                <div class="ldr-row">
+                    <div class="ldr-photo-wrapper">
+                        <img class="ldr-photo" src="images/Wasim.jpeg" alt="Mohammed Wasim">
+                    </div>
+                    <div class="ldr-info">
+                        <span class="ldr-badge">Chief Marketing Officer</span>
+                        <h4 class="ldr-name">Mohammed Wasim</h4>
+                        <div class="ldr-divider"></div>
+                        <p class="ldr-bio">Mohammed Wasim heads Cogniza's marketing and brand strategy, ensuring that every initiative resonates with students, institutions, and corporate partners. From digital campaigns to brand positioning and market expansion, he focuses on creating meaningful engagement and increasing Cogniza's impact across the education ecosystem.</p>
+                        <div class="ldr-profile-block">
+                            <a class="ldr-profile-icon" href="https://www.linkedin.com/in/mohammed-wasim-5337ab1b1" target="_blank" rel="noopener" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <div class="ldr-profile-text">
+                                <span class="ldr-profile-name">Mohammed Wasim</span>
+                                <span class="ldr-profile-role">Chief Marketing Officer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Cogniza -->
+    <section class="section-band">
+        <div class="container">
+            <div class="section-label">
+                <h2>Why Choose <span class="text-gradient">Cogniza?</span></h2>
+                <p>What sets us apart from every other ed-tech platform out there.</p>
+            </div>
+            <div class="why-grid">
+                <div class="why-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Industry-Led Curriculum</h4>
+                        <p>Learn strictly from what the tech industry demands right now, curated by experts from top MNCs.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Guaranteed Placements</h4>
+                        <p>Our dedicated placement cell works directly with hiring partners to secure your dream job.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Live Project Experience</h4>
+                        <p>Don't just watch videos. Build real-time applications that you can showcase on your resume.</p>
+                    </div>
+                </div>
+                <div class="why-item">
+                    <i class="fas fa-check-circle"></i>
+                    <div>
+                        <h4>Dedicated Mentorship</h4>
+                        <p>1-on-1 career coaching, mock interviews, and resume building from day one.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-band grey">
+        <div class="container">
+            <div class="section-label">
+                <h2>Our Core <span class="text-gradient">Values</span></h2>
+                <p>The principles that guide everything we do at Cogniza.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-lightbulb" style="color: #9d00ff;"></i>
+                    <h4>Innovation</h4>
+                    <p>Pushing the boundaries of tech education every day.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-gem" style="color: #0084ff;"></i>
+                    <h4>Excellence</h4>
+                    <p>Delivering premium quality training programs.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-users" style="color: #9d00ff;"></i>
+                    <h4>Community</h4>
+                    <p>Fostering collaboration and meaningful mentorship.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt" style="color: #0084ff;"></i>
+                    <h4>Integrity</h4>
+                    <p>Building trust through authentic commitments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">Cogniza</div>
+                    <p>Cogniza empowers students with skills, mentorship, and real-world learning.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy &amp; Refund Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <!-- Courses -->
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul id="footer-course-list" style="list-style:none;padding:0;margin:0;">
+                        <li id="fc-slot-1" class="fc-slot"></li>
+                        <li id="fc-slot-2" class="fc-slot"></li>
+                        <li id="fc-slot-3" class="fc-slot"></li>
+                        <li id="fc-slot-4" class="fc-slot"></li>
+                    </ul>
+                    <style>.fc-slot{padding:2px 0;font-size:.87rem;line-height:1.4;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}.fc-slot a{color:rgba(255,255,255,.7);text-decoration:none;}.fc-slot a:hover{color:#fff;}</style>
+                </div>
+                <!-- Contact Information -->
+                <div class="footer-col contact-col">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 8884456745</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>operations@cogniza.in</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cogniza pvt Ltd, The Desk World, GR towers, Sector 6, HSR Layout, Bengaluru, Karnataka 560102</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/cogniza.in?utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/cogniza-private-limited/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/918884456745" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>Cogniza Edutech Private Limited &copy; 2026. All Rights Reserved.</p>
+                </div>
+                <div class="footer-managed">
+                    <p>Managed by Cogniza Tech.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating AI Button -->
+    <a href="#" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title">
+                <i class="fas fa-comment-dots"></i> AI Assistant
+            </div>
+            <div class="ai-chat-actions">
+                <button id="aiCloseBtn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-message ai">
+                <div class="msg-avatar"><i class="fas fa-comment-dots"></i></div>
+                <div class="msg-bubble">Hello! I'm your Cogniza AI assistant. How can I help you shape your career today?</div>
+            </div>
+        </div>
+        <div class="ai-chat-input-area">
+            <textarea id="aiChatInput" placeholder="Type your message..." rows="1"></textarea>
+            <button id="aiSendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        var c=['Machine Learning With Python','Web Development','Artificial Intelligence','Data Science','Full Stack Web Development','Cyber Security & Ethical Hacking','Cloud Computing','Android App Development','Digital Marketing','UI/UX Design','Data Analytics','Blockchain Technology','DevOps','Business Analytics','Robotics','Embedded Systems','Stock Market','Medical Coding','Graphic Designing','Programming in Python'];
+        var slots=[document.getElementById('fc-slot-1'),document.getElementById('fc-slot-2'),document.getElementById('fc-slot-3'),document.getElementById('fc-slot-4')];
+        if(!slots[0])return;
+        var off=0,ptr=0;
+        slots.forEach(function(s,i){s.innerHTML='<a href="index.html#programs">'+c[i]+'</a>';off=i+1;});
+        off=off%c.length;
+        setInterval(function(){
+            var s=slots[ptr];
+            s.style.cssText='opacity:0;transform:translateY(-7px);transition:opacity .28s ease,transform .28s ease;';
+            setTimeout(function(){
+                s.innerHTML='<a href="index.html#programs">'+c[off]+'</a>';
+                s.style.cssText='opacity:0;transform:translateY(7px);transition:none;';
+                requestAnimationFrame(function(){requestAnimationFrame(function(){
+                    s.style.cssText='opacity:1;transform:translateY(0);transition:opacity .32s ease,transform .32s ease;';
+                });});
+                off=(off+1)%c.length;
+                ptr=(ptr+1)%slots.length;
+            },290);
+        },1600);
+    })();
+    // Leadership row entrance animation
+    (function(){
+        var grid=document.querySelector('.ldr-grid');
+        var cards=document.querySelectorAll('.ldr-row');
+        if(!grid||!cards.length)return;
+        var done=false;
+        new IntersectionObserver(function(e){
+            if(e[0].isIntersecting&&!done){
+                done=true;
+                cards.forEach(function(c,i){setTimeout(function(){c.classList.add('visible');},i*450);});
+            }
+        },{threshold:0.1}).observe(grid);
+    })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
