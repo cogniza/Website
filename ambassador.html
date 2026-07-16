@@ -289,7 +289,7 @@
     <header>
         <div class="container top-bar">
             <div class="logo">
-                <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+                <a href="/" style="display: flex; align-items: center; text-decoration: none;">
                     <div class="logo-icon-wrapper">
                         <img src="logos/c_logo.jpeg" alt="Cogniza Icon">
                     </div>
@@ -303,24 +303,24 @@
             <div class="nav-container">
                 <nav class="pill-nav">
                     <ul class="nav-links">
-                        <li><a href="index.html#home">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="index.html#programs">Programs</a></li>
-                        <li><a href="index.html#offers">Offer Plans</a></li>
+                        <li><a href="/#home">Home</a></li>
+                        <li><a href="/about">About</a></li>
+                        <li><a href="/#programs">Programs</a></li>
+                        <li><a href="/#offers">Offer Plans</a></li>
                         <li class="nav-dropdown">
-                            <a href="index.html#careers" class="active">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                            <a href="/#careers" class="active">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="ambassador.html">Become Cogniza Campus Ambassador</a></li>
-                                <li><a href="careers.html">Looking For A Job ?</a></li>
+                                <li><a href="/ambassador">Become Cogniza Campus Ambassador</a></li>
+                                <li><a href="/careers">Looking For A Job ?</a></li>
                             </ul>
                         </li>
-                        <li><a href="index.html#contact">Contact</a></li>
+                        <li><a href="/#contact">Contact</a></li>
                     </ul>
                 </nav>
             </div>
 
             <div class="nav-actions">
-                <a href="register.html" class="btn btn-outline">Register</a>
+                <a href="/register" class="btn btn-outline">Register</a>
             </div>
 
             <button class="mobile-menu-btn" aria-label="Toggle navigation">
@@ -465,7 +465,7 @@
     <section class="cta-band">
         <h2>Ready to Step Up?</h2>
         <p>Applications are now open for the upcoming cohort. Apply now to kickstart your leadership journey with Cogniza!</p>
-        <a href="register.html">Apply Now</a>
+        <a href="/register">Apply Now</a>
     </section>
 
     <!-- Footer Section -->
@@ -481,10 +481,10 @@
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="privacy-policy.html">Privacy Policy & Refund Policy</a></li>
-                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/privacy-policy">Privacy Policy & Refund Policy</a></li>
+                        <li><a href="/terms-and-conditions">Terms &amp; Conditions</a></li>
                     </ul>
                 </div>
                 <!-- Courses -->
@@ -558,13 +558,13 @@
       var s=[document.getElementById("fc-slot-1"),document.getElementById("fc-slot-2"),document.getElementById("fc-slot-3"),document.getElementById("fc-slot-4")];
       if(!s[0])return;
       var o=4,p=0;
-      s.forEach(function(x,i){x.innerHTML='<a href="index.html#programs">'+c[i]+'</a>';});
+      s.forEach(function(x,i){x.innerHTML='<a href="/#programs">'+c[i]+'</a>';});
       o=o%c.length;
       setInterval(function(){
         var x=s[p];
         x.style.cssText="opacity:0;transform:translateY(-7px);transition:opacity .28s ease,transform .28s ease;";
         setTimeout(function(){
-          x.innerHTML='<a href="index.html#programs">'+c[o]+'</a>';
+          x.innerHTML='<a href="/#programs">'+c[o]+'</a>';
           x.style.cssText="opacity:0;transform:translateY(7px);transition:none;";
           requestAnimationFrame(function(){requestAnimationFrame(function(){
             x.style.cssText="opacity:1;transform:translateY(0);transition:opacity .32s ease,transform .32s ease;";
