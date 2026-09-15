@@ -93,7 +93,7 @@
             <script>var formSubmitted = false;</script>
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { alert('Thank you! Your registration has been submitted successfully.'); document.querySelector('form').reset(); }"></iframe>
             
-            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJdgaxz3jT_vvNCSu13ueJ2QEsCyThgHNCbVPssl6ki1Y-8w/viewform?usp=dialog" method="POST" target="hidden_iframe" onsubmit="formSubmitted=true; setTimeout(() => this.reset(), 500);">
+            <form action="https://docs.google.com/forms/d/e/1FAIpQLSdJdgaxz3jT_vvNCSu13ueJ2QEsCyThgHNCbVPssl6ki1Y-8w/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted=true; setTimeout(() => this.reset(), 500);">
                 
                 <div style="margin-bottom: 20px;">
                     <label style="color: #444; font-size: 0.95rem;">Name:</label>
