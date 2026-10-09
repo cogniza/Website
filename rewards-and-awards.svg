@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgAwards" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f0c29" />
+      <stop offset="50%" stop-color="#302b63" />
+      <stop offset="100%" stop-color="#24243e" />
+    </linearGradient>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="40%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <linearGradient id="ribbonRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ef4444" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <radialGradient id="sparkleGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#bgAwards)" rx="18" />
+
+  <!-- Ambient Glow -->
+  <circle cx="400" cy="140" r="180" fill="url(#sparkleGlow)" />
+  <circle cx="200" cy="90" r="100" fill="#9d00ff" opacity="0.15" />
+  <circle cx="620" cy="110" r="110" fill="#0084ff" opacity="0.15" />
+
+  <!-- Confetti & Star Sparkles -->
+  <g fill="#fbbf24" opacity="0.75">
+    <circle cx="160" cy="70" r="3" />
+    <circle cx="230" cy="140" r="2.5" />
+    <circle cx="270" cy="60" r="4" />
+    <circle cx="530" cy="70" r="3.5" />
+    <circle cx="580" cy="150" r="2.5" />
+    <circle cx="650" cy="80" r="4" />
+    <polygon points="190,110 193,117 200,118 195,123 196,130 190,126 184,130 185,123 180,118 187,117" />
+    <polygon points="610,60 613,67 620,68 615,73 616,80 610,76 604,80 605,73 600,68 607,67" />
+  </g>
+  <g fill="#f43f5e" opacity="0.6">
+    <rect x="140" y="110" width="8" height="4" rx="2" transform="rotate(25 140 110)" />
+    <rect x="250" y="95" width="8" height="4" rx="2" transform="rotate(-35 250 95)" />
+    <rect x="560" y="115" width="8" height="4" rx="2" transform="rotate(45 560 115)" />
+    <rect x="670" y="120" width="8" height="4" rx="2" transform="rotate(-20 670 120)" />
+  </g>
+  <g fill="#38bdf8" opacity="0.7">
+    <circle cx="130" cy="160" r="3" />
+    <circle cx="670" cy="60" r="3.5" />
+    <rect x="210" y="50" width="7" height="4" rx="2" transform="rotate(15 210 50)" />
+    <rect x="590" y="90" width="7" height="4" rx="2" transform="rotate(-40 590 90)" />
+  </g>
+
+  <!-- Central Trophy & Medals -->
+  <g transform="translate(400, 135)">
+    <!-- Trophy Base -->
+    <rect x="-42" y="70" width="84" height="16" rx="4" fill="#78350f" />
+    <polygon points="-32,70 32,70 24,52 -24,52" fill="url(#goldGradient)" />
+    <rect x="-10" y="32" width="20" height="22" fill="#d97706" />
+    
+    <!-- Trophy Cup -->
+    <path d="M-45,-40 L45,-40 L38,10 C32,32 0,35 0,35 C0,35 -32,32 -38,10 Z" fill="url(#goldGradient)" />
+    
+    <!-- Trophy Handles -->
+    <path d="M-45,-30 C-75,-30 -75,0 -40,0" fill="none" stroke="url(#goldGradient)" stroke-width="8" stroke-linecap="round" />
+    <path d="M45,-30 C75,-30 75,0 40,0" fill="none" stroke="url(#goldGradient)" stroke-width="8" stroke-linecap="round" />
+    
+    <!-- Trophy Emblem (Star) -->
+    <circle cx="0" cy="-6" r="16" fill="#ffffff" opacity="0.25" />
+    <text x="0" y="1" fill="#ffffff" font-size="20" font-weight="bold" text-anchor="middle">★</text>
+    
+    <!-- Laurel Wreath Leaves (Left) -->
+    <path d="M-70,-10 C-85,-35 -75,-60 -50,-70" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
+    <ellipse cx="-72" cy="-25" rx="5" ry="9" fill="#fbbf24" transform="rotate(-30 -72 -25)" />
+    <ellipse cx="-68" cy="-48" rx="5" ry="9" fill="#fbbf24" transform="rotate(-50 -68 -48)" />
+    
+    <!-- Laurel Wreath Leaves (Right) -->
+    <path d="M70,-10 C85,-35 75,-60 50,-70" fill="none" stroke="#fbbf24" stroke-width="4" stroke-linecap="round" />
+    <ellipse cx="72" cy="-25" rx="5" ry="9" fill="#fbbf24" transform="rotate(30 72 -25)" />
+    <ellipse cx="68" cy="-48" rx="5" ry="9" fill="#fbbf24" transform="rotate(50 68 -48)" />
+
+    <!-- Medals on Left & Right -->
+    <g transform="translate(-115, 10)">
+      <polygon points="-12,-35 0,-15 12,-35" fill="url(#ribbonRed)" />
+      <circle cx="0" cy="0" r="22" fill="url(#goldGradient)" stroke="#fef08a" stroke-width="2" />
+      <text x="0" y="7" fill="#78350f" font-family="'Inter', sans-serif" font-size="16" font-weight="900" text-anchor="middle">1st</text>
+    </g>
+    <g transform="translate(115, 10)">
+      <polygon points="-12,-35 0,-15 12,-35" fill="url(#ribbonRed)" />
+      <circle cx="0" cy="0" r="22" fill="url(#goldGradient)" stroke="#fef08a" stroke-width="2" />
+      <text x="0" y="6" fill="#78350f" font-size="15" text-anchor="middle">🏆</text>
+    </g>
+  </g>
+
+  <!-- Bottom Details Banner Card -->
+  <rect x="35" y="270" width="730" height="145" rx="16" fill="#0f172a" fill-opacity="0.9" stroke="rgba(251,191,36,0.3)" />
+
+  <rect x="60" y="294" width="160" height="26" rx="13" fill="url(#goldGradient)" />
+  <text x="140" y="311" fill="#78350f" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="1">REWARDS &amp; RECOGNITION</text>
+
+  <text x="60" y="352" fill="#ffffff" font-family="'Inter', sans-serif" font-size="23" font-weight="800">Rewards, Awards &amp; Happy Moments</text>
+  <text x="60" y="382" fill="#cbd5e1" font-family="'Inter', sans-serif" font-size="14">Honoring outstanding mentors, high-achieving student innovators, and joyful team celebrations at Cogniza.</text>
+</svg>

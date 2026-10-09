@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="saffronGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="100%" stop-color="#FF6F00" />
+    </linearGradient>
+    <linearGradient id="whiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#138808" />
+      <stop offset="100%" stop-color="#0d5c06" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="15" flood-color="#000000" flood-opacity="0.4" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bgGrad)" />
+
+  <!-- Ambient glowing orbs -->
+  <circle cx="200" cy="150" r="180" fill="#FF9933" opacity="0.15" filter="url(#glow)" />
+  <circle cx="1050" cy="500" r="220" fill="#138808" opacity="0.15" filter="url(#glow)" />
+  <circle cx="600" cy="337" r="260" fill="#6366f1" opacity="0.1" filter="url(#glow)" />
+
+  <!-- Decorative geometric waves / ribbons -->
+  <path d="M-50,220 C300,120 450,380 850,200 C1050,110 1150,180 1250,140 L1250,0 L-50,0 Z" fill="url(#saffronGrad)" opacity="0.85" />
+  <path d="M-50,360 C350,260 550,480 900,320 C1100,240 1180,300 1250,260 L1250,140 C1150,180 1050,110 850,200 C450,380 300,120 -50,220 Z" fill="url(#whiteGrad)" opacity="0.9" />
+  <path d="M-50,500 C320,420 600,600 950,440 C1120,370 1200,420 1250,380 L1250,260 C1180,300 1100,240 900,320 C550,480 350,260 -50,360 Z" fill="url(#greenGrad)" opacity="0.85" />
+
+  <!-- Stylized Ashok Chakra Emblem -->
+  <g transform="translate(600, 315)">
+    <!-- Outer rim -->
+    <circle r="95" fill="none" stroke="#000080" stroke-width="7" opacity="0.95" />
+    <circle r="85" fill="none" stroke="#000080" stroke-width="2" stroke-dasharray="3,3" opacity="0.8" />
+    <circle r="18" fill="#000080" />
+    <!-- 24 Spokes -->
+    <g stroke="#000080" stroke-width="3" opacity="0.85">
+      <line x1="0" y1="-88" x2="0" y2="88" />
+      <line x1="-88" y1="0" x2="88" y2="0" />
+      <line x1="-62.2" y1="-62.2" x2="62.2" y2="62.2" />
+      <line x1="-62.2" y1="62.2" x2="62.2" y2="-62.2" />
+      <line x1="-33.7" y1="-81.3" x2="33.7" y2="81.3" />
+      <line x1="-81.3" y1="-33.7" x2="81.3" y2="33.7" />
+      <line x1="-81.3" y1="33.7" x2="81.3" y2="-33.7" />
+      <line x1="-33.7" y1="81.3" x2="33.7" y2="-81.3" />
+      <line x1="-16.8" y1="-86.4" x2="16.8" y2="86.4" />
+      <line x1="-86.4" y1="-16.8" x2="86.4" y2="16.8" />
+      <line x1="-86.4" y1="16.8" x2="86.4" y2="-16.8" />
+      <line x1="-16.8" y1="86.4" x2="16.8" y2="-86.4" />
+    </g>
+  </g>
+
+  <!-- Modern Overlay Glass Card on Left/Center -->
+  <rect x="70" y="380" width="1060" height="240" rx="20" fill="#0f172a" fill-opacity="0.85" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" filter="url(#cardShadow)" />
+
+  <!-- Event Badge -->
+  <rect x="110" y="415" width="230" height="36" rx="18" fill="url(#saffronGrad)" />
+  <text x="225" y="439" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="1">🇮🇳 INDEPENDENCE DAY 2026</text>
+
+  <!-- Main Title & Subtitles inside card -->
+  <text x="110" y="495" fill="#ffffff" font-family="'Inter', -apple-system, sans-serif" font-size="34" font-weight="800">Celebrating Freedom, Unity &amp; Innovation</text>
+  <text x="110" y="535" fill="#cbd5e1" font-family="'Inter', -apple-system, sans-serif" font-size="18" font-weight="400">Honoring India's glorious spirit with the vibrant Cogniza team &amp; student community.</text>
+  
+  <!-- Metadata pills -->
+  <g transform="translate(110, 565)">
+    <!-- Date Pill -->
+    <rect x="0" y="0" width="170" height="32" rx="16" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" />
+    <circle cx="16" cy="16" r="5" fill="#FF9933" />
+    <text x="32" y="21" fill="#f8fafc" font-family="'Inter', sans-serif" font-size="13" font-weight="600">📅 August 15, 2026</text>
+
+    <!-- Location Pill -->
+    <rect x="185" y="0" width="195" height="32" rx="16" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)" />
+    <circle cx="201" cy="16" r="5" fill="#138808" />
+    <text x="217" y="21" fill="#f8fafc" font-family="'Inter', sans-serif" font-size="13" font-weight="600">📍 Cogniza HQ, Bangalore</text>
+
+    <!-- Tag Pill -->
+    <rect x="395" y="0" width="170" height="32" rx="16" fill="rgba(157,0,255,0.2)" stroke="rgba(157,0,255,0.4)" />
+    <text x="480" y="21" fill="#c084fc" font-family="'Inter', sans-serif" font-size="13" font-weight="700" text-anchor="middle">Events &amp; Celebrations</text>
+  </g>
+
+  <!-- Cogniza Watermark top right -->
+  <text x="1110" y="90" fill="#ffffff" opacity="0.3" font-family="'Inter', sans-serif" font-size="26" font-weight="900" text-anchor="end" letter-spacing="4">COGNIZA HIGHLIGHTS</text>
+  <circle cx="1125" cy="82" r="5" fill="#FF9933" />
+</svg>

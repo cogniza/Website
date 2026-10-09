@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgRep" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#091e3a" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <linearGradient id="indGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9933" />
+      <stop offset="50%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#138808" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgRep)" rx="16" />
+  
+  <!-- Swirl stripes -->
+  <path d="M0,180 Q200,60 400,160 T800,80 L800,0 L0,0 Z" fill="#FF9933" opacity="0.4" />
+  <path d="M0,230 Q200,110 400,210 T800,130 L800,80 Q600,160 400,160 T0,180 Z" fill="#ffffff" opacity="0.3" />
+  <path d="M0,280 Q200,160 400,260 T800,180 L800,130 Q600,210 400,210 T0,230 Z" fill="#138808" opacity="0.4" />
+
+  <!-- Center Chakra & Badge -->
+  <g transform="translate(400, 130)">
+    <circle r="45" fill="none" stroke="#38bdf8" stroke-width="4" />
+    <circle r="8" fill="#38bdf8" />
+    <text x="0" y="70" fill="#ffffff" font-family="'Inter', sans-serif" font-size="16" font-weight="800" text-anchor="middle">REPUBLIC DAY FEST</text>
+  </g>
+
+  <!-- Bottom Card Content -->
+  <rect x="40" y="270" width="720" height="140" rx="14" fill="#0f172a" fill-opacity="0.85" stroke="rgba(255,255,255,0.12)" />
+  
+  <rect x="65" y="295" width="130" height="24" rx="12" fill="#38bdf8" />
+  <text x="130" y="311" fill="#0f172a" font-family="'Inter', sans-serif" font-size="11" font-weight="800" text-anchor="middle" letter-spacing="1">CELEBRATIONS</text>
+  
+  <text x="65" y="352" fill="#ffffff" font-family="'Inter', sans-serif" font-size="22" font-weight="800">Republic Day &amp; Cultural Festivities</text>
+  <text x="65" y="380" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14">A celebration of cultural diversity, unity in nationhood, and student talent.</text>
+</svg>
