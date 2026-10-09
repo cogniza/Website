@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgWelcome" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e1b4b" />
+      <stop offset="100%" stop-color="#312e81" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9d00ff" />
+      <stop offset="100%" stop-color="#0084ff" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bgWelcome)" rx="16" />
+  
+  <!-- Geometric glow shapes -->
+  <circle cx="100" cy="80" r="140" fill="#9d00ff" opacity="0.25" filter="blur(30px)" />
+  <circle cx="700" cy="380" r="160" fill="#0084ff" opacity="0.2" filter="blur(30px)" />
+  
+  <!-- Decorative Grid dots -->
+  <g fill="#ffffff" opacity="0.08">
+    <circle cx="50" cy="50" r="2" /><circle cx="70" cy="50" r="2" /><circle cx="90" cy="50" r="2" />
+    <circle cx="50" cy="70" r="2" /><circle cx="70" cy="70" r="2" /><circle cx="90" cy="70" r="2" />
+    <circle cx="50" cy="90" r="2" /><circle cx="70" cy="90" r="2" /><circle cx="90" cy="90" r="2" />
+  </g>
+
+  <!-- Central Graphic: Team avatars & welcome badge -->
+  <g transform="translate(400, 160)">
+    <!-- Main Center Avatar -->
+    <circle cx="0" cy="0" r="54" fill="url(#purpleGrad)" />
+    <circle cx="0" cy="-14" r="20" fill="#ffffff" />
+    <path d="M-30,34 C-30,12 30,12 30,34 Z" fill="#ffffff" />
+    
+    <!-- Left Avatar -->
+    <circle cx="-100" cy="20" r="42" fill="#3b82f6" opacity="0.9" />
+    <circle cx="-100" cy="8" r="15" fill="#ffffff" />
+    <path d="M-124,46 C-124,30 -76,30 -76,46 Z" fill="#ffffff" />
+    
+    <!-- Right Avatar -->
+    <circle cx="100" cy="20" r="42" fill="#ec4899" opacity="0.9" />
+    <circle cx="100" cy="8" r="15" fill="#ffffff" />
+    <path d="M76,46 C76,30 124,30 124,46 Z" fill="#ffffff" />
+
+    <!-- Plus / Growth icons -->
+    <circle cx="150" cy="-40" r="16" fill="#10b981" />
+    <text x="150" y="-34" fill="#ffffff" font-family="'Inter', sans-serif" font-size="16" font-weight="800" text-anchor="middle">+</text>
+  </g>
+
+  <!-- Bottom Card Content -->
+  <rect x="40" y="270" width="720" height="140" rx="14" fill="#0f172a" fill-opacity="0.8" stroke="rgba(255,255,255,0.12)" />
+  
+  <rect x="65" y="295" width="150" height="24" rx="12" fill="url(#purpleGrad)" />
+  <text x="140" y="311" fill="#ffffff" font-family="'Inter', sans-serif" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1">COMPANY UPDATES</text>
+  
+  <text x="65" y="352" fill="#ffffff" font-family="'Inter', sans-serif" font-size="22" font-weight="800">Welcome to the Cogniza Team</text>
+  <text x="65" y="380" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="14">Welcoming our newest cohort of educators, tech mentors &amp; innovators.</text>
+</svg>

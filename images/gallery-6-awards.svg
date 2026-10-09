@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="#0f172a" rx="12" />
+  <rect x="20" y="20" width="560" height="410" rx="8" fill="url(#g6)" opacity="0.15" />
+  <circle cx="300" cy="180" r="70" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-dasharray="6,4" />
+  <text x="300" y="195" font-size="50" text-anchor="middle">🏆</text>
+  <rect x="40" y="320" width="520" height="90" rx="10" fill="#0f172a" opacity="0.9" />
+  <text x="60" y="355" fill="#ffffff" font-family="'Inter', sans-serif" font-size="18" font-weight="700">EdTech Innovation &amp; Leadership Award</text>
+  <text x="60" y="385" fill="#94a3b8" font-family="'Inter', sans-serif" font-size="13">May 2026 • National EdTech Conclave</text>
+</svg>
