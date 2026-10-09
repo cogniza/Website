@@ -1,5 +1,9 @@
-// Interactions can be added here
-document.addEventListener("DOMContentLoaded", () => {
+// Cogniza Web Application Scripts
+// Fully modular & safe for static GitHub Pages and live hosts
+
+(function() {
+    'use strict';
+
     const courses = [
         "AI (Generative & Agentic)",
         "Agentic AI",
@@ -108,839 +112,921 @@ document.addEventListener("DOMContentLoaded", () => {
         "Web3 & Smart Contracts"
     ];
 
-    const typingElement = document.getElementById("typing-text");
-
-    const courseSelect = document.getElementById("courseSelect");
-    if (courseSelect) {
-        courses.forEach(course => {
-            const option = document.createElement("option");
-            option.value = course;
-            option.textContent = course;
-            courseSelect.appendChild(option);
-        });
-    }
-
-    if (typingElement) {
-        let courseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentCourse = courses[courseIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentCourse.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentCourse.substring(0, charIndex + 1);
-                charIndex++;
+    // ==========================================
+    // 1. HERO TYPING EFFECT & MODAL DROPDOWN
+    // ==========================================
+    function initHeroAndDropdown() {
+        try {
+            const courseSelect = document.getElementById("courseSelect");
+            if (courseSelect && courseSelect.children.length <= 1) {
+                courses.forEach(course => {
+                    const option = document.createElement("option");
+                    option.value = course;
+                    option.textContent = course;
+                    courseSelect.appendChild(option);
+                });
             }
 
-            let typeSpeed = isDeleting ? 40 : 80; // Deleting is faster
+            const typingElement = document.getElementById("typing-text");
+            if (typingElement) {
+                let courseIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
 
-            if (!isDeleting && charIndex === currentCourse.length) {
-                typeSpeed = 2000; // Pause at the end of the word
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                courseIndex = (courseIndex + 1) % courses.length;
-                typeSpeed = 500; // Pause before typing the next word
-            }
-
-            setTimeout(typeEffect, typeSpeed);
-        }
-
-        typeEffect();
-    }
-
-    // Expanding Cards Logic
-    const expandCards = document.querySelectorAll(".expand-card");
-    if (expandCards.length > 0) {
-        let activeIndex = 0;
-        let autoPlayInterval;
-
-        const startAutoPlay = () => {
-            autoPlayInterval = setInterval(() => {
-                expandCards.forEach(c => c.classList.remove("active"));
-                activeIndex = (activeIndex + 1) % expandCards.length;
-                expandCards[activeIndex].classList.add("active");
-            }, 3000); // Change every 3 seconds
-        };
-
-        const stopAutoPlay = () => {
-            clearInterval(autoPlayInterval);
-        };
-
-        expandCards.forEach((card, index) => {
-            card.addEventListener("mouseenter", () => {
-                stopAutoPlay();
-                expandCards.forEach(c => c.classList.remove("active"));
-                card.classList.add("active");
-                activeIndex = index;
-            });
-            card.addEventListener("mouseleave", () => {
-                startAutoPlay();
-            });
-            // For mobile clicks
-            card.addEventListener("click", () => {
-                stopAutoPlay();
-                expandCards.forEach(c => c.classList.remove("active"));
-                card.classList.add("active");
-                activeIndex = index;
-            });
-        });
-        
-        startAutoPlay();
-    }
-
-    // Success Stats Counter Animation
-    const statNumbers = document.querySelectorAll('.stat-number');
-
-    if (statNumbers.length > 0) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    if (!entry.target.classList.contains('animating')) {
-                        entry.target.classList.add('animating');
-                        statNumbers.forEach(stat => {
-                            const target = +stat.getAttribute('data-target');
-                            const duration = 2000; // 2 seconds
-                            const increment = target / (duration / 16); // 60fps
-                            
-                            let current = 0;
-                            const updateCounter = () => {
-                                if (!entry.target.classList.contains('animating')) return; // Cancel if scrolled away
-                                
-                                current += increment;
-                                if (current < target) {
-                                    stat.textContent = Math.ceil(current).toLocaleString() + '+';
-                                    requestAnimationFrame(updateCounter);
-                                } else {
-                                    stat.textContent = target.toLocaleString() + '+';
-                                }
-                            };
-                            updateCounter();
-                        });
+                function typeEffect() {
+                    const currentCourse = courses[courseIndex];
+                    if (!currentCourse) return;
+                    
+                    if (isDeleting) {
+                        typingElement.textContent = currentCourse.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        typingElement.textContent = currentCourse.substring(0, charIndex + 1);
+                        charIndex++;
                     }
-                } else {
-                    // Reset numbers to 0 when scrolled out of view
-                    entry.target.classList.remove('animating');
-                    statNumbers.forEach(stat => {
-                        stat.textContent = '0';
+
+                    let typeSpeed = isDeleting ? 40 : 80;
+
+                    if (!isDeleting && charIndex === currentCourse.length) {
+                        typeSpeed = 2000;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        courseIndex = (courseIndex + 1) % courses.length;
+                        typeSpeed = 500;
+                    }
+
+                    setTimeout(typeEffect, typeSpeed);
+                }
+
+                typeEffect();
+            }
+        } catch (e) {
+            console.error("Error in initHeroAndDropdown:", e);
+        }
+    }
+
+    // ==========================================
+    // 2. EXPANDING CARDS LOGIC
+    // ==========================================
+    function initExpandingCards() {
+        try {
+            const expandCards = document.querySelectorAll(".expand-card");
+            if (expandCards.length > 0) {
+                let activeIndex = 0;
+                let autoPlayInterval;
+
+                const startAutoPlay = () => {
+                    autoPlayInterval = setInterval(() => {
+                        expandCards.forEach(c => c.classList.remove("active"));
+                        activeIndex = (activeIndex + 1) % expandCards.length;
+                        expandCards[activeIndex].classList.add("active");
+                    }, 3000);
+                };
+
+                const stopAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                };
+
+                expandCards.forEach((card, index) => {
+                    card.addEventListener("mouseenter", () => {
+                        stopAutoPlay();
+                        expandCards.forEach(c => c.classList.remove("active"));
+                        card.classList.add("active");
+                        activeIndex = index;
                     });
+                    card.addEventListener("mouseleave", () => {
+                        startAutoPlay();
+                    });
+                    card.addEventListener("click", () => {
+                        stopAutoPlay();
+                        expandCards.forEach(c => c.classList.remove("active"));
+                        card.classList.add("active");
+                        activeIndex = index;
+                    });
+                });
+                
+                startAutoPlay();
+            }
+        } catch (e) {
+            console.error("Error in initExpandingCards:", e);
+        }
+    }
+
+    // ==========================================
+    // 3. STATS COUNTER ANIMATION
+    // ==========================================
+    function initStatsCounter() {
+        try {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            const statsSection = document.querySelector('.stats-section');
+
+            if (statNumbers.length > 0 && statsSection && 'IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (!entry.target.classList.contains('animating')) {
+                                entry.target.classList.add('animating');
+                                statNumbers.forEach(stat => {
+                                    const target = +(stat.getAttribute('data-target') || 0);
+                                    if (!target) return;
+                                    const duration = 2000;
+                                    const increment = target / (duration / 16);
+                                    
+                                    let current = 0;
+                                    const updateCounter = () => {
+                                        if (!entry.target.classList.contains('animating')) return;
+                                        current += increment;
+                                        if (current < target) {
+                                            stat.textContent = Math.ceil(current).toLocaleString() + '+';
+                                            requestAnimationFrame(updateCounter);
+                                        } else {
+                                            stat.textContent = target.toLocaleString() + '+';
+                                        }
+                                    };
+                                    updateCounter();
+                                });
+                            }
+                        } else {
+                            entry.target.classList.remove('animating');
+                            statNumbers.forEach(stat => {
+                                stat.textContent = '0';
+                            });
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                observer.observe(statsSection);
+            }
+        } catch (e) {
+            console.error("Error in initStatsCounter:", e);
+        }
+    }
+
+    // ==========================================
+    // 4. ACTIVE NAVIGATION & SCROLL SPY
+    // ==========================================
+    function initNavigation() {
+        try {
+            const navLinks = document.querySelectorAll(".nav-links a");
+            const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+
+            navLinks.forEach(link => {
+                const href = link.getAttribute("href");
+                if (!href) return;
+                if (href === currentPath) {
+                    link.classList.add("active");
+                } else if (href === 'blog-events.html' && (
+                    currentPath.includes('celebration') || 
+                    currentPath.includes('initiative') || 
+                    currentPath.includes('milestone') || 
+                    currentPath.includes('summit') || 
+                    currentPath.includes('team') || 
+                    currentPath.includes('immersion') ||
+                    currentPath.includes('event')
+                )) {
+                    link.classList.add("active");
                 }
             });
-        }, { threshold: 0.1 });
-        
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-    }
-    // Active Navigation Link Highlighting
-    const sections = document.querySelectorAll("section[id], main[id]");
-    const navLinks = document.querySelectorAll(".nav-links a");
-    const currentPath = window.location.pathname.split("/").pop() || 'index.html';
 
-    // 1. Highlight static pages on load (e.g. about.html, careers.html, blog-events.html)
-    navLinks.forEach(link => {
-        const href = link.getAttribute("href");
-        if (href === currentPath) {
-            link.classList.add("active");
-        } else if (href === 'blog-events.html' && (
-            currentPath.includes('celebration') || 
-            currentPath.includes('initiative') || 
-            currentPath.includes('milestone') || 
-            currentPath.includes('summit') || 
-            currentPath.includes('team') || 
-            currentPath.includes('immersion') ||
-            currentPath.includes('event')
-        )) {
-            link.classList.add("active");
-        }
-    });
-
-    // 2. Scroll Spy for Homepage sections
-    if (sections.length > 0 && navLinks.length > 0) {
-        const spyObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute("id");
-                    
-                    // Only run scroll spy on the homepage
-                    if (currentPath === 'index.html' || currentPath === '') {
-                        navLinks.forEach(link => {
-                            const href = link.getAttribute("href");
-                            // If this link points to the intersecting section
-                            if (href === "#" + id || href === "index.html#" + id) {
-                                // Remove active class from all anchor links first
-                                navLinks.forEach(l => {
-                                    if (l.getAttribute("href").includes("#")) {
-                                        l.classList.remove("active");
+            const sections = document.querySelectorAll("section[id], main[id]");
+            if (sections.length > 0 && navLinks.length > 0 && 'IntersectionObserver' in window) {
+                const spyObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const id = entry.target.getAttribute("id");
+                            if (currentPath === 'index.html' || currentPath === '') {
+                                navLinks.forEach(link => {
+                                    const href = link.getAttribute("href");
+                                    if (href === "#" + id || href === "index.html#" + id) {
+                                        navLinks.forEach(l => {
+                                            const lHref = l.getAttribute("href");
+                                            if (lHref && lHref.includes("#")) {
+                                                l.classList.remove("active");
+                                            }
+                                        });
+                                        link.classList.add("active");
                                     }
                                 });
-                                // Add active class to current section link
-                                link.classList.add("active");
                             }
-                        });
+                        }
+                    });
+                }, {
+                    rootMargin: "-10% 0px -70% 0px"
+                });
+
+                sections.forEach(section => spyObserver.observe(section));
+            }
+        } catch (e) {
+            console.error("Error in initNavigation:", e);
+        }
+    }
+
+    // ==========================================
+    // 5. ENQUIRY MODAL LOGIC
+    // ==========================================
+    function initEnquiryModal() {
+        try {
+            const enquiryModal = document.getElementById('enquiryModal');
+            const closeEnquiryBtn = document.getElementById('closeModal');
+            const typingElement = document.getElementById("typing-text");
+
+            if (enquiryModal && closeEnquiryBtn && typingElement) {
+                setTimeout(() => {
+                    enquiryModal.classList.add('show');
+                }, 1000);
+
+                closeEnquiryBtn.addEventListener('click', () => {
+                    enquiryModal.classList.remove('show');
+                });
+
+                enquiryModal.addEventListener('click', (e) => {
+                    if (e.target === enquiryModal) {
+                        enquiryModal.classList.remove('show');
+                    }
+                });
+            }
+        } catch (e) {
+            console.error("Error in initEnquiryModal:", e);
+        }
+    }
+
+    // ==========================================
+    // 6. COGNIZA AI CHATBOT ENGINE & KNOWLEDGE BASE
+    // ==========================================
+    function initAIChatbot() {
+        try {
+            const aiBtn = document.getElementById('aiBtn');
+            const aiChatWidget = document.getElementById('aiChatWidget');
+            const aiCloseBtn = document.getElementById('aiCloseBtn');
+            const aiChatInput = document.getElementById('aiChatInput');
+            const aiSendBtn = document.getElementById('aiSendBtn');
+            const aiChatMessages = document.getElementById('aiChatMessages');
+            const aiGreetingBubble = document.getElementById('aiGreetingBubble');
+            const closeGreetingBtn = document.getElementById('closeGreetingBtn');
+
+            if (!aiBtn || !aiChatWidget) {
+                return;
+            }
+
+            const KNOWLEDGE_BASE = [
+                {
+                    triggers: ['program', 'course', 'courses', 'domain', 'domains', 'specialization', 'specializations', 'subjects', 'syllabus', 'what do you teach', 'curriculum', 'study', 'tracks', 'classes'],
+                    reply: `<p><strong>Cogniza offers 100+ specialized programs across 7 core domains</strong> with industry-designed curriculums, live capstones, and 1-on-1 mentorship:</p>
+                    <ul>
+                        <li><strong>💻 CSE / IT:</strong> AI &amp; ML, GenAI, Full Stack, Python, Java, Data Engineering, Cyber Security, Cloud, SAP (FICO/MM/GRC/Security), DevOps.</li>
+                        <li><strong>⚡ ECE / EEE:</strong> Embedded Systems, VLSI Design, Signals &amp; Systems, SCLD Logic Design, Industrial Automation.</li>
+                        <li><strong>⚙️ Mechanical Engineering:</strong> AutoCAD, CATIA 3D, Car Design, Drone Engineering &amp; Mechanics, EV Technology, Robotics.</li>
+                        <li><strong>🏗️ Civil Engineering:</strong> Construction Planning (Primavera), Structural Analysis (STAAD.Pro), Revit BIM, AutoCAD Civil.</li>
+                        <li><strong>🧪 Chemical / Process / Energy:</strong> Aspen HYSYS, Aspen Plus, Petroleum Refining, Process Safety, Renewable Energy.</li>
+                        <li><strong>🧬 Medical / Pharma / Life Sciences:</strong> Clinical SAS (SDTM/ADaM), Clinical Data Mgmt, Pharmacovigilance, Medical Coding, Genetics.</li>
+                        <li><strong>📈 Management &amp; Business:</strong> ACCA F4 Law, Business Analytics, Finance, Digital Marketing, Power BI, Product Management.</li>
+                    </ul>
+                    <p>Explore all domain curriculums and roadmaps directly:</p>`,
+                    links: [
+                        { text: '🎓 Explore All Specialization Hubs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['CSE / IT Programs', 'ECE / EEE', 'Mechanical', 'Medical & Pharma', 'Management', 'Offer Plans']
+                },
+                {
+                    triggers: ['cse', 'it', 'python', 'java', 'web', 'full stack', 'frontend', 'backend', 'devops', 'cloud', 'aws', 'azure', 'cyber', 'security', 'data science', 'ai', 'machine learning', 'sap', 'software', 'coding'],
+                    reply: `<p><strong>💻 CSE / IT Specialization Tracks:</strong></p>
+                    <p>We provide over 50+ cutting-edge IT career tracks including Full Stack Development (MERN/Java/Python), DevOps, AWS &amp; Azure Cloud Computing, Cybersecurity &amp; Ethical Hacking, Data Engineering, and enterprise SAP solutions.</p>`,
+                    links: [
+                        { text: '🚀 View All CSE / IT Programs', url: 'projects.html' },
+                        { text: '📝 Register for IT Track', url: 'register.html' }
+                    ],
+                    chips: ['Artificial Intelligence', 'Full Stack Development', 'Cyber Security', 'DevOps', 'Offer Plans']
+                },
+                {
+                    triggers: ['ece', 'eee', 'embedded', 'vlsi', 'iot', 'robotics', 'signal', 'circuit', 'microcontroller', 'arduino', 'fpga', 'verilog'],
+                    reply: `<p><strong>⚡ ECE / EEE &amp; Embedded Hardware Tracks:</strong></p>
+                    <p>Hands-on core hardware engineering programs covering VLSI Design &amp; Verilog, Embedded Systems with STM32 ARM Cortex, IoT Sensors &amp; Cloud Protocols, Signals &amp; Systems, and SCLD Logic Design.</p>`,
+                    links: [
+                        { text: '⚡ Explore ECE / EEE Programs', url: 'projects.html' },
+                        { text: '📝 Register for Hardware Track', url: 'register.html' }
+                    ],
+                    chips: ['VLSI Design', 'Embedded Systems', 'IoT Track', 'Contact Mentor']
+                },
+                {
+                    triggers: ['mechanical', 'autocad', 'catia', 'car design', 'automobile', 'ev', 'electric vehicle', 'drone', 'uav', 'robotics', 'ic engine'],
+                    reply: `<p><strong>⚙️ Mechanical &amp; Automotive Engineering Tracks:</strong></p>
+                    <p>Master industry-standard CAD, simulation, and hardware styling with AutoCAD 2D/3D, CATIA Surfacing, EV Powertrain &amp; Battery Thermal Management, Drone Flight Dynamics, and Industrial Robotics.</p>`,
+                    links: [
+                        { text: '⚙️ Explore Mechanical Tracks', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['AutoCAD', 'EV Technology', 'Car Design', 'Robotics']
+                },
+                {
+                    triggers: ['civil', 'construction', 'staad', 'primavera', 'revit', 'bim', 'building', 'structure', 'structural'],
+                    reply: `<p><strong>🏗️ Civil Engineering &amp; Infrastructure Tracks:</strong></p>
+                    <p>Comprehensive training in Construction Planning &amp; Primavera P6, Structural Analysis with STAAD.Pro, Revit BIM 3D Modeling, and AutoCAD Civil drafting standards.</p>`,
+                    links: [
+                        { text: '🏗️ Explore Civil Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['Revit BIM', 'STAAD.Pro', 'Construction Planning', 'How to Register']
+                },
+                {
+                    triggers: ['chemical', 'petroleum', 'process', 'aspen', 'hysys', 'refining', 'oil', 'gas', 'energy', 'solar', 'renewable'],
+                    reply: `<p><strong>🧪 Chemical, Process &amp; Energy Tracks:</strong></p>
+                    <p>Master industrial process modeling with Aspen HYSYS, Aspen Plus, Petroleum Refinery Distillation Simulation, Plant Safety &amp; HAZOP, and Green Energy Transition.</p>`,
+                    links: [
+                        { text: '🧪 Explore Chemical & Energy Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['Aspen HYSYS', 'Petroleum Engineering', 'Process Simulation', 'Offer Plans']
+                },
+                {
+                    triggers: ['medical', 'pharma', 'clinical', 'sas', 'cdisc', 'pharmacovigilance', 'safety', 'coding', 'icd', 'biology', 'genetics', 'microbiology', 'biostatistics', 'cdm'],
+                    reply: `<p><strong>🧬 Medical, Pharma &amp; Life Sciences Tracks:</strong></p>
+                    <p>Fast-track your healthcare career with Clinical SAS (SDTM &amp; ADaM mapping), Pharmacovigilance (ICSR/MedDRA/Argus), Clinical Data Management, Medical Coding (ICD-10/CPT), and Bioinformatics.</p>`,
+                    links: [
+                        { text: '🧬 Explore Medical & Pharma Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['Clinical SAS', 'Pharmacovigilance', 'Medical Coding', 'Clinical Research']
+                },
+                {
+                    triggers: ['management', 'business', 'mba', 'finance', 'marketing', 'hr', 'human resources', 'investment banking', 'analytics', 'power bi', 'acca', 'supply chain', 'stock'],
+                    reply: `<p><strong>📈 Management &amp; Business Tracks:</strong></p>
+                    <p>Career-transforming business curricula including Investment Banking DCF Valuations, Business Analytics with Power BI &amp; SQL, Corporate Finance, Digital Marketing Growth, SAP FICO, and Product Management.</p>`,
+                    links: [
+                        { text: '📈 Explore Management Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
+                    ],
+                    chips: ['Investment Banking', 'Business Analytics', 'Digital Marketing', 'SAP FICO']
+                },
+                {
+                    triggers: ['internship', 'project', 'live project', 'training', 'stipend', 'duration', 'certificate', 'experience', 'hands-on'],
+                    reply: `<p><strong>💼 Cogniza Project Internship Highlights:</strong></p>
+                    <ul>
+                        <li><strong>Real-World Capstones:</strong> Work on production-grade projects that solve actual industry challenges.</li>
+                        <li><strong>1-on-1 Senior Mentorship:</strong> Direct guidance from professionals at Google, IBM, Capgemini, and leading AI startups.</li>
+                        <li><strong>Verified Credentials:</strong> ISO 9001:2015 &amp; MSME recognized government-certified completion letter.</li>
+                        <li><strong>Flexible Formats:</strong> Self-paced online, mentor-led hybrid, or offline immersion batches.</li>
+                    </ul>`,
+                    links: [
+                        { text: '🎓 Explore All Programs', url: 'index.html#programs' },
+                        { text: '📝 Apply for Internship', url: 'register.html' }
+                    ],
+                    chips: ['Top Programs', 'Offer Plans', 'How to Register', 'Contact Us']
+                },
+                {
+                    triggers: ['offer', 'offers', 'price', 'pricing', 'fee', 'fees', 'cost', 'discount', 'pack', 'packs', 'tech pro', 'flexi', 'career pro'],
+                    reply: `<p><strong>💰 Our Value-Packed Offer Plans:</strong></p>
+                    <ul>
+                        <li><strong>Tech Pro Pack (&#8377;20,000 for IT / &#8377;15,000 for Non-IT):</strong> Core specialization, live capstone project, and verified certification.</li>
+                        <li><strong>Flexi Pro Pack:</strong> Dual-domain flexibility with custom scheduling and extended mentor access.</li>
+                        <li><strong>Career Pro Pack:</strong> Complete end-to-end career suite with 3 live capstones, mock interviews, resume portfolio building, and placement assurance support.</li>
+                    </ul>`,
+                    links: [
+                        { text: '🏷️ View Detailed Offer Plans', url: 'index.html#offers' },
+                        { text: '📝 Register Now', url: 'register.html' }
+                    ],
+                    chips: ['Tech Pro Pack', 'Career Pro Pack', 'How to Register', 'Talk to Counselor']
+                },
+                {
+                    triggers: ['register', 'apply', 'enroll', 'join', 'admission', 'sign up', 'how to register'],
+                    reply: `<p><strong>📝 Easy 3-Step Registration:</strong></p>
+                    <ol>
+                        <li>Choose your preferred program domain (CSE/IT, ECE, Mechanical, Civil, Chemical, Medical/Pharma, or Management).</li>
+                        <li>Select your batch schedule and enrollment pack.</li>
+                        <li>Submit your basic profile details on our secure portal. Our counselor will contact you within 24 hours to confirm your seat!</li>
+                    </ol>`,
+                    links: [
+                        { text: '👉 Open Online Registration Form', url: 'register.html' }
+                    ],
+                    chips: ['Top Programs', 'Offer Plans', 'Contact Support']
+                },
+                {
+                    triggers: ['contact', 'call', 'phone', 'email', 'address', 'location', 'whatsapp', 'support', 'help', 'counselor', 'advisor'],
+                    reply: `<p><strong>📞 Get in Touch with Cogniza:</strong></p>
+                    <ul>
+                        <li><strong>📱 Phone / WhatsApp:</strong> +91 8884456745</li>
+                        <li><strong>✉️ Email:</strong> support@cogniza.in</li>
+                        <li><strong>🏢 Location:</strong> Bengaluru, Karnataka, India</li>
+                    </ul>
+                    <p>Our academic counselors are available Mon–Sat from 9:00 AM to 7:00 PM IST.</p>`,
+                    links: [
+                        { text: '💬 WhatsApp Us Directly', url: 'https://wa.me/918884456745' },
+                        { text: '📬 Open Contact Page', url: 'index.html#contact' }
+                    ],
+                    chips: ['Top Programs', 'How to Register', 'Visit Website']
+                },
+                {
+                    triggers: ['ambassador', 'campus ambassador', 'college rep', 'student ambassador'],
+                    reply: `<p><strong>🌟 Become a Cogniza Campus Ambassador!</strong></p>
+                    <p>Represent Cogniza in your college, lead tech workshops, earn performance stipends, and receive leadership recommendations for top MNC hiring drives.</p>`,
+                    links: [
+                        { text: '🚀 Apply for Campus Ambassador', url: 'ambassador.html' }
+                    ],
+                    chips: ['Top Programs', 'How to Register', 'Contact Us']
+                },
+                {
+                    triggers: ['blog', 'event', 'events', 'highlights', 'updates', 'happening', 'stories', 'news', 'gallery', 'photos', 'celebration', 'onam', 'award', 'awards', 'rewards', 'reward', 'happy moments', 'recognition'],
+                    reply: `<p><strong>📰 Cogniza Highlights &amp; Events Hub:</strong></p>
+                    <p>Explore what's happening at Cogniza! Discover our latest team stories, employee recognition, and celebrations:</p>
+                    <ul>
+                        <li><strong>Welcome to the Cogniza Team:</strong> Meet our new mentors &amp; leadership.</li>
+                        <li><strong>Onam Celebration 2026:</strong> Grand floral Pookkalam &amp; festive team harmony.</li>
+                        <li><strong>Rewards, Awards &amp; Happy Moments:</strong> Celebrating star mentors, student champions, and team milestones.</li>
+                        <li><strong>Visual Photo Gallery:</strong> Moments of workshops, culture, and achievements.</li>
+                    </ul>`,
+                    links: [
+                        { text: '✨ Visit Blog & Events', url: 'blog-events.html' },
+                        { text: '🏆 Read Rewards & Awards', url: 'rewards-and-awards.html' },
+                        { text: '🌸 Read Onam Story', url: 'onam-celebration-2026.html' }
+                    ],
+                    chips: ['Top Programs', 'Offer Plans', 'Contact Us']
+                },
+                {
+                    triggers: ['about', 'who are you', 'what is cogniza', 'founder', 'company', 'mission', 'vision'],
+                    reply: `<p><strong>✨ About Cogniza:</strong></p>
+                    <p>Cogniza is a premier EdTech platform committed to <em>"Beyond Learning. Beyond Limits."</em></p>
+                    <p>We bridge the gap between academia and corporate careers by delivering project-centric internships, mentorship from alumni of top tech giants (Google, Meta, Infosys, Wipro, and AI unicorns), and verified credentials.</p>`,
+                    links: [
+                        { text: '📖 Read About Us', url: 'about.html' },
+                        { text: '🎓 Explore Programs', url: 'projects.html' }
+                    ],
+                    chips: ['Top Programs', 'Internship Benefits', 'Contact Us']
+                },
+                {
+                    triggers: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'good morning', 'good afternoon', 'good evening'],
+                    reply: `<p>Hello there! 👋 Welcome to <strong>Cogniza</strong>. I'm your AI career assistant!</p>
+                    <p>I can help you explore 100+ programs across 7 domains, learn about our project internships, view offer plans, or help you register. What would you like to explore today?</p>`,
+                    chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
+                },
+                {
+                    triggers: ['thank', 'thanks', 'thank you', 'awesome', 'great', 'cool', 'good job', 'bye', 'ok'],
+                    reply: `<p>You're very welcome! 😊 Feel free to ask anything else, or click below to start your journey with Cogniza.</p>`,
+                    links: [
+                        { text: '📝 Register Now', url: 'register.html' },
+                        { text: '📞 Talk to a Mentor', url: 'https://wa.me/918884456745' }
+                    ],
+                    chips: ['Top Programs', 'Offer Plans', 'Contact Us']
+                }
+            ];
+
+            function getLocalAIResponse(query) {
+                const cleanQuery = query.toLowerCase().trim();
+                
+                for (const item of KNOWLEDGE_BASE) {
+                    for (const trigger of item.triggers) {
+                        if (cleanQuery.includes(trigger)) {
+                            return item;
+                        }
                     }
                 }
-            });
-        }, {
-            rootMargin: "-10% 0px -70% 0px"
-        });
 
-        sections.forEach(section => spyObserver.observe(section));
-    }
-
-    // Modal Logic
-    const enquiryModal = document.getElementById('enquiryModal');
-    const closeEnquiryBtn = document.getElementById('closeModal');
-
-    // Only show the popup on the home page (where typingElement exists)
-    if (enquiryModal && closeEnquiryBtn && typingElement) {
-        // Show modal after a brief delay
-        setTimeout(() => {
-            enquiryModal.classList.add('show');
-        }, 1000);
-
-        // Close modal
-        closeEnquiryBtn.addEventListener('click', () => {
-            enquiryModal.classList.remove('show');
-        });
-
-        // Close if clicked outside
-        enquiryModal.addEventListener('click', (e) => {
-            if (e.target === enquiryModal) {
-                enquiryModal.classList.remove('show');
+                return {
+                    reply: `<p>Thank you for asking about <strong>${escapeHtml(query)}</strong> at Cogniza!</p>
+                    <p>Cogniza provides over 100+ industry-recognized internship programs across IT, Non-IT, Engineering, Healthcare, and Management with live capstones and mentor support.</p>
+                    <p>Would you like to explore our programs, check our offer plans, or talk with an admissions advisor?</p>`,
+                    links: [
+                        { text: '🎓 View Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' },
+                        { text: '📞 Contact Support', url: 'index.html#contact' }
+                    ],
+                    chips: ['🎓 Top Programs', '💰 Offer Plans', '📝 How to Register', '📞 Contact Us']
+                };
             }
-        });
-    }
-    
-    // ==========================================
-    // COGNIZA AI CHATBOT ENGINE & KNOWLEDGE BASE
-    // ==========================================
-    const aiBtn = document.getElementById('aiBtn');
-    const aiChatWidget = document.getElementById('aiChatWidget');
-    const aiCloseBtn = document.getElementById('aiCloseBtn');
-    const aiChatInput = document.getElementById('aiChatInput');
-    const aiSendBtn = document.getElementById('aiSendBtn');
-    const aiChatMessages = document.getElementById('aiChatMessages');
-    const aiGreetingBubble = document.getElementById('aiGreetingBubble');
-    const closeGreetingBtn = document.getElementById('closeGreetingBtn');
 
-    // Greeting bubble logic
-    if (closeGreetingBtn && aiGreetingBubble) {
-        closeGreetingBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            aiGreetingBubble.classList.add('hidden');
-        });
-    }
+            function escapeHtml(str) {
+                return String(str).replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+            }
 
-    // Knowledge Base matching rules
-    const KNOWLEDGE_BASE = [
-        {
-            triggers: ['program', 'course', 'courses', 'domain', 'domains', 'specialization', 'specializations', 'subjects', 'syllabus', 'what do you teach', 'curriculum', 'study', 'tracks', 'classes'],
-            reply: `<p><strong>Cogniza offers 100+ specialized programs across 7 core domains</strong> with industry-designed curriculums, live capstones, and 1-on-1 mentorship:</p>
-            <ul>
-                <li><strong>💻 CSE / IT:</strong> AI &amp; ML, GenAI, Full Stack, Python, Java, Data Engineering, Cyber Security, Cloud, SAP (FICO/MM/GRC/Security), DevOps.</li>
-                <li><strong>⚡ ECE / EEE:</strong> Embedded Systems, VLSI Design, Signals &amp; Systems, SCLD Logic Design, Industrial Automation.</li>
-                <li><strong>⚙️ Mechanical Engineering:</strong> AutoCAD, CATIA 3D, Car Design, Drone Engineering &amp; Mechanics, EV Technology, Robotics.</li>
-                <li><strong>🏗️ Civil Engineering:</strong> Construction Planning (Primavera), Structural Analysis (STAAD.Pro), Revit BIM, AutoCAD Civil.</li>
-                <li><strong>🧪 Chemical / Process / Energy:</strong> Aspen HYSYS, Aspen Plus, Petroleum Refining, Process Safety, Renewable Energy.</li>
-                <li><strong>🧬 Medical / Pharma / Life Sciences:</strong> Clinical SAS (SDTM/ADaM), Clinical Data Mgmt, Pharmacovigilance, Medical Coding, Genetics.</li>
-                <li><strong>📈 Management &amp; Business:</strong> ACCA F4 Law, Business Analytics, Finance, Digital Marketing, Power BI, Product Management.</li>
-            </ul>
-            <p>Explore all domain curriculums and roadmaps directly:</p>`,
-            links: [
-                { text: '🎓 Explore All Specialization Hubs', url: 'projects.html' },
-                { text: '📝 Register Online', url: 'register.html' }
-            ],
-            chips: ['CSE / IT Programs', 'ECE / EEE', 'Mechanical', 'Medical & Pharma', 'Management', 'Offer Plans']
-        },
-        {
-            triggers: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'generative ai', 'genai', 'deep learning', 'nlp', 'prompt engineering'],
-            reply: `<p><strong>🤖 AI & Machine Learning Programs at Cogniza:</strong></p>
-            <p>Master Python, Neural Networks, PyTorch, TensorFlow, Computer Vision, and modern Generative AI with real-world production projects.</p>
-            <ul>
-                <li>Hands-on model training & evaluation</li>
-                <li>Generative AI & Agentic Workflows</li>
-                <li>1-on-1 Code reviews by Senior AI Engineers</li>
-                <li>Verified certificate with verifiable QR credentials</li>
-            </ul>`,
-            links: [
-                { text: 'View AI & ML Program', url: 'artificial-intelligence-ai-machine-learning-ml.html' },
-                { text: 'View Python DSA', url: 'dsa-with-python.html' }
-            ],
-            chips: ['How to Register', 'Internship Benefits', 'Offer Plans']
-        },
-        {
-            triggers: ['web dev', 'web development', 'full stack', 'frontend', 'backend', 'html', 'css', 'javascript', 'react', 'node'],
-            reply: `<p><strong>🌐 Web Development & Full-Stack Mastery:</strong></p>
-            <p>Learn to build modern, responsive web apps from scratch with HTML5, CSS3, JavaScript, React, Node.js, Express, and MongoDB/SQL.</p>
-            <ul>
-                <li>Live frontend UI/UX architecture</li>
-                <li>REST APIs & backend database design</li>
-                <li>Deploying on Cloud (AWS/Vercel)</li>
-                <li>GitHub portfolio with 3+ live projects</li>
-            </ul>`,
-            links: [
-                { text: 'Full Stack Web Dev', url: 'full-stack-web-development.html' },
-                { text: 'Web Development', url: 'web-development.html' }
-            ],
-            chips: ['Top Programs', 'Offer Plans', 'Register Now']
-        },
-        {
-            triggers: ['data science', 'data analytics', 'data analysis', 'sql', 'power bi', 'tableau', 'pandas', 'excel'],
-            reply: `<p><strong>📈 Data Science & Analytics Programs:</strong></p>
-            <p>Turn raw data into strategic business insights using Python, SQL, Power BI, Tableau, Pandas, and Advanced Statistics.</p>
-            <ul>
-                <li>Interactive data dashboarding with Power BI</li>
-                <li>Predictive analytics & machine learning models</li>
-                <li>Real-world industry case studies</li>
-            </ul>`,
-            links: [
-                { text: 'Data Science Program', url: 'data-science.html' },
-                { text: 'Data Analytics Program', url: 'data-analytics.html' }
-            ],
-            chips: ['Business Analytics', 'Offer Plans', 'Register Now']
-        },
-        {
-            triggers: ['clinical', 'sas', 'clinical sas', 'clinical data', 'cdm', 'pharmacovigilance', 'pharma', 'medical coding', 'healthcare', 'biology'],
-            reply: `<p><strong>💊 Healthcare & Clinical Data Specializations:</strong></p>
-            <p>Cogniza is a recognized leader in life sciences upskilling, preparing pharmacy, biotechnology, and science graduates for top CROs and pharma multinationals.</p>
-            <ul>
-                <li><strong>Clinical SAS:</strong> SDTM, ADAM datasets & TLF reporting</li>
-                <li><strong>Clinical Data Management (CDM):</strong> CRF design & EDC workflows</li>
-                <li><strong>Pharmacovigilance:</strong> ICSR processing & Argus safety</li>
-                <li><strong>Medical Coding:</strong> ICD-10, CPT & HCPCS guidelines</li>
-            </ul>`,
-            links: [
-                { text: 'Clinical SAS Program', url: 'clinical-sas.html' },
-                { text: 'Pharmacovigilance', url: 'pharmacovigilance.html' },
-                { text: 'Clinical Data Mgmt', url: 'clinical-data-management.html' }
-            ],
-            chips: ['How to Register', 'Contact Mentors', 'Offer Plans']
-        },
-        {
-            triggers: ['ui', 'ux', 'uiux', 'ui/ux', 'design', 'graphic', 'figma', 'photoshop', 'illustrator'],
-            reply: `<p><strong>🎨 UI/UX & Graphic Design Programs:</strong></p>
-            <p>Master human-centered digital product design, wireframing, interactive prototyping in Figma, visual design systems, and brand identity.</p>
-            <ul>
-                <li>User research, personas & user journeys</li>
-                <li>Figma interactive micro-interactions</li>
-                <li>Complete Behance & Dribbble portfolio creation</li>
-            </ul>`,
-            links: [
-                { text: 'UI/UX Design Program', url: 'uiux-design.html' },
-                { text: 'Graphic Design', url: 'graphic-designing.html' }
-            ],
-            chips: ['Top Programs', 'How to Register', 'Internship Benefits']
-        },
-        {
-            triggers: ['internship', 'intern', 'training', 'stipend', 'experience', 'benefit', 'benefits', 'project', 'live project', 'mentor', 'certificate', 'lor'],
-            reply: `<p><strong>🚀 Cogniza Internship Program Highlights:</strong></p>
-            <ul>
-                <li><strong>Real-World Capstone Projects:</strong> Work on production-grade briefs simulating actual company environments.</li>
-                <li><strong>1-on-1 Industry Mentorship:</strong> Direct guidance from developers and domain leads.</li>
-                <li><strong>ISO Certified Credentials:</strong> Verifiable course completion certificate recognized by companies nationwide.</li>
-                <li><strong>Letter of Recommendation (LOR):</strong> Awarded to top-performing interns.</li>
-                <li><strong>Flexible Scheduling:</strong> Online self-paced and weekend live cohorts suitable for college students.</li>
-            </ul>`,
-            links: [
-                { text: '📝 Apply for Internship', url: 'register.html' },
-                { text: '💼 View Projects', url: 'projects.html' }
-            ],
-            chips: ['Offer Plans', 'How to Register', 'Contact Us']
-        },
-        {
-            triggers: ['price', 'pricing', 'fee', 'fees', 'cost', 'offer', 'offers', 'discount', 'pack', 'tech pro', 'career pro', 'plan', 'plans', 'offline', 'offline program', 'offline pricing'],
-            reply: `<p><strong>💎 Special Offer Plans &amp; Offline Programs:</strong></p>
-            <p>Cogniza provides curated upskilling packs and intensive offline programs:</p>
-            <ul>
-                <li><strong>Cogniza TechPro Offline (IT):</strong> &#8377;20,000 &mdash; In-person training, 4 sessions/week, mentor support, offline internship &amp; placement assistance.</li>
-                <li><strong>Cogniza CareerPro Offline (Non-IT):</strong> &#8377;15,000 &mdash; Intensive offline corporate training, live projects &amp; 100% placement assistance.</li>
-                <li><strong>Tech Pro Pack:</strong> Technical bundle + cloud lab credits + verified dual certificates.</li>
-                <li><strong>Flexi Pro Pack:</strong> Flexible cohort-based track with 1:1 mentorship.</li>
-            </ul>`,
-            links: [
-                { text: '📍 Explore Offline Programs', url: 'offline-programs.html' },
-                { text: '🏷️ View Offer Plans', url: 'index.html#offers' },
-                { text: 'Tech Pro Pack', url: 'tech-pro-pack.html' }
-            ],
-            chips: ['Offline Programs', 'How to Register', 'Top Programs', 'Contact Us']
-        },
-        {
-            triggers: ['register', 'apply', 'admission', 'enroll', 'join', 'how to join', 'how to register', 'sign up', 'form', 'link'],
-            reply: `<p><strong>📝 Easy 3-Step Registration:</strong></p>
-            <ol>
-                <li>Click the <strong>Register</strong> button or open our registration portal.</li>
-                <li>Choose your desired domain track (e.g. AI, Web Dev, Clinical SAS, UI/UX).</li>
-                <li>Fill in your student details and our admissions mentor will connect with your onboarding pass and schedule!</li>
-            </ol>`,
-            links: [
-                { text: '👉 Open Registration Form', url: 'register.html' }
-            ],
-            chips: ['Top Programs', 'Offer Plans', 'Contact Support']
-        },
-        {
-            triggers: ['contact', 'phone', 'call', 'email', 'address', 'location', 'where are you', 'bangalore', 'office', 'number', 'whatsapp', 'support', 'help'],
-            reply: `<p><strong>📞 Contact & Office Information:</strong></p>
-            <ul>
-                <li><strong>📱 Phone / WhatsApp:</strong> +91 8884456745</li>
-                <li><strong>✉️ Email:</strong> operations@cogniza.in</li>
-                <li><strong>📍 Address:</strong> 2734, 2nd Floor, 16th Cross, 27th Main Road, Near NIFT College, HSR Layout, Sector 1, Bangalore - 560102.</li>
-                <li><strong>⏰ Support Hours:</strong> Monday – Saturday (9:30 AM – 6:30 PM IST)</li>
-            </ul>`,
-            links: [
-                { text: '💬 WhatsApp Us', url: 'https://wa.me/918884456745' },
-                { text: '📩 Send Enquiry', url: 'index.html#contact' }
-            ],
-            chips: ['How to Register', 'Top Programs', 'Highlights & Events']
-        },
-        {
-            triggers: ['ambassador', 'campus ambassador', 'college lead', 'representative'],
-            reply: `<p><strong>🌟 Become a Cogniza Campus Ambassador:</strong></p>
-            <p>Lead the tech revolution in your university! As an ambassador, you'll organize workshops, represent Cogniza, and earn attractive stipends and leadership credentials.</p>
-            <ul>
-                <li>Monthly performance stipends & rewards</li>
-                <li>Direct leadership certificate & CEO commendation</li>
-                <li>Free access to premium Cogniza upskilling tracks</li>
-            </ul>`,
-            links: [
-                { text: '🚀 Apply for Campus Ambassador', url: 'ambassador.html' }
-            ],
-            chips: ['Top Programs', 'How to Register', 'Contact Us']
-        },
-        {
-            triggers: ['blog', 'event', 'events', 'highlights', 'updates', 'happening', 'stories', 'news', 'gallery', 'photos', 'celebration', 'onam', 'award', 'awards', 'rewards', 'reward', 'happy moments', 'recognition'],
-            reply: `<p><strong>📰 Cogniza Highlights &amp; Events Hub:</strong></p>
-            <p>Explore what's happening at Cogniza! Discover our latest team stories, employee recognition, and celebrations:</p>
-            <ul>
-                <li><strong>Welcome to the Cogniza Team:</strong> Meet our new mentors &amp; leadership.</li>
-                <li><strong>Onam Celebration 2026:</strong> Grand floral Pookkalam &amp; festive team harmony.</li>
-                <li><strong>Rewards, Awards &amp; Happy Moments:</strong> Celebrating star mentors, student champions, and team milestones.</li>
-                <li><strong>Moments That Matter:</strong> Visual photo gallery of celebrations, workshops, and team culture.</li>
-            </ul>`,
-            links: [
-                { text: '✨ Visit Blog & Events', url: 'blog-events.html' },
-                { text: '🏆 Read Rewards & Awards', url: 'rewards-and-awards.html' },
-                { text: '🌸 Read Onam Story', url: 'onam-celebration-2026.html' }
-            ],
-            chips: ['Top Programs', 'Offer Plans', 'Contact Us']
-        },
-        {
-            triggers: ['about', 'who are you', 'what is cogniza', 'founder', 'company', 'mission', 'vision'],
-            reply: `<p><strong>✨ About Cogniza:</strong></p>
-            <p>Cogniza is a premier EdTech platform committed to <em>"Beyond Learning. Beyond Limits."</em></p>
-            <p>We bridge the gap between academia and corporate careers by delivering project-centric internships, mentorship from top tech giants (Google, Meta, Infosys, Wipro alumni), and verified credentials.</p>`,
-            links: [
-                { text: '📖 Read About Us', url: 'about.html' },
-                { text: '🎓 Explore Programs', url: 'index.html#programs' }
-            ],
-            chips: ['Top Programs', 'Internship Benefits', 'Contact Us']
-        },
-        {
-            triggers: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'good morning', 'good afternoon', 'good evening'],
-            reply: `<p>Hello there! 👋 Welcome to <strong>Cogniza</strong>. I'm your AI career assistant!</p>
-            <p>I can help you explore 50+ programs, learn about our project internships, view offer plans, or help you register. What would you like to explore today?</p>`,
-            chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
-        },
-        {
-            triggers: ['thank', 'thanks', 'thank you', 'awesome', 'great', 'cool', 'good job', 'bye', 'ok'],
-            reply: `<p>You're very welcome! 😊 Feel free to ask anything else, or click below to start your journey with Cogniza.</p>`,
-            links: [
-                { text: '📝 Register Now', url: 'register.html' },
-                { text: '📞 Talk to a Mentor', url: 'https://wa.me/918884456745' }
-            ],
-            chips: ['Top Programs', 'Offer Plans', 'Contact Us']
-        }
-    ];
+            function initChatGreeting() {
+                if (!aiChatMessages) return;
+                aiChatMessages.innerHTML = '';
 
-    function getLocalAIResponse(query) {
-        const cleanQuery = query.toLowerCase().trim();
-        
-        // Exact / keyword match
-        for (const item of KNOWLEDGE_BASE) {
-            for (const trigger of item.triggers) {
-                if (cleanQuery.includes(trigger)) {
-                    return item;
+                const welcomeItem = {
+                    reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Assistant</strong>.</p>
+                    <p>How can I help shape your career today? Select a topic below or type any question:</p>`,
+                    chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
+                };
+
+                renderAIMessage(welcomeItem);
+            }
+
+            function renderAIMessage(responseObj) {
+                if (!aiChatMessages) return null;
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'ai-message ai';
+
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = 'msg-avatar';
+                avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
+
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'msg-bubble';
+                bubbleDiv.innerHTML = responseObj.reply || '';
+
+                if (responseObj.links && responseObj.links.length > 0) {
+                    const linksWrap = document.createElement('div');
+                    linksWrap.style.marginTop = '8px';
+                    responseObj.links.forEach(l => {
+                        const linkTag = document.createElement('a');
+                        linkTag.href = l.url;
+                        linkTag.className = 'chat-link';
+                        linkTag.innerHTML = `${l.text} <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>`;
+                        linksWrap.appendChild(linkTag);
+                    });
+                    bubbleDiv.appendChild(linksWrap);
                 }
-            }
-        }
 
-        // Generic intelligent fallback
-        return {
-            reply: `<p>Thank you for asking about <strong>${escapeHtml(query)}</strong> at Cogniza!</p>
-            <p>Cogniza provides over 50+ industry-recognized internship programs across IT, Non-IT, Management, and Healthcare with live capstone projects and mentor support.</p>
-            <p>Would you like to explore our programs, check our offer plans, or talk with an admissions advisor?</p>`,
-            links: [
-                { text: '🎓 View Programs', url: 'index.html#programs' },
-                { text: '📝 Register Online', url: 'register.html' },
-                { text: '📞 Contact Support', url: 'index.html#contact' }
-            ],
-            chips: ['🎓 Top Programs', '💰 Offer Plans', '📝 How to Register', '📞 Contact Us']
-        };
-    }
-
-    function escapeHtml(str) {
-        return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
-    }
-
-    function initChatGreeting() {
-        if (!aiChatMessages) return;
-        aiChatMessages.innerHTML = '';
-
-        const welcomeItem = {
-            reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Assistant</strong>.</p>
-            <p>How can I help shape your career today? Select a topic below or type any question:</p>`,
-            chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
-        };
-
-        renderAIMessage(welcomeItem);
-    }
-
-    function renderAIMessage(responseObj) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'ai-message ai';
-
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'msg-avatar';
-        avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
-
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'msg-bubble';
-        bubbleDiv.innerHTML = responseObj.reply;
-
-        // Render Action Links if present
-        if (responseObj.links && responseObj.links.length > 0) {
-            const linksWrap = document.createElement('div');
-            linksWrap.style.marginTop = '8px';
-            responseObj.links.forEach(l => {
-                const linkTag = document.createElement('a');
-                linkTag.href = l.url;
-                linkTag.className = 'chat-link';
-                linkTag.innerHTML = `${l.text} <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>`;
-                linksWrap.appendChild(linkTag);
-            });
-            bubbleDiv.appendChild(linksWrap);
-        }
-
-        // Render Quick Chips if present
-        if (responseObj.chips && responseObj.chips.length > 0) {
-            const chipsWrap = document.createElement('div');
-            chipsWrap.className = 'ai-quick-chips';
-            responseObj.chips.forEach(chipText => {
-                const chipBtn = document.createElement('button');
-                chipBtn.className = 'ai-chip';
-                chipBtn.type = 'button';
-                chipBtn.textContent = chipText;
-                chipBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    sendUserQuery(chipText);
-                });
-                chipsWrap.appendChild(chipBtn);
-            });
-            bubbleDiv.appendChild(chipsWrap);
-        }
-
-        msgDiv.appendChild(avatarDiv);
-        msgDiv.appendChild(bubbleDiv);
-        aiChatMessages.appendChild(msgDiv);
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-        return msgDiv;
-    }
-
-    function renderUserMessage(text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'ai-message user';
-
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'msg-avatar';
-        avatarDiv.innerHTML = '<i class="far fa-user"></i>';
-
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'msg-bubble';
-        bubbleDiv.textContent = text;
-
-        msgDiv.appendChild(avatarDiv);
-        msgDiv.appendChild(bubbleDiv);
-        aiChatMessages.appendChild(msgDiv);
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-    }
-
-    function showTypingIndicator() {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = 'ai-message ai typing-indicator';
-
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'msg-avatar';
-        avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
-
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'msg-bubble';
-        bubbleDiv.innerHTML = `
-            <div class="ai-typing-dots">
-                <span></span><span></span><span></span>
-            </div>
-        `;
-
-        msgDiv.appendChild(avatarDiv);
-        msgDiv.appendChild(bubbleDiv);
-        aiChatMessages.appendChild(msgDiv);
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-        return msgDiv;
-    }
-
-    async function sendUserQuery(text) {
-        if (!text || !text.trim()) return;
-        const query = text.trim();
-
-        // Render user message
-        renderUserMessage(query);
-
-        if (aiChatInput) {
-            aiChatInput.value = '';
-            aiChatInput.style.height = '20px';
-        }
-
-        // Show typing indicator
-        const typingEl = showTypingIndicator();
-
-        // Check local intelligent knowledge engine
-        const localAnswer = getLocalAIResponse(query);
-
-        // Small realistic response delay (450ms) for smooth UX
-        setTimeout(() => {
-            if (typingEl && typingEl.parentNode) {
-                typingEl.remove();
-            }
-            renderAIMessage(localAnswer);
-        }, 450);
-    }
-
-    // Toggle Chat Widget
-    if (aiBtn && aiChatWidget) {
-        aiBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (aiGreetingBubble) aiGreetingBubble.classList.add('hidden');
-            const isActive = aiChatWidget.classList.toggle('active');
-            if (isActive) {
-                if (!aiChatMessages.children.length) {
-                    initChatGreeting();
+                if (responseObj.chips && responseObj.chips.length > 0) {
+                    const chipsWrap = document.createElement('div');
+                    chipsWrap.className = 'ai-quick-chips';
+                    responseObj.chips.forEach(chipText => {
+                        const chipBtn = document.createElement('button');
+                        chipBtn.className = 'ai-chip';
+                        chipBtn.type = 'button';
+                        chipBtn.textContent = chipText;
+                        chipBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            sendUserQuery(chipText);
+                        });
+                        chipsWrap.appendChild(chipBtn);
+                    });
+                    bubbleDiv.appendChild(chipsWrap);
                 }
-                if (aiChatInput) aiChatInput.focus();
+
+                msgDiv.appendChild(avatarDiv);
+                msgDiv.appendChild(bubbleDiv);
+                aiChatMessages.appendChild(msgDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                return msgDiv;
             }
-        });
-    }
 
-    if (aiCloseBtn && aiChatWidget) {
-        aiCloseBtn.addEventListener('click', () => {
-            aiChatWidget.classList.remove('active');
-        });
-    }
+            function renderUserMessage(text) {
+                if (!aiChatMessages) return;
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'ai-message user';
 
-    // Auto-resize textarea & Enter key support
-    if (aiChatInput) {
-        aiChatInput.addEventListener('input', function() {
-            this.style.height = '20px';
-            this.style.height = Math.min(this.scrollHeight - 10, 100) + 'px';
-        });
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = 'msg-avatar';
+                avatarDiv.innerHTML = '<i class="far fa-user"></i>';
 
-        aiChatInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'msg-bubble';
+                bubbleDiv.textContent = text;
+
+                msgDiv.appendChild(avatarDiv);
+                msgDiv.appendChild(bubbleDiv);
+                aiChatMessages.appendChild(msgDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                if (!aiChatMessages) return null;
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'ai-message ai typing-indicator';
+
+                const avatarDiv = document.createElement('div');
+                avatarDiv.className = 'msg-avatar';
+                avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
+
+                const bubbleDiv = document.createElement('div');
+                bubbleDiv.className = 'msg-bubble';
+                bubbleDiv.innerHTML = `
+                    <div class="ai-typing-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                `;
+
+                msgDiv.appendChild(avatarDiv);
+                msgDiv.appendChild(bubbleDiv);
+                aiChatMessages.appendChild(msgDiv);
+                aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+                return msgDiv;
+            }
+
+            function sendUserQuery(text) {
+                if (!text || !text.trim()) return;
+                const query = text.trim();
+
+                renderUserMessage(query);
+
+                if (aiChatInput) {
+                    aiChatInput.value = '';
+                    aiChatInput.style.height = '20px';
+                }
+
+                const typingEl = showTypingIndicator();
+                const localAnswer = getLocalAIResponse(query);
+
+                setTimeout(() => {
+                    if (typingEl && typingEl.parentNode) {
+                        typingEl.remove();
+                    }
+                    renderAIMessage(localAnswer);
+                }, 350);
+            }
+
+            // Expose globally as safe fallback
+            window.toggleCognizaAIChat = function() {
+                if (!aiChatWidget) return;
+                const isCurrentlyActive = aiChatWidget.classList.contains('active');
+                if (isCurrentlyActive) {
+                    aiChatWidget.classList.remove('active');
+                } else {
+                    aiChatWidget.classList.add('active');
+                    if (aiChatMessages && !aiChatMessages.children.length) {
+                        initChatGreeting();
+                    }
+                    setTimeout(() => {
+                        if (aiChatInput) aiChatInput.focus();
+                    }, 100);
+                }
+            };
+
+            // Toggle click listener
+            aiBtn.addEventListener('click', (e) => {
                 e.preventDefault();
-                sendUserQuery(aiChatInput.value);
-            }
-        });
-    }
+                e.stopPropagation();
+                if (aiGreetingBubble) aiGreetingBubble.classList.add('hidden');
+                window.toggleCognizaAIChat();
+            });
 
-    if (aiSendBtn) {
-        aiSendBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            sendUserQuery(aiChatInput.value);
-        });
-    }
-
-    // Initialize greeting on load
-    initChatGreeting();
-    
-    // Testimonials Interactive Carousel Logic
-    const testiCards = document.querySelectorAll('.testi-card');
-    const testiDotsContainer = document.getElementById('testi-dots');
-    const testiPrevBtn = document.getElementById('testi-prev');
-    const testiNextBtn = document.getElementById('testi-next');
-    const testiRangeText = document.getElementById('testi-range-text');
-    const testiSection = document.getElementById('testimonials');
-
-    if (testiCards.length > 0) {
-        let currentPage = 0;
-        let autoPlayTimer = null;
-        let isPaused = false;
-
-        function getCardsPerPage() {
-            if (window.innerWidth <= 600) return 1;
-            if (window.innerWidth <= 900) return 2;
-            return 3;
-        }
-
-        function renderDots(totalPages) {
-            if (!testiDotsContainer) return;
-            testiDotsContainer.innerHTML = '';
-            for (let i = 0; i < totalPages; i++) {
-                const dot = document.createElement('button');
-                dot.className = `testi-dot ${i === currentPage ? 'active' : ''}`;
-                dot.setAttribute('aria-label', `Go to testimonial page ${i + 1}`);
-                dot.addEventListener('click', () => {
-                    currentPage = i;
-                    showPage(currentPage);
-                    resetTimer();
+            // Close button handler
+            if (aiCloseBtn) {
+                aiCloseBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    aiChatWidget.classList.remove('active');
                 });
-                testiDotsContainer.appendChild(dot);
             }
-        }
 
-        function showPage(pageIndex) {
-            const cardsPerPage = getCardsPerPage();
-            const totalCards = testiCards.length;
-            const totalPages = Math.ceil(totalCards / cardsPerPage);
+            // Greeting close
+            if (closeGreetingBtn && aiGreetingBubble) {
+                closeGreetingBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    aiGreetingBubble.classList.add('hidden');
+                });
+            }
 
-            // Bounds check
-            if (pageIndex >= totalPages) pageIndex = 0;
-            if (pageIndex < 0) pageIndex = totalPages - 1;
-            currentPage = pageIndex;
+            // Input handlers
+            if (aiChatInput) {
+                aiChatInput.addEventListener('input', function() {
+                    this.style.height = '20px';
+                    this.style.height = Math.min(this.scrollHeight - 10, 100) + 'px';
+                });
 
-            const startIndex = currentPage * cardsPerPage;
-            const endIndex = Math.min(startIndex + cardsPerPage, totalCards);
+                aiChatInput.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && !e.shiftKey) {
+                        e.preventDefault();
+                        const val = aiChatInput.value;
+                        if (val && val.trim()) {
+                            sendUserQuery(val);
+                        }
+                    }
+                });
+            }
 
-            testiCards.forEach((card, index) => {
-                if (index >= startIndex && index < endIndex) {
-                    card.style.display = 'flex';
-                    card.style.animation = 'fadeIn 0.4s ease forwards';
-                } else {
-                    card.style.display = 'none';
+            if (aiSendBtn) {
+                aiSendBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (aiChatInput) {
+                        const val = aiChatInput.value;
+                        if (val && val.trim()) {
+                            sendUserQuery(val);
+                        }
+                    }
+                });
+            }
+
+            // Prevent clicks inside chat widget from bubbling to document
+            aiChatWidget.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+
+            // Close when clicked outside
+            document.addEventListener('click', (e) => {
+                if (aiChatWidget.classList.contains('active') && !aiChatWidget.contains(e.target) && !aiBtn.contains(e.target)) {
+                    aiChatWidget.classList.remove('active');
                 }
             });
 
-            // Update range text
-            if (testiRangeText) {
-                testiRangeText.textContent = `${startIndex + 1} - ${endIndex}`;
-            }
+            // Initialize greeting
+            initChatGreeting();
 
-            // Update dots
-            if (testiDotsContainer) {
-                const dots = testiDotsContainer.querySelectorAll('.testi-dot');
-                if (dots.length !== totalPages) {
-                    renderDots(totalPages);
-                } else {
-                    dots.forEach((dot, idx) => {
-                        dot.classList.toggle('active', idx === currentPage);
+        } catch (e) {
+            console.error("Error in initAIChatbot:", e);
+        }
+    }
+
+    // ==========================================
+    // 7. TESTIMONIALS CAROUSEL & NAVIGATION
+    // ==========================================
+    function initTestimonials() {
+        try {
+            const testiCards = document.querySelectorAll('.testi-card');
+            const testiDotsContainer = document.getElementById('testi-dots');
+            const testiPrevBtn = document.getElementById('testi-prev');
+            const testiNextBtn = document.getElementById('testi-next');
+            const testiRangeText = document.getElementById('testi-range-text');
+            const testiSection = document.getElementById('testimonials');
+
+            if (testiCards.length > 0) {
+                let currentPage = 0;
+                let autoPlayTimer = null;
+                let isPaused = false;
+
+                function getCardsPerPage() {
+                    if (window.innerWidth <= 600) return 1;
+                    if (window.innerWidth <= 900) return 2;
+                    return 3;
+                }
+
+                function renderDots(totalPages) {
+                    if (!testiDotsContainer) return;
+                    testiDotsContainer.innerHTML = '';
+                    for (let i = 0; i < totalPages; i++) {
+                        const dot = document.createElement('button');
+                        dot.className = `testi-dot ${i === currentPage ? 'active' : ''}`;
+                        dot.setAttribute('aria-label', `Go to testimonial page ${i + 1}`);
+                        dot.addEventListener('click', () => {
+                            currentPage = i;
+                            showPage(currentPage);
+                            resetTimer();
+                        });
+                        testiDotsContainer.appendChild(dot);
+                    }
+                }
+
+                function showPage(pageIndex) {
+                    const cardsPerPage = getCardsPerPage();
+                    const totalCards = testiCards.length;
+                    const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+                    if (pageIndex >= totalPages) pageIndex = 0;
+                    if (pageIndex < 0) pageIndex = totalPages - 1;
+                    currentPage = pageIndex;
+
+                    const startIndex = currentPage * cardsPerPage;
+                    const endIndex = Math.min(startIndex + cardsPerPage, totalCards);
+
+                    testiCards.forEach((card, index) => {
+                        if (index >= startIndex && index < endIndex) {
+                            card.style.display = 'flex';
+                            card.style.animation = 'fadeIn 0.4s ease forwards';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    if (testiRangeText) {
+                        testiRangeText.textContent = `${startIndex + 1} - ${endIndex}`;
+                    }
+
+                    if (testiDotsContainer) {
+                        const dots = testiDotsContainer.querySelectorAll('.testi-dot');
+                        if (dots.length !== totalPages) {
+                            renderDots(totalPages);
+                        } else {
+                            dots.forEach((dot, idx) => {
+                                dot.classList.toggle('active', idx === currentPage);
+                            });
+                        }
+                    }
+                }
+
+                function nextPage() {
+                    const cardsPerPage = getCardsPerPage();
+                    const totalPages = Math.ceil(testiCards.length / cardsPerPage);
+                    currentPage = (currentPage + 1) % totalPages;
+                    showPage(currentPage);
+                }
+
+                function prevPage() {
+                    const cardsPerPage = getCardsPerPage();
+                    const totalPages = Math.ceil(testiCards.length / cardsPerPage);
+                    currentPage = (currentPage - 1 + totalPages) % totalPages;
+                    showPage(currentPage);
+                }
+
+                function startTimer() {
+                    if (autoPlayTimer) clearInterval(autoPlayTimer);
+                    autoPlayTimer = setInterval(() => {
+                        if (!isPaused) {
+                            nextPage();
+                        }
+                    }, 5500);
+                }
+
+                function resetTimer() {
+                    startTimer();
+                }
+
+                if (testiNextBtn) {
+                    testiNextBtn.addEventListener('click', () => {
+                        nextPage();
+                        resetTimer();
                     });
                 }
-            }
-        }
 
-        function nextPage() {
-            const cardsPerPage = getCardsPerPage();
-            const totalPages = Math.ceil(testiCards.length / cardsPerPage);
-            currentPage = (currentPage + 1) % totalPages;
-            showPage(currentPage);
-        }
-
-        function prevPage() {
-            const cardsPerPage = getCardsPerPage();
-            const totalPages = Math.ceil(testiCards.length / cardsPerPage);
-            currentPage = (currentPage - 1 + totalPages) % totalPages;
-            showPage(currentPage);
-        }
-
-        function startTimer() {
-            if (autoPlayTimer) clearInterval(autoPlayTimer);
-            autoPlayTimer = setInterval(() => {
-                if (!isPaused) {
-                    nextPage();
+                if (testiPrevBtn) {
+                    testiPrevBtn.addEventListener('click', () => {
+                        prevPage();
+                        resetTimer();
+                    });
                 }
-            }, 5500);
-        }
 
-        function resetTimer() {
-            startTimer();
-        }
+                if (testiSection) {
+                    testiSection.addEventListener('mouseenter', () => { isPaused = true; });
+                    testiSection.addEventListener('mouseleave', () => { isPaused = false; });
+                    
+                    let touchStartX = 0;
+                    let touchEndX = 0;
+                    testiSection.addEventListener('touchstart', (e) => {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
 
-        // Event listeners
-        if (testiNextBtn) {
-            testiNextBtn.addEventListener('click', () => {
-                nextPage();
-                resetTimer();
-            });
-        }
+                    testiSection.addEventListener('touchend', (e) => {
+                        touchEndX = e.changedTouches[0].screenX;
+                        const diff = touchStartX - touchEndX;
+                        if (Math.abs(diff) > 50) {
+                            if (diff > 0) {
+                                nextPage();
+                            } else {
+                                prevPage();
+                            }
+                            resetTimer();
+                        }
+                    }, { passive: true });
+                }
 
-        if (testiPrevBtn) {
-            testiPrevBtn.addEventListener('click', () => {
-                prevPage();
-                resetTimer();
-            });
-        }
+                let resizeTimeout;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => {
+                        const totalPages = Math.ceil(testiCards.length / getCardsPerPage());
+                        renderDots(totalPages);
+                        showPage(currentPage);
+                    }, 200);
+                });
 
-        if (testiSection) {
-            testiSection.addEventListener('mouseenter', () => { isPaused = true; });
-            testiSection.addEventListener('mouseleave', () => { isPaused = false; });
+                const initialPages = Math.ceil(testiCards.length / getCardsPerPage());
+                renderDots(initialPages);
+                showPage(0);
+                startTimer();
+            }
+        } catch (e) {
+            console.error("Error in initTestimonials:", e);
+        }
+    }
+
+    // ==========================================
+    // 8. MOBILE MENU TOGGLE
+    // ==========================================
+    function initMobileMenu() {
+        try {
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const topBar = document.querySelector('.top-bar');
             
-            // Touch Swipe Support for mobile
-            let touchStartX = 0;
-            let touchEndX = 0;
-            testiSection.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-            }, { passive: true });
-
-            testiSection.addEventListener('touchend', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                const diff = touchStartX - touchEndX;
-                if (Math.abs(diff) > 50) {
-                    if (diff > 0) {
-                        nextPage(); // swipe left -> next
-                    } else {
-                        prevPage(); // swipe right -> prev
+            if (mobileMenuBtn && topBar) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    topBar.classList.toggle('menu-open');
+                    const icon = mobileMenuBtn.querySelector('i');
+                    if (icon) {
+                        if (topBar.classList.contains('menu-open')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
                     }
-                    resetTimer();
-                }
-            }, { passive: true });
-        }
-
-        // Window resize debounce
-        let resizeTimeout;
-        window.addEventListener('resize', () => {
-            clearTimeout(resizeTimeout);
-            resizeTimeout = setTimeout(() => {
-                const totalPages = Math.ceil(testiCards.length / getCardsPerPage());
-                renderDots(totalPages);
-                showPage(currentPage);
-            }, 200);
-        });
-
-        // Initialize
-        const initialPages = Math.ceil(testiCards.length / getCardsPerPage());
-        renderDots(initialPages);
-        showPage(0);
-        startTimer();
-    }
-    // Mobile Menu Toggle Logic
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const topBar = document.querySelector('.top-bar');
-    
-    if (mobileMenuBtn && topBar) {
-        mobileMenuBtn.addEventListener('click', () => {
-            topBar.classList.toggle('menu-open');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) {
-                if (topBar.classList.contains('menu-open')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
+                });
             }
-        });
+        } catch (e) {
+            console.error("Error in initMobileMenu:", e);
+        }
     }
-});
+
+    // ==========================================
+    // MASTER INITIALIZATION
+    // ==========================================
+    function initApp() {
+        initHeroAndDropdown();
+        initExpandingCards();
+        initStatsCounter();
+        initNavigation();
+        initEnquiryModal();
+        initAIChatbot();
+        initTestimonials();
+        initMobileMenu();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initApp);
+    } else {
+        initApp();
+    }
+
+})();
