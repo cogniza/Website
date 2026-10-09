@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 50" fill="none">
+  <!-- Krutrim Geometric K Icon -->
+  <g transform="translate(10, 8)">
+    <rect width="34" height="34" rx="8" fill="url(#krutrim_grad)" />
+    <!-- Stylized K -->
+    <path d="M10 8V26M10 17L22 8M14 14.5L24 26" stroke="#ffffff" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <!-- Text -->
+  <text x="54" y="31" font-family="'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#0F172A" letter-spacing="-0.5">krutrim</text>
+  <!-- AI Badge -->
+  <rect x="145" y="14" width="34" height="20" rx="4" fill="#0F172A" />
+  <text x="162" y="28" font-family="'Inter', -apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="900" fill="#00E599" text-anchor="middle">AI</text>
+  
+  <defs>
+    <linearGradient id="krutrim_grad" x1="0" y1="0" x2="34" y2="34" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A" />
+      <stop offset="1" stop-color="#00C875" />
+    </linearGradient>
+  </defs>
+</svg>
