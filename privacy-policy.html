@@ -213,16 +213,14 @@
         </div>
     </footer>
     <!-- Floating AI Button -->
-    <a href="#" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant">
+    <a href="#" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant" onclick="if(window.toggleCognizaAIChat){window.toggleCognizaAIChat();return false;}">
         <i class="fas fa-comment-dots"></i>
         </a>
 
     <!-- AI Chat Widget -->
     <div class="ai-chat-widget" id="aiChatWidget">
         <div class="ai-chat-header">
-            <div class="ai-chat-title">
-                <i class="fas fa-comment-dots"></i> AI Assistant
-            </div>
+            <div class="ai-chat-title"><i class="fas fa-comment-dots"></i> Cogniza AI <span class="ai-status-indicator" title="Active Now"></span></div>
             <div class="ai-chat-actions">
                 <button id="aiCloseBtn" title="Close"><i class="fas fa-times"></i></button>
             </div>
@@ -240,7 +238,7 @@
             <button id="aiSendBtn"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="script.js?v=3.0"></script>
 <script>(function(){var c=["Machine Learning With Python","Web Development","Artificial Intelligence","Data Science","Full Stack Web Development","Cyber Security & Ethical Hacking","Cloud Computing","Android App Development","Digital Marketing","UI/UX Design","Data Analytics","Blockchain Technology","DevOps","Business Analytics","Robotics","Embedded Systems","Stock Market","Medical Coding","Graphic Designing","Programming in Python"];var slots=[document.getElementById("fc-slot-1"),document.getElementById("fc-slot-2"),document.getElementById("fc-slot-3"),document.getElementById("fc-slot-4")];if(!slots[0])return;var off=0,ptr=0;slots.forEach(function(s,i){s.innerHTML='<a href="index.html#programs">' + c[i] + '</a>';off=i+1;});off=off%c.length;setInterval(function(){var s=slots[ptr];s.style.cssText="opacity:0;transform:translateY(-7px);transition:opacity .28s ease,transform .28s ease;";setTimeout(function(){s.innerHTML='<a href="index.html#programs">' + c[off] + '</a>';s.style.cssText="opacity:0;transform:translateY(7px);transition:none;";requestAnimationFrame(function(){requestAnimationFrame(function(){s.style.cssText="opacity:1;transform:translateY(0);transition:opacity .32s ease,transform .32s ease;";});});off=(off+1)%c.length;ptr=(ptr+1)%slots.length;},290);},1600);})();</script>
 <script>
 (function(){

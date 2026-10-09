@@ -1,125 +1,58 @@
-// Cogniza Web Application Scripts
-// Fully modular & safe for static GitHub Pages and live hosts
+// =========================================================================
+// COGNIZA OFFICIAL WEB PLATFORM SCRIPTS & AI ENGINE (v3.0 Standalone)
+// 100% Client-Side In-Browser NLP - Zero External Server Failures
+// =========================================================================
 
 (function() {
     'use strict';
 
-    const courses = [
-        "AI (Generative & Agentic)",
-        "Agentic AI",
-        "Android App Development",
-        "Artificial Intelligence (AI)",
-        "AI & Machine Learning (AI/ML)",
-        "AI for Economics",
-        "Augmented Reality (AR) & Virtual Reality (VR)",
-        "AutoCAD 2D & 3D Drafting",
-        "AutoCAD for Civil Engineering",
-        "AWS Cloud Solutions",
-        "ACCA F4 Business Law",
-        "Aspen HYSYS Process Simulation",
-        "Aspen Plus Chemical Simulation",
-        "Basic Graphic Design",
-        "Bioinformatics & Genomics",
-        "Biostatistics & Clinical Analytics",
-        "Blockchain Technology & Web3",
-        "Business Analysis (BABOK)",
-        "Business Analytics",
-        "Car Design & Automotive Styling",
-        "CATIA 3D CAD & Surfacing",
-        "CCNA 200-301 Networking",
-        "Chemical Engineering",
-        "Clinical Data Management (CDM)",
-        "Clinical SAS (SDTM & ADaM)",
-        "Clinical Trials & Research",
-        "Cloud Computing",
-        "Computer Organization & Architecture",
-        "Construction Planning & Primavera P6",
-        "Cybersecurity & Ethical Hacking",
-        "Data Analytics",
-        "Data Engineering & PySpark",
-        "Data Science",
-        "Data Structures & Algorithms (DSA)",
-        "Database Management Systems (DBMS)",
-        "Deep Learning & Neural Networks",
-        "DevOps Engineering",
-        "Digital Marketing & Growth",
-        "Docker & Containerization",
-        ".NET Development",
-        "Drone Engineering & Technology",
-        "Drone Mechanics & Dynamics",
-        "DSA with Python",
-        "Embedded Systems & ARM",
-        "Energy & Renewable Power Engineering",
-        "Corporate Finance",
-        "Front-End Web Development",
-        "Full Stack Web Development",
-        "Generative AI & LLMs",
-        "Genetic Engineering & CRISPR",
-        "Graphic Designing",
-        "Human Resources (HR) Management",
-        "Hybrid & Electric Vehicle (EV) Technology",
-        "IC Engine & Powertrain Design",
-        "Industrial Automation, PLC & SCADA",
-        "Industrial Robotics & Automation",
-        "Internet of Things (IoT)",
-        "Investment Banking",
-        "Java Full Stack Development",
-        "Machine Learning (ML)",
-        "Manual & API Testing",
-        "Medical Coding (ICD-10/CPT)",
-        "Medical Sciences & Administration",
-        "Metaverse & Spatial Computing",
-        "Microbiology",
-        "Microsoft Azure Cloud",
-        "Microsoft Excel & Financial Modeling",
-        "Molecular Biology",
-        "Nanotechnology & Nanosciences",
-        "Operations & Supply Chain Management",
-        "Petroleum Engineering",
-        "Pharmacovigilance (ICSR/MedDRA)",
-        "Placement Preparation & Aptitude",
-        "Power BI & Business Intelligence",
-        "Product Management & PRDs",
-        "Product & Project Management",
-        "Programming in Java",
-        "Programming in Python",
-        "Psychology & Behavioral Science",
-        "Python Full Stack Development",
-        "Quantum Computing",
-        "Revit & BIM Architecture",
-        "Robotics Engineering",
-        "Sales & Marketing Strategies",
-        "Salesforce Administration",
-        "SAP ERP Fundamentals",
-        "SAP FICO",
-        "SAP GRC ARM",
-        "SAP MM (Materials Management)",
-        "SAP Security",
-        "SAP SuccessFactors Employee Central",
-        "SAP UI5, Fiori & OData",
-        "SAS Programming",
-        "SCLD (Sequential Circuit & Logic Design)",
-        "Selenium Automation Testing",
-        "ServiceNow Administration",
-        "Signals & Systems and DSP",
-        "Startup & Entrepreneurship",
-        "Stock Market & Equity Trading",
-        "Structural Analysis & STAAD.Pro",
-        "Supply Chain Management",
-        "UI/UX Design",
-        "VLSI Design",
-        "Web Development",
-        "Web3 & Smart Contracts"
+    // 107+ Comprehensive Specialization Catalog
+    const ALL_COURSES = [
+        "AI (Generative & Agentic)", "Agentic AI", "Android App Development", 
+        "Artificial Intelligence (AI)", "AI & Machine Learning (AI/ML)", "AI for Economics", 
+        "Augmented Reality (AR) & Virtual Reality (VR)", "AutoCAD 2D & 3D Drafting", 
+        "AutoCAD for Civil Engineering", "AWS Cloud Solutions", "ACCA F4 Business Law", 
+        "Aspen HYSYS Process Simulation", "Aspen Plus Chemical Simulation", "Basic Graphic Design", 
+        "Bioinformatics & Genomics", "Biostatistics & Clinical Analytics", "Blockchain Technology & Web3", 
+        "Business Analysis (BABOK)", "Business Analytics", "Car Design & Automotive Styling", 
+        "CATIA 3D CAD & Surfacing", "CCNA 200-301 Networking", "Chemical Engineering", 
+        "Clinical Data Management (CDM)", "Clinical SAS (SDTM & ADaM)", "Clinical Trials & Research", 
+        "Cloud Computing", "Computer Organization & Architecture", "Construction Planning & Primavera P6", 
+        "Cybersecurity & Ethical Hacking", "Data Analytics", "Data Engineering & PySpark", 
+        "Data Science", "Data Structures & Algorithms (DSA)", "Database Management Systems (DBMS)", 
+        "Deep Learning & Neural Networks", "DevOps Engineering", "Digital Marketing & Growth", 
+        "Docker & Containerization", ".NET Development", "Drone Engineering & Technology", 
+        "Drone Mechanics & Dynamics", "DSA with Python", "Embedded Systems & ARM", 
+        "Energy & Renewable Power Engineering", "Corporate Finance", "Front-End Web Development", 
+        "Full Stack Web Development", "Generative AI & LLMs", "Genetic Engineering & CRISPR", 
+        "Graphic Designing", "Human Resources (HR) Management", "Hybrid & Electric Vehicle (EV) Technology", 
+        "IC Engine & Powertrain Design", "Industrial Automation, PLC & SCADA", "Industrial Robotics & Automation", 
+        "Internet of Things (IoT)", "Investment Banking", "Java Full Stack Development", 
+        "Machine Learning (ML)", "Manual & API Testing", "Medical Coding (ICD-10/CPT)", 
+        "Medical Sciences & Administration", "Metaverse & Spatial Computing", "Microbiology", 
+        "Microsoft Azure Cloud", "Microsoft Excel & Financial Modeling", "Molecular Biology", 
+        "Nanotechnology & Nanosciences", "Operations & Supply Chain Management", "Petroleum Engineering", 
+        "Pharmacovigilance (ICSR/MedDRA)", "Placement Preparation & Aptitude", "Power BI & Business Intelligence", 
+        "Product Management & PRDs", "Product & Project Management", "Programming in Java", 
+        "Programming in Python", "Psychology & Behavioral Science", "Python Full Stack Development", 
+        "Quantum Computing", "Revit & BIM Architecture", "Robotics Engineering", 
+        "Sales & Marketing Strategies", "Salesforce Administration", "SAP ERP Fundamentals", 
+        "SAP FICO", "SAP GRC ARM", "SAP MM (Materials Management)", "SAP Security", 
+        "SAP SuccessFactors Employee Central", "SAP UI5, Fiori & OData", "SAS Programming", 
+        "SCLD (Sequential Circuit & Logic Design)", "Selenium Automation Testing", "ServiceNow Administration", 
+        "Signals & Systems and DSP", "Startup & Entrepreneurship", "Stock Market & Equity Trading", 
+        "Structural Analysis & STAAD.Pro", "Supply Chain Management", "UI/UX Design", 
+        "VLSI Design", "Web Development", "Web3 & Smart Contracts"
     ];
 
     // ==========================================
-    // 1. HERO TYPING EFFECT & MODAL DROPDOWN
+    // 1. HERO TYPING EFFECT & ENQUIRY SELECT
     // ==========================================
     function initHeroAndDropdown() {
         try {
             const courseSelect = document.getElementById("courseSelect");
             if (courseSelect && courseSelect.children.length <= 1) {
-                courses.forEach(course => {
+                ALL_COURSES.forEach(course => {
                     const option = document.createElement("option");
                     option.value = course;
                     option.textContent = course;
@@ -134,7 +67,7 @@
                 let isDeleting = false;
 
                 function typeEffect() {
-                    const currentCourse = courses[courseIndex];
+                    const currentCourse = ALL_COURSES[courseIndex];
                     if (!currentCourse) return;
                     
                     if (isDeleting) {
@@ -152,7 +85,7 @@
                         isDeleting = true;
                     } else if (isDeleting && charIndex === 0) {
                         isDeleting = false;
-                        courseIndex = (courseIndex + 1) % courses.length;
+                        courseIndex = (courseIndex + 1) % ALL_COURSES.length;
                         typeSpeed = 500;
                     }
 
@@ -351,9 +284,9 @@
         }
     }
 
-    // ==========================================
-    // 6. COGNIZA AI CHATBOT ENGINE & KNOWLEDGE BASE
-    // ==========================================
+    // =========================================================================
+    // 6. BRAND NEW COGNIZA AI CHATBOT (Standalone In-Browser Engine)
+    // =========================================================================
     function initAIChatbot() {
         try {
             const aiBtn = document.getElementById('aiBtn');
@@ -369,228 +302,245 @@
                 return;
             }
 
+            // --- Knowledge Rules & Natural Language Response Matrix ---
             const KNOWLEDGE_BASE = [
                 {
-                    triggers: ['program', 'course', 'courses', 'domain', 'domains', 'specialization', 'specializations', 'subjects', 'syllabus', 'what do you teach', 'curriculum', 'study', 'tracks', 'classes'],
-                    reply: `<p><strong>Cogniza offers 100+ specialized programs across 7 core domains</strong> with industry-designed curriculums, live capstones, and 1-on-1 mentorship:</p>
+                    triggers: ['course', 'courses', 'program', 'programs', 'domain', 'domains', 'specialization', 'specializations', 'tracks', 'syllabus', 'curriculum', 'what do you teach', 'study', 'subjects'],
+                    reply: `<p><strong>🎓 Cogniza Specialization Programs &amp; Domains:</strong></p>
+                    <p>We offer <strong>107+ industry-designed programs</strong> organized across 7 core engineering &amp; management domains:</p>
                     <ul>
-                        <li><strong>💻 CSE / IT:</strong> AI &amp; ML, GenAI, Full Stack, Python, Java, Data Engineering, Cyber Security, Cloud, SAP (FICO/MM/GRC/Security), DevOps.</li>
-                        <li><strong>⚡ ECE / EEE:</strong> Embedded Systems, VLSI Design, Signals &amp; Systems, SCLD Logic Design, Industrial Automation.</li>
-                        <li><strong>⚙️ Mechanical Engineering:</strong> AutoCAD, CATIA 3D, Car Design, Drone Engineering &amp; Mechanics, EV Technology, Robotics.</li>
-                        <li><strong>🏗️ Civil Engineering:</strong> Construction Planning (Primavera), Structural Analysis (STAAD.Pro), Revit BIM, AutoCAD Civil.</li>
-                        <li><strong>🧪 Chemical / Process / Energy:</strong> Aspen HYSYS, Aspen Plus, Petroleum Refining, Process Safety, Renewable Energy.</li>
-                        <li><strong>🧬 Medical / Pharma / Life Sciences:</strong> Clinical SAS (SDTM/ADaM), Clinical Data Mgmt, Pharmacovigilance, Medical Coding, Genetics.</li>
-                        <li><strong>📈 Management &amp; Business:</strong> ACCA F4 Law, Business Analytics, Finance, Digital Marketing, Power BI, Product Management.</li>
-                    </ul>
-                    <p>Explore all domain curriculums and roadmaps directly:</p>`,
-                    links: [
-                        { text: '🎓 Explore All Specialization Hubs', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['CSE / IT Programs', 'ECE / EEE', 'Mechanical', 'Medical & Pharma', 'Management', 'Offer Plans']
-                },
-                {
-                    triggers: ['cse', 'it', 'python', 'java', 'web', 'full stack', 'frontend', 'backend', 'devops', 'cloud', 'aws', 'azure', 'cyber', 'security', 'data science', 'ai', 'machine learning', 'sap', 'software', 'coding'],
-                    reply: `<p><strong>💻 CSE / IT Specialization Tracks:</strong></p>
-                    <p>We provide over 50+ cutting-edge IT career tracks including Full Stack Development (MERN/Java/Python), DevOps, AWS &amp; Azure Cloud Computing, Cybersecurity &amp; Ethical Hacking, Data Engineering, and enterprise SAP solutions.</p>`,
-                    links: [
-                        { text: '🚀 View All CSE / IT Programs', url: 'projects.html' },
-                        { text: '📝 Register for IT Track', url: 'register.html' }
-                    ],
-                    chips: ['Artificial Intelligence', 'Full Stack Development', 'Cyber Security', 'DevOps', 'Offer Plans']
-                },
-                {
-                    triggers: ['ece', 'eee', 'embedded', 'vlsi', 'iot', 'robotics', 'signal', 'circuit', 'microcontroller', 'arduino', 'fpga', 'verilog'],
-                    reply: `<p><strong>⚡ ECE / EEE &amp; Embedded Hardware Tracks:</strong></p>
-                    <p>Hands-on core hardware engineering programs covering VLSI Design &amp; Verilog, Embedded Systems with STM32 ARM Cortex, IoT Sensors &amp; Cloud Protocols, Signals &amp; Systems, and SCLD Logic Design.</p>`,
-                    links: [
-                        { text: '⚡ Explore ECE / EEE Programs', url: 'projects.html' },
-                        { text: '📝 Register for Hardware Track', url: 'register.html' }
-                    ],
-                    chips: ['VLSI Design', 'Embedded Systems', 'IoT Track', 'Contact Mentor']
-                },
-                {
-                    triggers: ['mechanical', 'autocad', 'catia', 'car design', 'automobile', 'ev', 'electric vehicle', 'drone', 'uav', 'robotics', 'ic engine'],
-                    reply: `<p><strong>⚙️ Mechanical &amp; Automotive Engineering Tracks:</strong></p>
-                    <p>Master industry-standard CAD, simulation, and hardware styling with AutoCAD 2D/3D, CATIA Surfacing, EV Powertrain &amp; Battery Thermal Management, Drone Flight Dynamics, and Industrial Robotics.</p>`,
-                    links: [
-                        { text: '⚙️ Explore Mechanical Tracks', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['AutoCAD', 'EV Technology', 'Car Design', 'Robotics']
-                },
-                {
-                    triggers: ['civil', 'construction', 'staad', 'primavera', 'revit', 'bim', 'building', 'structure', 'structural'],
-                    reply: `<p><strong>🏗️ Civil Engineering &amp; Infrastructure Tracks:</strong></p>
-                    <p>Comprehensive training in Construction Planning &amp; Primavera P6, Structural Analysis with STAAD.Pro, Revit BIM 3D Modeling, and AutoCAD Civil drafting standards.</p>`,
-                    links: [
-                        { text: '🏗️ Explore Civil Programs', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['Revit BIM', 'STAAD.Pro', 'Construction Planning', 'How to Register']
-                },
-                {
-                    triggers: ['chemical', 'petroleum', 'process', 'aspen', 'hysys', 'refining', 'oil', 'gas', 'energy', 'solar', 'renewable'],
-                    reply: `<p><strong>🧪 Chemical, Process &amp; Energy Tracks:</strong></p>
-                    <p>Master industrial process modeling with Aspen HYSYS, Aspen Plus, Petroleum Refinery Distillation Simulation, Plant Safety &amp; HAZOP, and Green Energy Transition.</p>`,
-                    links: [
-                        { text: '🧪 Explore Chemical & Energy Programs', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['Aspen HYSYS', 'Petroleum Engineering', 'Process Simulation', 'Offer Plans']
-                },
-                {
-                    triggers: ['medical', 'pharma', 'clinical', 'sas', 'cdisc', 'pharmacovigilance', 'safety', 'coding', 'icd', 'biology', 'genetics', 'microbiology', 'biostatistics', 'cdm'],
-                    reply: `<p><strong>🧬 Medical, Pharma &amp; Life Sciences Tracks:</strong></p>
-                    <p>Fast-track your healthcare career with Clinical SAS (SDTM &amp; ADaM mapping), Pharmacovigilance (ICSR/MedDRA/Argus), Clinical Data Management, Medical Coding (ICD-10/CPT), and Bioinformatics.</p>`,
-                    links: [
-                        { text: '🧬 Explore Medical & Pharma Programs', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['Clinical SAS', 'Pharmacovigilance', 'Medical Coding', 'Clinical Research']
-                },
-                {
-                    triggers: ['management', 'business', 'mba', 'finance', 'marketing', 'hr', 'human resources', 'investment banking', 'analytics', 'power bi', 'acca', 'supply chain', 'stock'],
-                    reply: `<p><strong>📈 Management &amp; Business Tracks:</strong></p>
-                    <p>Career-transforming business curricula including Investment Banking DCF Valuations, Business Analytics with Power BI &amp; SQL, Corporate Finance, Digital Marketing Growth, SAP FICO, and Product Management.</p>`,
-                    links: [
-                        { text: '📈 Explore Management Programs', url: 'projects.html' },
-                        { text: '📝 Register Online', url: 'register.html' }
-                    ],
-                    chips: ['Investment Banking', 'Business Analytics', 'Digital Marketing', 'SAP FICO']
-                },
-                {
-                    triggers: ['internship', 'project', 'live project', 'training', 'stipend', 'duration', 'certificate', 'experience', 'hands-on'],
-                    reply: `<p><strong>💼 Cogniza Project Internship Highlights:</strong></p>
-                    <ul>
-                        <li><strong>Real-World Capstones:</strong> Work on production-grade projects that solve actual industry challenges.</li>
-                        <li><strong>1-on-1 Senior Mentorship:</strong> Direct guidance from professionals at Google, IBM, Capgemini, and leading AI startups.</li>
-                        <li><strong>Verified Credentials:</strong> ISO 9001:2015 &amp; MSME recognized government-certified completion letter.</li>
-                        <li><strong>Flexible Formats:</strong> Self-paced online, mentor-led hybrid, or offline immersion batches.</li>
+                        <li><strong>💻 CSE / IT (53 tracks):</strong> AI/ML, Full Stack, Python, Java, Cloud (AWS/Azure), Cyber Security, DevOps, SAP (FICO/MM/GRC).</li>
+                        <li><strong>⚡ ECE / EEE (5 tracks):</strong> VLSI Design, Embedded Systems, IoT, Signals &amp; Systems, SCLD Logic Design.</li>
+                        <li><strong>⚙️ Mechanical (9 tracks):</strong> AutoCAD, CATIA 3D, Car Design, Drone Mechanics, EV Powertrain, Robotics.</li>
+                        <li><strong>🏗️ Civil (4 tracks):</strong> Construction Planning (Primavera), STAAD.Pro Structural, Revit BIM Architecture, AutoCAD Civil.</li>
+                        <li><strong>🧪 Chemical &amp; Energy (6 tracks):</strong> Aspen HYSYS, Aspen Plus, Petroleum Refining, Process Safety, Renewable Energy.</li>
+                        <li><strong>🧬 Medical &amp; Pharma (12 tracks):</strong> Clinical SAS (SDTM/ADaM), Pharmacovigilance, Clinical Data Mgmt, Medical Coding, Bioinformatics.</li>
+                        <li><strong>📈 Management (18 tracks):</strong> ACCA F4 Law, Investment Banking, Business Analytics (Power BI), HR, Digital Marketing, Corporate Finance.</li>
                     </ul>`,
                     links: [
-                        { text: '🎓 Explore All Programs', url: 'index.html#programs' },
-                        { text: '📝 Apply for Internship', url: 'register.html' }
+                        { text: '🚀 Explore All 107+ Programs', url: 'projects.html' },
+                        { text: '📝 Register Online', url: 'register.html' }
                     ],
-                    chips: ['Top Programs', 'Offer Plans', 'How to Register', 'Contact Us']
+                    chips: ['💻 CSE / IT', '⚡ ECE & VLSI', '⚙️ Mechanical & EV', '🧬 Pharma & SAS', '📈 Management', '💰 Pricing & Fees']
                 },
                 {
-                    triggers: ['offer', 'offers', 'price', 'pricing', 'fee', 'fees', 'cost', 'discount', 'pack', 'packs', 'tech pro', 'flexi', 'career pro'],
-                    reply: `<p><strong>💰 Our Value-Packed Offer Plans:</strong></p>
+                    triggers: ['fee', 'fees', 'cost', 'price', 'pricing', 'offer', 'offers', 'pack', 'packs', 'plan', 'plans', 'discount', 'tech pro', 'flexi', 'career pro'],
+                    reply: `<p><strong>💰 Value-Packed Offer Plans &amp; Pricing:</strong></p>
                     <ul>
-                        <li><strong>Tech Pro Pack (&#8377;20,000 for IT / &#8377;15,000 for Non-IT):</strong> Core specialization, live capstone project, and verified certification.</li>
-                        <li><strong>Flexi Pro Pack:</strong> Dual-domain flexibility with custom scheduling and extended mentor access.</li>
-                        <li><strong>Career Pro Pack:</strong> Complete end-to-end career suite with 3 live capstones, mock interviews, resume portfolio building, and placement assurance support.</li>
+                        <li><strong>🌟 Tech Pro Pack:</strong>
+                            <br>• <strong>IT Tracks:</strong> &#8377;20,000
+                            <br>• <strong>Non-IT / Core Tracks:</strong> &#8377;15,000
+                            <br><em>Includes 1 core specialization, live project capstone, mentor support &amp; ISO/MSME verified credential.</em>
+                        </li>
+                        <li><strong>🔄 Flexi Pro Pack:</strong> Dual-domain flexibility with custom batch schedules.</li>
+                        <li><strong>🚀 Career Pro Pack:</strong> Full career suite with 3 production capstones, placement assurance, resume optimization &amp; mock interviews.</li>
                     </ul>`,
                     links: [
                         { text: '🏷️ View Detailed Offer Plans', url: 'index.html#offers' },
-                        { text: '📝 Register Now', url: 'register.html' }
+                        { text: '📝 Apply for Enrollment', url: 'register.html' }
                     ],
                     chips: ['Tech Pro Pack', 'Career Pro Pack', 'How to Register', 'Talk to Counselor']
                 },
                 {
-                    triggers: ['register', 'apply', 'enroll', 'join', 'admission', 'sign up', 'how to register'],
-                    reply: `<p><strong>📝 Easy 3-Step Registration:</strong></p>
+                    triggers: ['python', 'java', 'web development', 'full stack', 'frontend', 'backend', 'react', 'node', 'javascript', 'mern', 'software engineering'],
+                    reply: `<p><strong>💻 Full Stack &amp; Software Development:</strong></p>
+                    <p>Our software tracks cover modern full-stack architectures (React, Node.js, Express, MongoDB/PostgreSQL, Java Spring Boot, and Python Django/FastAPI). Students build multi-tenant SaaS applications, microservices, and secure APIs.</p>`,
+                    links: [
+                        { text: '🌐 View Full Stack Web Dev', url: 'full-stack-web-development.html' },
+                        { text: '🐍 View Python Program', url: 'programming-in-python.html' },
+                        { text: '☕ View Java Program', url: 'programming-in-java.html' }
+                    ],
+                    chips: ['Full Stack Development', 'Python Programming', 'DevOps', 'Offer Plans']
+                },
+                {
+                    triggers: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'deep learning', 'genai', 'generative ai', 'llm', 'agentic', 'data science', 'data analytics'],
+                    reply: `<p><strong>🤖 Artificial Intelligence &amp; Data Science:</strong></p>
+                    <p>Master machine learning algorithms, deep neural networks, computer vision, NLP, and agentic GenAI architectures (LangChain, LlamaIndex, vector databases). Build end-to-end predictive and generative AI pipelines deployed on cloud.</p>`,
+                    links: [
+                        { text: '🧠 View AI & ML Program', url: 'artificial-intelligence-ai-machine-learning-ml.html' },
+                        { text: '📊 View Data Science Track', url: 'data-science.html' },
+                        { text: '⚡ View GenAI & Agentic AI', url: 'ai-generative-agentic.html' }
+                    ],
+                    chips: ['AI & Machine Learning', 'Data Science', 'Generative AI', 'Register Now']
+                },
+                {
+                    triggers: ['vlsi', 'embedded', 'iot', 'hardware', 'semiconductor', 'chip', 'verilog', 'fpga', 'arm', 'cortex', 'robotics'],
+                    reply: `<p><strong>⚡ ECE, VLSI &amp; Embedded Systems:</strong></p>
+                    <p>Hands-on core semiconductor and embedded design tracks covering Verilog HDL, RTL synthesis, static timing analysis (STA), STM32 ARM Cortex firmware, SPI/I2C protocols, and IoT edge hardware integration.</p>`,
+                    links: [
+                        { text: '🔬 View VLSI Design', url: 'vlsi-design.html' },
+                        { text: '🔌 View Embedded Systems', url: 'embedded-systems.html' },
+                        { text: '📡 View Internet of Things', url: 'internet-of-things-iot.html' }
+                    ],
+                    chips: ['VLSI Design', 'Embedded Systems', 'Robotics', 'Offer Plans']
+                },
+                {
+                    triggers: ['autocad', 'catia', 'ev', 'electric vehicle', 'car design', 'mechanical', 'drone', 'uav', 'automobile'],
+                    reply: `<p><strong>⚙️ Mechanical, CAD &amp; Electric Vehicle Tracks:</strong></p>
+                    <p>Master industrial 2D/3D modeling, surface design, and EV powertrain architectures with AutoCAD, CATIA, EV battery management simulation (BMS), and Drone aerodynamics.</p>`,
+                    links: [
+                        { text: '📐 View AutoCAD Program', url: 'autocad.html' },
+                        { text: '🔋 View EV Technology', url: 'hybrid-electric-vehicle-technology.html' },
+                        { text: '🏎️ View Car Design', url: 'car-design.html' }
+                    ],
+                    chips: ['AutoCAD', 'EV Technology', 'Car Design', 'How to Register']
+                },
+                {
+                    triggers: ['civil', 'staad', 'primavera', 'revit', 'bim', 'structural', 'construction'],
+                    reply: `<p><strong>🏗️ Civil Engineering &amp; BIM:</strong></p>
+                    <p>Specialized training in Primavera P6 construction management, STAAD.Pro structural analysis, and Revit 3D/4D BIM architectural workflows.</p>`,
+                    links: [
+                        { text: '🏢 View Revit & BIM', url: 'revit-bim.html' },
+                        { text: '🏗️ View Construction Planning', url: 'construction-planning.html' },
+                        { text: '📐 View AutoCAD Civil', url: 'autocad-civil-engineering.html' }
+                    ],
+                    chips: ['Revit BIM', 'Construction Planning', 'All Programs']
+                },
+                {
+                    triggers: ['clinical sas', 'sas', 'pharmacovigilance', 'medical coding', 'cdm', 'clinical research', 'clinical trials', 'pharma', 'biology', 'microbiology'],
+                    reply: `<p><strong>🧬 Medical, Pharma &amp; Life Sciences:</strong></p>
+                    <p>Accelerate your clinical research career with Clinical SAS (SDTM &amp; ADaM mapping), ICSR Pharmacovigilance safety reporting, ICD-10 medical coding, and Clinical Data Management.</p>`,
+                    links: [
+                        { text: '💊 View Clinical SAS Track', url: 'clinical-sas.html' },
+                        { text: '🛡️ View Pharmacovigilance', url: 'pharmacovigilance.html' },
+                        { text: '🏥 View Medical Coding', url: 'medical-coding.html' }
+                    ],
+                    chips: ['Clinical SAS', 'Pharmacovigilance', 'Medical Coding', 'Register Online']
+                },
+                {
+                    triggers: ['investment banking', 'finance', 'sap fico', 'sap mm', 'sap', 'power bi', 'business analytics', 'marketing', 'digital marketing', 'hr', 'human resources'],
+                    reply: `<p><strong>📈 Management, Finance &amp; Enterprise ERP:</strong></p>
+                    <p>Master corporate valuation financial models (DCF, M&amp;A), Power BI dashboards, SAP S/4HANA (FICO, MM, Security, GRC), digital marketing ROI, and talent analytics.</p>`,
+                    links: [
+                        { text: '📊 View Business Analytics', url: 'business-analytics.html' },
+                        { text: '💼 View Investment Banking', url: 'investment-banking.html' },
+                        { text: '🏢 View SAP FICO', url: 'sap-fico.html' }
+                    ],
+                    chips: ['Investment Banking', 'Business Analytics', 'SAP FICO', 'Offer Plans']
+                },
+                {
+                    triggers: ['internship', 'project', 'live project', 'training', 'certificate', 'certification', 'stipend', 'duration', 'letter'],
+                    reply: `<p><strong>💼 Cogniza Project Internship Experience:</strong></p>
+                    <ul>
+                        <li><strong>Real Production Capstones:</strong> Build authentic portfolios solving actual business challenges.</li>
+                        <li><strong>1-on-1 Mentor Guidance:</strong> Direct mentoring from engineers and leads at top firms.</li>
+                        <li><strong>Government-Recognized Credentials:</strong> ISO 9001:2015 &amp; MSME certified verified completion certificate.</li>
+                        <li><strong>Placement &amp; Interview Prep:</strong> Resume reviews, mock interviews, and career advisory.</li>
+                    </ul>`,
+                    links: [
+                        { text: '🎓 Explore All Programs', url: 'projects.html' },
+                        { text: '📝 Apply for Internship', url: 'register.html' }
+                    ],
+                    chips: ['All Courses', 'Offer Plans', 'How to Enroll', 'Contact Mentor']
+                },
+                {
+                    triggers: ['register', 'apply', 'enroll', 'admission', 'sign up', 'how to register', 'joining', 'join'],
+                    reply: `<p><strong>📝 How to Enroll at Cogniza:</strong></p>
                     <ol>
-                        <li>Choose your preferred program domain (CSE/IT, ECE, Mechanical, Civil, Chemical, Medical/Pharma, or Management).</li>
-                        <li>Select your batch schedule and enrollment pack.</li>
-                        <li>Submit your basic profile details on our secure portal. Our counselor will contact you within 24 hours to confirm your seat!</li>
-                    </ol>`,
+                        <li>Choose your target domain and specialization track.</li>
+                        <li>Select your preferred pack (Tech Pro, Flexi Pro, or Career Pro).</li>
+                        <li>Complete the online application form with your college &amp; contact info.</li>
+                    </ol>
+                    <p>Our academic counselor will reach out within 24 hours to schedule your onboarding!</p>`,
                     links: [
                         { text: '👉 Open Online Registration Form', url: 'register.html' }
                     ],
-                    chips: ['Top Programs', 'Offer Plans', 'Contact Support']
+                    chips: ['All Courses', 'Offer Plans', 'Contact Support']
                 },
                 {
-                    triggers: ['contact', 'call', 'phone', 'email', 'address', 'location', 'whatsapp', 'support', 'help', 'counselor', 'advisor'],
-                    reply: `<p><strong>📞 Get in Touch with Cogniza:</strong></p>
+                    triggers: ['contact', 'phone', 'call', 'whatsapp', 'email', 'support', 'help', 'address', 'location', 'counselor', 'advisor', 'talk to human'],
+                    reply: `<p><strong>📞 Contact Cogniza Admissions &amp; Support:</strong></p>
                     <ul>
-                        <li><strong>📱 Phone / WhatsApp:</strong> +91 8884456745</li>
+                        <li><strong>📱 WhatsApp / Direct Call:</strong> +91 8884456745</li>
                         <li><strong>✉️ Email:</strong> support@cogniza.in</li>
                         <li><strong>🏢 Location:</strong> Bengaluru, Karnataka, India</li>
                     </ul>
-                    <p>Our academic counselors are available Mon–Sat from 9:00 AM to 7:00 PM IST.</p>`,
+                    <p>Our team is available Monday to Saturday, 9:00 AM – 7:00 PM IST.</p>`,
                     links: [
-                        { text: '💬 WhatsApp Us Directly', url: 'https://wa.me/918884456745' },
-                        { text: '📬 Open Contact Page', url: 'index.html#contact' }
+                        { text: '💬 Chat on WhatsApp Now', url: 'https://wa.me/918884456745' },
+                        { text: '📬 Visit Contact Page', url: 'index.html#contact' }
                     ],
-                    chips: ['Top Programs', 'How to Register', 'Visit Website']
+                    chips: ['All Courses', 'How to Register', 'Pricing & Fees']
                 },
                 {
-                    triggers: ['ambassador', 'campus ambassador', 'college rep', 'student ambassador'],
-                    reply: `<p><strong>🌟 Become a Cogniza Campus Ambassador!</strong></p>
-                    <p>Represent Cogniza in your college, lead tech workshops, earn performance stipends, and receive leadership recommendations for top MNC hiring drives.</p>`,
+                    triggers: ['ambassador', 'campus ambassador', 'student rep', 'college ambassador'],
+                    reply: `<p><strong>🌟 Cogniza Campus Ambassador Program:</strong></p>
+                    <p>Lead tech communities in your college, organize workshops, earn performance stipends, and gain exclusive internship recommendations.</p>`,
                     links: [
                         { text: '🚀 Apply for Campus Ambassador', url: 'ambassador.html' }
                     ],
-                    chips: ['Top Programs', 'How to Register', 'Contact Us']
+                    chips: ['All Courses', 'How to Register', 'Contact Us']
                 },
                 {
-                    triggers: ['blog', 'event', 'events', 'highlights', 'updates', 'happening', 'stories', 'news', 'gallery', 'photos', 'celebration', 'onam', 'award', 'awards', 'rewards', 'reward', 'happy moments', 'recognition'],
-                    reply: `<p><strong>📰 Cogniza Highlights &amp; Events Hub:</strong></p>
-                    <p>Explore what's happening at Cogniza! Discover our latest team stories, employee recognition, and celebrations:</p>
+                    triggers: ['blog', 'event', 'events', 'celebration', 'onam', 'awards', 'rewards', 'news', 'highlights', 'updates', 'photos', 'gallery'],
+                    reply: `<p><strong>📰 Cogniza Community &amp; Event Highlights:</strong></p>
                     <ul>
-                        <li><strong>Welcome to the Cogniza Team:</strong> Meet our new mentors &amp; leadership.</li>
-                        <li><strong>Onam Celebration 2026:</strong> Grand floral Pookkalam &amp; festive team harmony.</li>
-                        <li><strong>Rewards, Awards &amp; Happy Moments:</strong> Celebrating star mentors, student champions, and team milestones.</li>
-                        <li><strong>Visual Photo Gallery:</strong> Moments of workshops, culture, and achievements.</li>
+                        <li><strong>Welcome to Cogniza:</strong> Welcoming our new mentors and technical leadership.</li>
+                        <li><strong>Onam Celebration:</strong> Traditional Pookkalam &amp; festive celebrations.</li>
+                        <li><strong>Rewards &amp; Awards:</strong> Recognizing star performers, educators, and student achievers.</li>
                     </ul>`,
                     links: [
                         { text: '✨ Visit Blog & Events', url: 'blog-events.html' },
                         { text: '🏆 Read Rewards & Awards', url: 'rewards-and-awards.html' },
                         { text: '🌸 Read Onam Story', url: 'onam-celebration-2026.html' }
                     ],
-                    chips: ['Top Programs', 'Offer Plans', 'Contact Us']
+                    chips: ['All Courses', 'Offer Plans', 'Contact Us']
                 },
                 {
-                    triggers: ['about', 'who are you', 'what is cogniza', 'founder', 'company', 'mission', 'vision'],
-                    reply: `<p><strong>✨ About Cogniza:</strong></p>
-                    <p>Cogniza is a premier EdTech platform committed to <em>"Beyond Learning. Beyond Limits."</em></p>
-                    <p>We bridge the gap between academia and corporate careers by delivering project-centric internships, mentorship from alumni of top tech giants (Google, Meta, Infosys, Wipro, and AI unicorns), and verified credentials.</p>`,
+                    triggers: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'morning', 'afternoon', 'evening', '.', 'help'],
+                    reply: `<p>Hello there! 👋 Welcome to <strong>Cogniza</strong>. I'm your AI career advisor!</p>
+                    <p>I can help you explore 107+ specialization programs, check offer plans &amp; pricing, guide your enrollment, or connect you with a mentor. What would you like to explore today?</p>`,
+                    chips: ['🎓 All Courses (107+)', '💰 Pricing & Offers', '💼 Internship Info', '📝 How to Enroll', '📞 Talk to Mentor', '📰 Blog & Events']
+                },
+                {
+                    triggers: ['thank', 'thanks', 'thank you', 'awesome', 'great', 'cool', 'perfect', 'ok', 'okay', 'bye'],
+                    reply: `<p>You're very welcome! 😊 We are excited to support your career growth. Click below anytime to take the next step:</p>`,
                     links: [
-                        { text: '📖 Read About Us', url: 'about.html' },
-                        { text: '🎓 Explore Programs', url: 'projects.html' }
+                        { text: '📝 Register Online', url: 'register.html' },
+                        { text: '💬 WhatsApp a Mentor', url: 'https://wa.me/918884456745' }
                     ],
-                    chips: ['Top Programs', 'Internship Benefits', 'Contact Us']
-                },
-                {
-                    triggers: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'good morning', 'good afternoon', 'good evening'],
-                    reply: `<p>Hello there! 👋 Welcome to <strong>Cogniza</strong>. I'm your AI career assistant!</p>
-                    <p>I can help you explore 100+ programs across 7 domains, learn about our project internships, view offer plans, or help you register. What would you like to explore today?</p>`,
-                    chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
-                },
-                {
-                    triggers: ['thank', 'thanks', 'thank you', 'awesome', 'great', 'cool', 'good job', 'bye', 'ok'],
-                    reply: `<p>You're very welcome! 😊 Feel free to ask anything else, or click below to start your journey with Cogniza.</p>`,
-                    links: [
-                        { text: '📝 Register Now', url: 'register.html' },
-                        { text: '📞 Talk to a Mentor', url: 'https://wa.me/918884456745' }
-                    ],
-                    chips: ['Top Programs', 'Offer Plans', 'Contact Us']
+                    chips: ['All Courses', 'Offer Plans', 'Contact Us']
                 }
             ];
 
-            function getLocalAIResponse(query) {
+            // NLP Matching Engine
+            function getCognizaAIResponse(query) {
                 const cleanQuery = query.toLowerCase().trim();
-                
+
+                // 1. Direct Trigger Matching
                 for (const item of KNOWLEDGE_BASE) {
                     for (const trigger of item.triggers) {
-                        if (cleanQuery.includes(trigger)) {
+                        if (cleanQuery === trigger || cleanQuery.includes(trigger)) {
                             return item;
                         }
                     }
                 }
 
+                // 2. Fuzzy Course Matching across 107+ courses
+                const matchedCourse = ALL_COURSES.find(c => cleanQuery.includes(c.toLowerCase()) || c.toLowerCase().includes(cleanQuery));
+                if (matchedCourse) {
+                    return {
+                        reply: `<p><strong>🎓 Specialization Found: ${escapeHtml(matchedCourse)}</strong></p>
+                        <p>This program features a 4-phase hands-on trajectory: syntax &amp; foundations, core toolkits &amp; lab environments, advanced industry protocols, and production capstone deployments with ISO/MSME verified certification.</p>`,
+                        links: [
+                            { text: '📖 View Program Details', url: 'projects.html' },
+                            { text: '📝 Register for This Track', url: 'register.html' }
+                        ],
+                        chips: ['All Courses', '💰 Course Fees & Offers', '📝 How to Enroll', '📞 Talk to Mentor']
+                    };
+                }
+
+                // 3. Fallback Smart Guidance
                 return {
-                    reply: `<p>Thank you for asking about <strong>${escapeHtml(query)}</strong> at Cogniza!</p>
-                    <p>Cogniza provides over 100+ industry-recognized internship programs across IT, Non-IT, Engineering, Healthcare, and Management with live capstones and mentor support.</p>
-                    <p>Would you like to explore our programs, check our offer plans, or talk with an admissions advisor?</p>`,
+                    reply: `<p>Thank you for asking about <strong>${escapeHtml(query)}</strong>!</p>
+                    <p>Cogniza provides over <strong>107+ specialized tracks</strong> across CSE/IT, ECE, Mechanical, Civil, Chemical, Pharma, and Management with live capstone projects and mentor support.</p>
+                    <p>Select an option below to find exactly what you need:</p>`,
                     links: [
-                        { text: '🎓 View Programs', url: 'projects.html' },
+                        { text: '🎓 Explore All 107+ Programs', url: 'projects.html' },
                         { text: '📝 Register Online', url: 'register.html' },
-                        { text: '📞 Contact Support', url: 'index.html#contact' }
+                        { text: '💬 Chat on WhatsApp', url: 'https://wa.me/918884456745' }
                     ],
-                    chips: ['🎓 Top Programs', '💰 Offer Plans', '📝 How to Register', '📞 Contact Us']
+                    chips: ['🎓 All Courses', '💰 Pricing & Fees', '📝 How to Enroll', '📞 Contact Support']
                 };
             }
 
@@ -605,7 +555,7 @@
                 const welcomeItem = {
                     reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Assistant</strong>.</p>
                     <p>How can I help shape your career today? Select a topic below or type any question:</p>`,
-                    chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
+                    chips: ['🎓 All Courses (107+)', '💰 Pricing & Offers', '💼 Internship Info', '📝 How to Enroll', '📞 Talk to Mentor', '📰 Blog & Events']
                 };
 
                 renderAIMessage(welcomeItem);
@@ -626,7 +576,11 @@
 
                 if (responseObj.links && responseObj.links.length > 0) {
                     const linksWrap = document.createElement('div');
-                    linksWrap.style.marginTop = '8px';
+                    linksWrap.style.marginTop = '10px';
+                    linksWrap.style.display = 'flex';
+                    linksWrap.style.flexWrap = 'wrap';
+                    linksWrap.style.gap = '6px';
+
                     responseObj.links.forEach(l => {
                         const linkTag = document.createElement('a');
                         linkTag.href = l.url;
@@ -669,7 +623,7 @@
 
                 const avatarDiv = document.createElement('div');
                 avatarDiv.className = 'msg-avatar';
-                avatarDiv.innerHTML = '<i class="far fa-user"></i>';
+                avatarDiv.innerHTML = '<i class="fas fa-user"></i>';
 
                 const bubbleDiv = document.createElement('div');
                 bubbleDiv.className = 'msg-bubble';
@@ -717,17 +671,18 @@
                 }
 
                 const typingEl = showTypingIndicator();
-                const localAnswer = getLocalAIResponse(query);
+                const localAnswer = getCognizaAIResponse(query);
 
+                // Quick and natural typing response delay (280ms)
                 setTimeout(() => {
                     if (typingEl && typingEl.parentNode) {
                         typingEl.remove();
                     }
                     renderAIMessage(localAnswer);
-                }, 350);
+                }, 280);
             }
 
-            // Expose globally as safe fallback
+            // Expose globally
             window.toggleCognizaAIChat = function() {
                 if (!aiChatWidget) return;
                 const isCurrentlyActive = aiChatWidget.classList.contains('active');
@@ -761,7 +716,7 @@
                 });
             }
 
-            // Greeting close
+            // Greeting bubble close
             if (closeGreetingBtn && aiGreetingBubble) {
                 closeGreetingBtn.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -774,7 +729,7 @@
             if (aiChatInput) {
                 aiChatInput.addEventListener('input', function() {
                     this.style.height = '20px';
-                    this.style.height = Math.min(this.scrollHeight - 10, 100) + 'px';
+                    this.style.height = Math.min(this.scrollHeight - 10, 90) + 'px';
                 });
 
                 aiChatInput.addEventListener('keydown', (e) => {
@@ -800,19 +755,19 @@
                 });
             }
 
-            // Prevent clicks inside chat widget from bubbling to document
+            // Prevent clicks inside chat widget from closing it
             aiChatWidget.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
 
-            // Close when clicked outside
+            // Close when clicking outside
             document.addEventListener('click', (e) => {
                 if (aiChatWidget.classList.contains('active') && !aiChatWidget.contains(e.target) && !aiBtn.contains(e.target)) {
                     aiChatWidget.classList.remove('active');
                 }
             });
 
-            // Initialize greeting
+            // Initialize greeting on load
             initChatGreeting();
 
         } catch (e) {
