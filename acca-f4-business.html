@@ -1,0 +1,505 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACCA F4 Corporate & Business Law | Cogniza Specialization Programs</title>
+    <!-- Favicons & App Icons for Google Search and Modern Browsers -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/svg+xml" href="logos/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="course-layout.css">
+</head>
+<body>
+    <!-- Enquiry Modal Popup -->
+    <div id="enquiryModal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="closeModal" class="modal-close">&times;</button>
+            <div class="modal-badge">Student Enquiry Form</div>
+            <h2 class="modal-title">SHAPE YOUR CAREER WITH <span class="text-gradient">COGNIZA</span></h2>
+            <p class="modal-subtitle">Connect with industry mentors, join high-demand programs, and unlock exciting opportunities for your future career.</p>
+            
+            <script>var formSubmitted = false;</script><iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { document.getElementById('enquiryModal').classList.remove('show'); alert('Thank you! Your enquiry has been submitted successfully.'); }"></iframe><form id="enquiryForm" class="modal-form" action="https://docs.google.com/forms/d/e/1FAIpQLSecvb1_L_hGK0VTXsNxdIaizP9nSGE9PbzrsPonJ01lSrnVHg/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted=true; setTimeout(() => this.reset(), 500);">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <div class="input-wrapper">
+                            <i class="far fa-user"></i>
+                            <input type="text" name="entry.19428930" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <div class="input-wrapper">
+                            <i class="far fa-envelope"></i>
+                            <input type="email" name="emailAddress" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-phone-alt"></i>
+                            <input type="tel" name="entry.1872168905" placeholder="+91 8884456745" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Interested Course</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-book-open"></i>
+                            <select name="entry.330684132" id="courseSelect" required>
+                                <option value="ACCA F4 Corporate & Business Law" selected>ACCA F4 Corporate & Business Law</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>College / University</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-graduation-cap"></i>
+                            <input type="text" name="entry.309849495" placeholder="e.g. University / College Name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Preferred Language</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-language"></i>
+                            <input type="text" name="entry.1686906330" placeholder="e.g. English, Hindi, Regional" required>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn-submit-modal">Submit Enquiry <i class="far fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <header>
+        <div class="container top-bar">
+            <div class="logo">
+                <div class="logo-icon-wrapper">
+                    <img src="logos/c_logo.jpeg" alt="Cogniza Icon">
+                </div>
+                <div class="logo-text">
+                    <h1>COGNIZA</h1>
+                    <p class="slogan-gradient">"Beyond Learning. Beyond Limits."</p>
+                </div>
+            </div>
+
+            <div class="nav-container">
+                <nav class="pill-nav">
+                    <ul class="nav-links">
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#programs">Programs</a></li>
+                        <li><a href="index.html#offers">Offer Plans</a></li>
+                        <li><a href="blog-events.html">Blog &amp; Events</a></li>
+                        <li class="nav-dropdown">
+                            <a href="index.html#careers">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="ambassador.html">Become Cogniza Campus Ambassador</a></li>
+                                <li><a href="careers.html">Looking for job</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 20px;">
+                <a href="register.html" class="btn btn-outline">Register</a>
+            </div>
+            
+            <button class="mobile-menu-btn" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <div class="course-page-wrapper">
+        <!-- 1. Hero Section -->
+        <div class="course-hero">
+            <div class="course-hero-inner">
+                <div class="course-hero-content">
+                    <div style="display:inline-block; background:rgba(255,255,255,0.15); padding:6px 16px; border-radius:20px; font-weight:700; font-size:0.9rem; margin-bottom:15px; letter-spacing:0.5px; border: 1px solid rgba(255,255,255,0.25);">
+                        <i class="fas fa-layer-group"></i> MANAGEMENT & BUSINESS Domain
+                    </div>
+                    <h1 class="course-title">Become a Professional <span style="color: #ec4899;">ACCA F4 Corporate & Business Law</span> Specialist</h1>
+                    <p class="course-subtitle">Essential legal framework, law of contract, employment law, agency law, corporate formation, capital financing, and corporate governance. Master industry-standard workflows, production tools, and complete live capstone implementations guided by senior industry mentors.</p>
+                    <div class="course-highlights">
+                        <div class="highlight-pill"><i class="fas fa-check-circle" style="color: #ec4899;"></i> 25+ Real-World Projects</div>
+                        <div class="highlight-pill"><i class="fas fa-check-circle" style="color: #ec4899;"></i> 40+ Hours Live Classes</div>
+                        <div class="highlight-pill"><i class="fas fa-check-circle" style="color: #ec4899;"></i> 1:1 Industry Mentorship</div>
+                        <div class="highlight-pill"><i class="fas fa-check-circle" style="color: #ec4899;"></i> Live Capstone Project</div>
+                        <div class="highlight-pill"><i class="fas fa-check-circle" style="color: #ec4899;"></i> 100% Placement Assistance</div>
+                    </div>
+                    <div style="margin-top: 40px; display: flex; gap: 20px; flex-wrap: wrap;">
+                        <a href="register.html" style="background: #ec4899; color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.2);">Enroll Now &rarr;</a>
+                        <a href="#curriculum" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.3); color: white; padding: 15px 35px; border-radius: 12px; font-weight: bold; font-size: 1.1rem; text-decoration: none;">View Curriculum &darr;</a>
+                    </div>
+                </div>
+                <div class="course-hero-image">
+                    <img src="images/programs/Finance.png" alt="ACCA F4 Corporate & Business Law" onerror="this.src='images/programs/Artificial_Intelligence_AI_Machine_Learning_ML.png'">
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Rising Demand Stats -->
+        <div class="course-section">
+            <div class="section-inner">
+                <h2 class="section-title">Rising Industry Demand for ACCA F4 Corporate & Business Law</h2>
+                <p class="section-subtitle">Companies worldwide are actively hiring certified specialists with verified hands-on project experience.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 style="color: #ec4899;">91%</h3>
+                        <p>Hiring growth &amp; enterprise tech adoption</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="color: #ec4899;">12k+</h3>
+                        <p>Projected job openings across top firms</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 style="color: #ec4899;">&#8377;6.5 - &#8377;16 LPA</h3>
+                        <p>Average starting compensation for trained talent</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Skills Section -->
+        <div class="course-section bg-gray">
+            <div class="section-inner">
+                <h2 class="section-title">Key Domain Skills You Will Master</h2>
+                <p class="section-subtitle">Structured competencies tailored to actual corporate job descriptions.</p>
+                <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-file-contract"></i></div>
+                    <h4>Contract Law Principles</h4>
+                </div>                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-balance-scale"></i></div>
+                    <h4>Corporate Governance</h4>
+                </div>                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-building"></i></div>
+                    <h4>Company Formation & Capital</h4>
+                </div>                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-user-tie"></i></div>
+                    <h4>Employment & Labor Regulations</h4>
+                </div>                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-gavel"></i></div>
+                    <h4>Insolvency & Administration</h4>
+                </div>                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>Ethics & Fraud Prevention</h4>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Course Modules (Curriculum) -->
+        <div id="curriculum" class="course-section">
+            <div class="section-inner">
+                <h2 class="section-title">Structured Curriculum &amp; Learning Modules</h2>
+                <p class="section-subtitle">A comprehensive, step-by-step learning roadmap designed by veteran practitioners.</p>
+                <div class="modules-container">
+                <div class="module-item">
+                    <div class="module-header">Module 1: Legal Framework & Judicial Systems <i class="fas fa-chevron-up"></i></div>
+                    <div class="module-content" style="display:block;">
+                        <ul>
+                            <li>Sources of law: Legislation, judicial precedent, and European/international treaties</li>
+                            <li>Structure of civil and criminal courts, arbitration, and dispute resolution</li>
+                            <li>Human rights and statutory interpretation principles</li>
+                        </ul>
+                    </div>
+                </div>                <div class="module-item">
+                    <div class="module-header">Module 2: Law of Contract & Commercial Agreements <i class="fas fa-chevron-down"></i></div>
+                    <div class="module-content" style="display:none;">
+                        <ul>
+                            <li>Offer, acceptance, consideration, intention to create legal relations</li>
+                            <li>Terms of contract (Conditions, Warranties, Innominate terms), exclusion clauses</li>
+                            <li>Vitiating factors: Misrepresentation, mistake, duress, undue influence</li>
+                            <li>Breach of contract and remedies: Damages, specific performance, injunctions</li>
+                        </ul>
+                    </div>
+                </div>                <div class="module-item">
+                    <div class="module-header">Module 3: Employment Law & Agency Relationships <i class="fas fa-chevron-down"></i></div>
+                    <div class="module-content" style="display:none;">
+                        <ul>
+                            <li>Employee vs independent contractor status and legal implications</li>
+                            <li>Unfair dismissal vs wrongful dismissal, statutory redundancy payments</li>
+                            <li>Creation of agency, agent's authority (Actual vs Apparent), and principal's liability</li>
+                        </ul>
+                    </div>
+                </div>                <div class="module-item">
+                    <div class="module-header">Module 4: Company Law: Formation, Capital & Management <i class="fas fa-chevron-down"></i></div>
+                    <div class="module-content" style="display:none;">
+                        <ul>
+                            <li>Types of business entities: Sole trader, partnership, LLC, and public companies</li>
+                            <li>Company constitution: Articles of Association, separate legal personality</li>
+                            <li>Share capital, loan capital (Debentures, Fixed/Floating charges), and capital maintenance</li>
+                            <li>Directors' duties, powers, disqualification, and shareholder minority protections</li>
+                        </ul>
+                    </div>
+                </div>                <div class="module-item">
+                    <div class="module-header">Module 5: Insolvency, Corporate Fraud & Capstone Compliance Case Study <i class="fas fa-chevron-down"></i></div>
+                    <div class="module-content" style="display:none;">
+                        <ul>
+                            <li>Corporate insolvency procedures: Administration, winding up, liquidation priorities</li>
+                            <li>Fraudulent trading, wrongful trading, insider dealing, bribery, and money laundering</li>
+                            <li>Capstone: Legal audit and corporate restructuring plan for an international merger</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Capstone Projects -->
+        <div class="course-section bg-gray">
+            <div class="section-inner">
+                <h2 class="section-title">Industry Capstone Projects</h2>
+                <p class="section-subtitle">Build real-world production projects to strengthen your GitHub and portfolio resume.</p>
+                <div class="projects-grid">
+                <div class="project-card">
+                    <h3>Corporate Cross-Border Merger Legal Due Diligence</h3>
+                    <div class="project-steps">
+                        <div class="project-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text"><strong>Contracts:</strong> Review 50+ supplier, client, and executive employment contracts.</div>
+                        </div>
+                        <div class="project-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text"><strong>Compliance:</strong> Assess director fiduciary duties and shareholder voting thresholds.</div>
+                        </div>
+                        <div class="project-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text"><strong>Report:</strong> Author comprehensive legal risk mitigation and closing memorandum.</div>
+                        </div>
+                    </div>
+                </div>                <div class="project-card">
+                    <h3>Commercial Contract Breach & Dispute Resolution</h3>
+                    <div class="project-steps">
+                        <div class="project-step">
+                            <div class="step-number">1</div>
+                            <div class="step-text"><strong>Analysis:</strong> Evaluate repudiatory breach of supply agreement.</div>
+                        </div>
+                        <div class="project-step">
+                            <div class="step-number">2</div>
+                            <div class="step-text"><strong>Damages:</strong> Calculate expectation and reliance damages under contract law.</div>
+                        </div>
+                        <div class="project-step">
+                            <div class="step-number">3</div>
+                            <div class="step-text"><strong>Arbitration:</strong> Draft formal arbitration settlement terms.</div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Future Roles -->
+        <div class="course-section">
+            <div class="section-inner">
+                <h2 class="section-title">Career Opportunities &amp; Target Roles</h2>
+                <p class="section-subtitle">Unlock lucrative corporate roles and high-growth opportunities upon completion.</p>
+                <div class="roles-grid">
+                <div class="role-card">
+                    <div class="role-title">Corporate Legal Compliance Analyst</div>
+                    <div class="role-salary">&#8377;6.5 - &#8377;15 LPA</div>
+                </div>                <div class="role-card">
+                    <div class="role-title">ACCA / Corporate Governance Specialist</div>
+                    <div class="role-salary">&#8377;7 - &#8377;16 LPA</div>
+                </div>                <div class="role-card">
+                    <div class="role-title">Business Risk & Contract Advisor</div>
+                    <div class="role-salary">&#8377;7.5 - &#8377;17 LPA</div>
+                </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Pricing Plans -->
+        <div id="pricing" class="course-section bg-gray">
+            <div class="section-inner">
+                <h2 class="section-title">Flexible Learning &amp; Mentorship Plans</h2>
+                <p class="section-subtitle">Choose the plan that best fits your schedule and career ambition.</p>
+                <div class="pricing-grid">
+                    <!-- Plan 1 -->
+                    <div class="price-card">
+                        <div class="price-title">Self-Paced</div>
+                        <div class="price-amount">&#8377;5,999</div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check-circle"></i> Lifetime Recorded Modules</li>
+                            <li><i class="fas fa-check-circle"></i> Assignments &amp; Quizzes</li>
+                            <li><i class="fas fa-check-circle"></i> Production Capstone Project</li>
+                            <li><i class="fas fa-check-circle"></i> LMS Portal Access</li>
+                        </ul>
+                        <a href="register.html" class="btn-price">Get Started</a>
+                    </div>
+                    <!-- Plan 2 -->
+                    <div class="price-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <div class="price-title">Mentor Led</div>
+                        <div class="price-amount">&#8377;8,999</div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check-circle"></i> Everything in Self-Paced</li>
+                            <li><i class="fas fa-check-circle"></i> Live Weekend Mentorship</li>
+                            <li><i class="fas fa-check-circle"></i> 1:1 Live Doubt Clearing</li>
+                            <li><i class="fas fa-check-circle"></i> Direct Mentor Code Reviews</li>
+                        </ul>
+                        <a href="register.html" class="btn-price">Get Started</a>
+                    </div>
+                    <!-- Plan 3 -->
+                    <div class="price-card">
+                        <div class="price-title">Professional</div>
+                        <div class="price-amount">&#8377;14,999</div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check-circle"></i> Everything in Mentor Led</li>
+                            <li><i class="fas fa-check-circle"></i> 100% Placement Support</li>
+                            <li><i class="fas fa-check-circle"></i> Mock Technical Interviews</li>
+                            <li><i class="fas fa-check-circle"></i> Direct Referral Opportunities</li>
+                        </ul>
+                        <a href="register.html" class="btn-price">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Accordion functionality for curriculum modules
+        document.addEventListener("DOMContentLoaded", function() {
+            const headers = document.querySelectorAll('.module-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    if (content.style.display === "none") {
+                        content.style.display = "block";
+                        icon.classList.remove('fa-chevron-down');
+                        icon.classList.add('fa-chevron-up');
+                    } else {
+                        content.style.display = "none";
+                        icon.classList.remove('fa-chevron-up');
+                        icon.classList.add('fa-chevron-down');
+                    }
+                });
+            });
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-col brand-col">
+                    <div class="footer-logo">Cogniza</div>
+                    <p>Cogniza empowers students with skills, mentorship, and real-world learning.</p>
+                </div>
+                <!-- Quick Links -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy & Refund Policy</a></li>
+                        <li><a href="terms-and-conditions.html">Terms &amp; Conditions</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col"><h4>Courses</h4><ul id="footer-course-list" style="list-style:none;padding:0;margin:0;"><li id="fc-slot-1" class="fc-slot"></li><li id="fc-slot-2" class="fc-slot"></li><li id="fc-slot-3" class="fc-slot"></li><li id="fc-slot-4" class="fc-slot"></li></ul><style>.fc-slot{padding:2px 0;font-size:.87rem;line-height:1.4;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;}.fc-slot a{color:rgba(255,255,255,.7);text-decoration:none;}.fc-slot a:hover{color:#fff;}</style></div>
+                <!-- Contact Information -->
+                <div class="footer-col contact-col">
+                    <h4>Contact Information</h4>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>+91 8884456745</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>operations@cogniza.in</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Cogniza pvt Ltd, The Desk World, GR towers, Sector 6, HSR Layout, Bengaluru, Karnataka 560102</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/cogniza.in?utm_source=qr" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/cogniza-private-limited/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/918884456745" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>Cogniza Edutech Private Limited &copy; 2026. All Rights Reserved.</p>
+                </div>
+                <div class="footer-managed">
+                    <p>Managed by Cogniza Tech.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating AI Button -->
+    <a href="#" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant">
+        <i class="fas fa-comment-dots"></i>
+    </a>
+
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget" id="aiChatWidget">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title">
+                <i class="fas fa-comment-dots"></i> AI Assistant
+            </div>
+            <div class="ai-chat-actions">
+                <button id="aiCloseBtn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+        
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-message ai">
+                <div class="msg-avatar"><i class="fas fa-comment-dots"></i></div>
+                <div class="msg-bubble">Hello! I'm your Cogniza AI assistant. How can I help you explore this course today?</div>
+            </div>
+        </div>
+
+        <div class="ai-chat-input-area">
+            <textarea id="aiChatInput" placeholder="Type your message..." rows="1"></textarea>
+            <button id="aiSendBtn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+    (function(){
+      var c=["Machine Learning With Python","Web Development","Artificial Intelligence","Data Science","Full Stack Web Development","Cyber Security & Ethical Hacking","Cloud Computing","Android App Development","Digital Marketing","UI/UX Design","Data Analytics","Blockchain Technology","DevOps","Business Analytics","Robotics","Embedded Systems","Stock Market","Medical Coding","Graphic Designing","Programming in Python"];
+      var s=[document.getElementById("fc-slot-1"),document.getElementById("fc-slot-2"),document.getElementById("fc-slot-3"),document.getElementById("fc-slot-4")];
+      if(!s[0])return;
+      var o=4,p=0;
+      s.forEach(function(x,i){x.innerHTML='<a href="index.html#programs">'+c[i]+'</a>';});
+      o=o%c.length;
+      setInterval(function(){
+        var x=s[p];
+        x.style.cssText="opacity:0;transform:translateY(-7px);transition:opacity .28s ease,transform .28s ease;";
+        setTimeout(function(){
+          x.innerHTML='<a href="index.html#programs">'+c[o]+'</a>';
+          x.style.cssText="opacity:0;transform:translateY(7px);transition:none;";
+          requestAnimationFrame(function(){requestAnimationFrame(function(){
+            x.style.cssText="opacity:1;transform:translateY(0);transition:opacity .32s ease,transform .32s ease;";
+          });});
+          o=(o+1)%c.length;
+          p=(p+1)%s.length;
+        },290);
+      },1600);
+    })();
+    </script>
+</body>
+</html>
