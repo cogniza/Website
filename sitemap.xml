@@ -1,104 +1,499 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cogniza.in/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
+  </url>  <url>
     <loc>https://www.cogniza.in/about</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cogniza.in/careers</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cogniza.in/projects</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cogniza.in/offline-programs</loc>
+  </url>  <url>
+    <loc>https://www.cogniza.in/acca-f4-business</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.cogniza.in/register</loc>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/ai-for-economics</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/ai-generative-agentic</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
     <loc>https://www.cogniza.in/ambassador</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/android-app-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/app-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/artificial-intelligence</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/artificial-intelligence-ai-machine-learning-ml</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/aspen-hysys</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/aspen-plus</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/augmented-reality-ar-virtual-reality-arvr</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/autocad</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/autocad-civil-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/aws</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/basic-graphic-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/bioinformatics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/biostatistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/blockchain-technology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/blog-events</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/business-analysis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/business-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/car-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/career-pro-pack</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/careers</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/catia-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/ccna-networking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/chemical-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/clinical-data-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/clinical-sas</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/clinical-trials-research</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/cloud-computing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/computer-organization-architecture</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/construction-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/cyber-security-ethical-hacking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/data-analysis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/data-analytics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/database-management-systems-dbms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/data-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/data-science</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/data-structures-algorithms</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/deep-learning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/devops</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/digital-marketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/docker-containerization</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/dotnet-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/drone-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/drone-mechanics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/dsa-with-python</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/embedded-systems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/energy-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/finance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/flexi-pro-pack</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/front-end-web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/full-stack-web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/generative-ai-llm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/genetic-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/graphic-designing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/human-resources-hr-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/hybrid-electric-vehicle-technology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/ic-engine-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/industrial-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/industrial-robotics-automation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/internet-of-things-iot</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/investment-banking</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/java-full-stack-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/machine-learning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/manual-testing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/medical-coding</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/medical-sciences</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/metaverse</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/microbiology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/microsoft-azure-cloud-computing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/microsoft-excel</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/molecular-biology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/nanotechnology-nanoscience-nanotechnology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/offline-programs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/onam-celebration-2026</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/operations-supply-chain</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/petroleum-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/pharmacovigilance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/placement-preparation</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/power-bi</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
     <loc>https://www.cogniza.in/privacy-policy</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <url>
+  </url>  <url>
+    <loc>https://www.cogniza.in/probability-statistics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/process-engineering</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/product-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/product-project-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/programming-in-java</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/programming-in-python</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/projects</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/psychology</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/python-full-stack-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/quantum-computing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/register</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/revit-bim</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/rewards-and-awards</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/robotics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sales-and-marketing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/salesforce</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-fico</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-grc-arm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-mm</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-security</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-successfactors</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sap-ui5-fiori</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/sas-programming</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/scld-logic-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/selenium-testing</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/servicenow</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/signals-systems</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/startup-entrepreneurship</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/stock-market</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/structural-analysis</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/supply-chain-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/tech-pro-pack</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
     <loc>https://www.cogniza.in/terms-and-conditions</loc>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-  </url>
-  <!-- Course Pages -->
-  <url><loc>https://www.cogniza.in/ai-generative-agentic</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/android-app-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/artificial-intelligence-ai-machine-learning-ml</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/augmented-reality-ar-virtual-reality-arvr</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/autocad</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/aws</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/basic-graphic-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/blockchain-technology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/business-analysis</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/business-analytics</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/car-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/career-pro-pack</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.cogniza.in/clinical-data-management</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/clinical-sas</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/clinical-trials-research</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/cloud-computing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/cyber-security-ethical-hacking</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/data-analysis</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/data-analytics</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/data-science</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/devops</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/digital-marketing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/dsa-with-python</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/embedded-systems</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/finance</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/flexi-pro-pack</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.cogniza.in/front-end-web-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/full-stack-web-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/graphic-designing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/human-resources-hr-management</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/hybrid-electric-vehicle-technology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/internet-of-things-iot</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/investment-banking</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/machine-learning</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/medical-coding</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/microbiology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/microsoft-azure-cloud-computing</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/nanotechnology-nanoscience-nanotechnology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/petroleum-engineering</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/pharmacovigilance</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/product-project-management</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/programming-in-java</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/programming-in-python</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/psychology</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/robotics</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/salesforce</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/sap-fico</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/servicenow</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/startup-entrepreneurship</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/stock-market</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/supply-chain-management</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/tech-pro-pack</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://www.cogniza.in/uiux-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/vlsi-design</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://www.cogniza.in/web-development</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
-</urlset>
+  </url>  <url>
+    <loc>https://www.cogniza.in/uiux-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/vlsi-design</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/web3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/web-development</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>  <url>
+    <loc>https://www.cogniza.in/welcome-to-cogniza-team</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url></urlset>

@@ -2,57 +2,110 @@
 document.addEventListener("DOMContentLoaded", () => {
     const courses = [
         "AI (Generative & Agentic)",
+        "Agentic AI",
         "Android App Development",
-        "Artificial Intelligence (AI) & Machine Learning (ML)",
-        "Augmented Reality (AR) & Virtual Reality (AR/VR)",
-        "AutoCAD",
-        "AWS",
+        "Artificial Intelligence (AI)",
+        "AI & Machine Learning (AI/ML)",
+        "AI for Economics",
+        "Augmented Reality (AR) & Virtual Reality (VR)",
+        "AutoCAD 2D & 3D Drafting",
+        "AutoCAD for Civil Engineering",
+        "AWS Cloud Solutions",
+        "ACCA F4 Business Law",
+        "Aspen HYSYS Process Simulation",
+        "Aspen Plus Chemical Simulation",
         "Basic Graphic Design",
-        "Blockchain Technology",
-        "Business Analysis",
+        "Bioinformatics & Genomics",
+        "Biostatistics & Clinical Analytics",
+        "Blockchain Technology & Web3",
+        "Business Analysis (BABOK)",
         "Business Analytics",
-        "Car Design",
-        "Clinical Data Management",
-        "Clinical SAS",
+        "Car Design & Automotive Styling",
+        "CATIA 3D CAD & Surfacing",
+        "CCNA 200-301 Networking",
+        "Chemical Engineering",
+        "Clinical Data Management (CDM)",
+        "Clinical SAS (SDTM & ADaM)",
         "Clinical Trials & Research",
         "Cloud Computing",
-        "Cyber Security & Ethical Hacking",
-        "DSA with Python",
-        "Data Analysis",
+        "Computer Organization & Architecture",
+        "Construction Planning & Primavera P6",
+        "Cybersecurity & Ethical Hacking",
         "Data Analytics",
+        "Data Engineering & PySpark",
         "Data Science",
-        "DevOps",
-        "Digital Marketing",
-        "Embedded Systems",
-        "Finance",
-        "Front End Web Development",
+        "Data Structures & Algorithms (DSA)",
+        "Database Management Systems (DBMS)",
+        "Deep Learning & Neural Networks",
+        "DevOps Engineering",
+        "Digital Marketing & Growth",
+        "Docker & Containerization",
+        ".NET Development",
+        "Drone Engineering & Technology",
+        "Drone Mechanics & Dynamics",
+        "DSA with Python",
+        "Embedded Systems & ARM",
+        "Energy & Renewable Power Engineering",
+        "Corporate Finance",
+        "Front-End Web Development",
         "Full Stack Web Development",
+        "Generative AI & LLMs",
+        "Genetic Engineering & CRISPR",
         "Graphic Designing",
-        "Human Resources (HR) & Management",
-        "Hybrid & Electric Vehicle Technology",
+        "Human Resources (HR) Management",
+        "Hybrid & Electric Vehicle (EV) Technology",
+        "IC Engine & Powertrain Design",
+        "Industrial Automation, PLC & SCADA",
+        "Industrial Robotics & Automation",
         "Internet of Things (IoT)",
         "Investment Banking",
-        "Machine Learning",
-        "Medical Coding",
+        "Java Full Stack Development",
+        "Machine Learning (ML)",
+        "Manual & API Testing",
+        "Medical Coding (ICD-10/CPT)",
+        "Medical Sciences & Administration",
+        "Metaverse & Spatial Computing",
         "Microbiology",
-        "Microsoft Azure Cloud Computing",
-        "Nanotechnology / Nanoscience & Nanotechnology",
+        "Microsoft Azure Cloud",
+        "Microsoft Excel & Financial Modeling",
+        "Molecular Biology",
+        "Nanotechnology & Nanosciences",
+        "Operations & Supply Chain Management",
         "Petroleum Engineering",
-        "Pharmacovigilance",
+        "Pharmacovigilance (ICSR/MedDRA)",
+        "Placement Preparation & Aptitude",
+        "Power BI & Business Intelligence",
+        "Product Management & PRDs",
         "Product & Project Management",
         "Programming in Java",
         "Programming in Python",
-        "Psychology",
-        "Robotics",
+        "Psychology & Behavioral Science",
+        "Python Full Stack Development",
+        "Quantum Computing",
+        "Revit & BIM Architecture",
+        "Robotics Engineering",
+        "Sales & Marketing Strategies",
+        "Salesforce Administration",
+        "SAP ERP Fundamentals",
         "SAP FICO",
-        "Salesforce",
-        "ServiceNow",
+        "SAP GRC ARM",
+        "SAP MM (Materials Management)",
+        "SAP Security",
+        "SAP SuccessFactors Employee Central",
+        "SAP UI5, Fiori & OData",
+        "SAS Programming",
+        "SCLD (Sequential Circuit & Logic Design)",
+        "Selenium Automation Testing",
+        "ServiceNow Administration",
+        "Signals & Systems and DSP",
         "Startup & Entrepreneurship",
-        "Stock Market",
+        "Stock Market & Equity Trading",
+        "Structural Analysis & STAAD.Pro",
         "Supply Chain Management",
         "UI/UX Design",
         "VLSI Design",
-        "Web Development"
+        "Web Development",
+        "Web3 & Smart Contracts"
     ];
 
     const typingElement = document.getElementById("typing-text");
@@ -189,10 +242,20 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll(".nav-links a");
     const currentPath = window.location.pathname.split("/").pop() || 'index.html';
 
-    // 1. Highlight static pages on load (e.g. about.html, careers.html)
+    // 1. Highlight static pages on load (e.g. about.html, careers.html, blog-events.html)
     navLinks.forEach(link => {
         const href = link.getAttribute("href");
         if (href === currentPath) {
+            link.classList.add("active");
+        } else if (href === 'blog-events.html' && (
+            currentPath.includes('celebration') || 
+            currentPath.includes('initiative') || 
+            currentPath.includes('milestone') || 
+            currentPath.includes('summit') || 
+            currentPath.includes('team') || 
+            currentPath.includes('immersion') ||
+            currentPath.includes('event')
+        )) {
             link.classList.add("active");
         }
     });
@@ -254,7 +317,9 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
     
-    // AI Chat Widget Logic
+    // ==========================================
+    // COGNIZA AI CHATBOT ENGINE & KNOWLEDGE BASE
+    // ==========================================
     const aiBtn = document.getElementById('aiBtn');
     const aiChatWidget = document.getElementById('aiChatWidget');
     const aiCloseBtn = document.getElementById('aiCloseBtn');
@@ -263,125 +328,442 @@ document.addEventListener("DOMContentLoaded", () => {
     const aiChatMessages = document.getElementById('aiChatMessages');
     const aiGreetingBubble = document.getElementById('aiGreetingBubble');
     const closeGreetingBtn = document.getElementById('closeGreetingBtn');
-    
+
     // Greeting bubble logic
     if (closeGreetingBtn && aiGreetingBubble) {
         closeGreetingBtn.addEventListener('click', (e) => {
-            e.stopPropagation(); // prevent clicking through to button
+            e.stopPropagation();
             aiGreetingBubble.classList.add('hidden');
         });
     }
 
-    function clearChat() {
-        if (aiChatMessages) {
-            aiChatMessages.innerHTML = `
-                <div class="ai-message ai">
-                    <div class="msg-avatar"><i class="fas fa-comment-dots"></i></div>
-                    <div class="msg-bubble">Hello! I'm your Cogniza AI assistant. How can I help you shape your career today?</div>
-                </div>
-            `;
+    // Knowledge Base matching rules
+    const KNOWLEDGE_BASE = [
+        {
+            triggers: ['program', 'course', 'courses', 'domain', 'domains', 'specialization', 'specializations', 'subjects', 'syllabus', 'what do you teach', 'curriculum', 'study', 'tracks', 'classes'],
+            reply: `<p><strong>Cogniza offers 100+ specialized programs across 7 core domains</strong> with industry-designed curriculums, live capstones, and 1-on-1 mentorship:</p>
+            <ul>
+                <li><strong>💻 CSE / IT:</strong> AI &amp; ML, GenAI, Full Stack, Python, Java, Data Engineering, Cyber Security, Cloud, SAP (FICO/MM/GRC/Security), DevOps.</li>
+                <li><strong>⚡ ECE / EEE:</strong> Embedded Systems, VLSI Design, Signals &amp; Systems, SCLD Logic Design, Industrial Automation.</li>
+                <li><strong>⚙️ Mechanical Engineering:</strong> AutoCAD, CATIA 3D, Car Design, Drone Engineering &amp; Mechanics, EV Technology, Robotics.</li>
+                <li><strong>🏗️ Civil Engineering:</strong> Construction Planning (Primavera), Structural Analysis (STAAD.Pro), Revit BIM, AutoCAD Civil.</li>
+                <li><strong>🧪 Chemical / Process / Energy:</strong> Aspen HYSYS, Aspen Plus, Petroleum Refining, Process Safety, Renewable Energy.</li>
+                <li><strong>🧬 Medical / Pharma / Life Sciences:</strong> Clinical SAS (SDTM/ADaM), Clinical Data Mgmt, Pharmacovigilance, Medical Coding, Genetics.</li>
+                <li><strong>📈 Management &amp; Business:</strong> ACCA F4 Law, Business Analytics, Finance, Digital Marketing, Power BI, Product Management.</li>
+            </ul>
+            <p>Explore all domain curriculums and roadmaps directly:</p>`,
+            links: [
+                { text: '🎓 Explore All Specialization Hubs', url: 'projects.html' },
+                { text: '📝 Register Online', url: 'register.html' }
+            ],
+            chips: ['CSE / IT Programs', 'ECE / EEE', 'Mechanical', 'Medical & Pharma', 'Management', 'Offer Plans']
+        },
+        {
+            triggers: ['ai', 'artificial intelligence', 'machine learning', 'ml', 'generative ai', 'genai', 'deep learning', 'nlp', 'prompt engineering'],
+            reply: `<p><strong>🤖 AI & Machine Learning Programs at Cogniza:</strong></p>
+            <p>Master Python, Neural Networks, PyTorch, TensorFlow, Computer Vision, and modern Generative AI with real-world production projects.</p>
+            <ul>
+                <li>Hands-on model training & evaluation</li>
+                <li>Generative AI & Agentic Workflows</li>
+                <li>1-on-1 Code reviews by Senior AI Engineers</li>
+                <li>Verified certificate with verifiable QR credentials</li>
+            </ul>`,
+            links: [
+                { text: 'View AI & ML Program', url: 'artificial-intelligence-ai-machine-learning-ml.html' },
+                { text: 'View Python DSA', url: 'dsa-with-python.html' }
+            ],
+            chips: ['How to Register', 'Internship Benefits', 'Offer Plans']
+        },
+        {
+            triggers: ['web dev', 'web development', 'full stack', 'frontend', 'backend', 'html', 'css', 'javascript', 'react', 'node'],
+            reply: `<p><strong>🌐 Web Development & Full-Stack Mastery:</strong></p>
+            <p>Learn to build modern, responsive web apps from scratch with HTML5, CSS3, JavaScript, React, Node.js, Express, and MongoDB/SQL.</p>
+            <ul>
+                <li>Live frontend UI/UX architecture</li>
+                <li>REST APIs & backend database design</li>
+                <li>Deploying on Cloud (AWS/Vercel)</li>
+                <li>GitHub portfolio with 3+ live projects</li>
+            </ul>`,
+            links: [
+                { text: 'Full Stack Web Dev', url: 'full-stack-web-development.html' },
+                { text: 'Web Development', url: 'web-development.html' }
+            ],
+            chips: ['Top Programs', 'Offer Plans', 'Register Now']
+        },
+        {
+            triggers: ['data science', 'data analytics', 'data analysis', 'sql', 'power bi', 'tableau', 'pandas', 'excel'],
+            reply: `<p><strong>📈 Data Science & Analytics Programs:</strong></p>
+            <p>Turn raw data into strategic business insights using Python, SQL, Power BI, Tableau, Pandas, and Advanced Statistics.</p>
+            <ul>
+                <li>Interactive data dashboarding with Power BI</li>
+                <li>Predictive analytics & machine learning models</li>
+                <li>Real-world industry case studies</li>
+            </ul>`,
+            links: [
+                { text: 'Data Science Program', url: 'data-science.html' },
+                { text: 'Data Analytics Program', url: 'data-analytics.html' }
+            ],
+            chips: ['Business Analytics', 'Offer Plans', 'Register Now']
+        },
+        {
+            triggers: ['clinical', 'sas', 'clinical sas', 'clinical data', 'cdm', 'pharmacovigilance', 'pharma', 'medical coding', 'healthcare', 'biology'],
+            reply: `<p><strong>💊 Healthcare & Clinical Data Specializations:</strong></p>
+            <p>Cogniza is a recognized leader in life sciences upskilling, preparing pharmacy, biotechnology, and science graduates for top CROs and pharma multinationals.</p>
+            <ul>
+                <li><strong>Clinical SAS:</strong> SDTM, ADAM datasets & TLF reporting</li>
+                <li><strong>Clinical Data Management (CDM):</strong> CRF design & EDC workflows</li>
+                <li><strong>Pharmacovigilance:</strong> ICSR processing & Argus safety</li>
+                <li><strong>Medical Coding:</strong> ICD-10, CPT & HCPCS guidelines</li>
+            </ul>`,
+            links: [
+                { text: 'Clinical SAS Program', url: 'clinical-sas.html' },
+                { text: 'Pharmacovigilance', url: 'pharmacovigilance.html' },
+                { text: 'Clinical Data Mgmt', url: 'clinical-data-management.html' }
+            ],
+            chips: ['How to Register', 'Contact Mentors', 'Offer Plans']
+        },
+        {
+            triggers: ['ui', 'ux', 'uiux', 'ui/ux', 'design', 'graphic', 'figma', 'photoshop', 'illustrator'],
+            reply: `<p><strong>🎨 UI/UX & Graphic Design Programs:</strong></p>
+            <p>Master human-centered digital product design, wireframing, interactive prototyping in Figma, visual design systems, and brand identity.</p>
+            <ul>
+                <li>User research, personas & user journeys</li>
+                <li>Figma interactive micro-interactions</li>
+                <li>Complete Behance & Dribbble portfolio creation</li>
+            </ul>`,
+            links: [
+                { text: 'UI/UX Design Program', url: 'uiux-design.html' },
+                { text: 'Graphic Design', url: 'graphic-designing.html' }
+            ],
+            chips: ['Top Programs', 'How to Register', 'Internship Benefits']
+        },
+        {
+            triggers: ['internship', 'intern', 'training', 'stipend', 'experience', 'benefit', 'benefits', 'project', 'live project', 'mentor', 'certificate', 'lor'],
+            reply: `<p><strong>🚀 Cogniza Internship Program Highlights:</strong></p>
+            <ul>
+                <li><strong>Real-World Capstone Projects:</strong> Work on production-grade briefs simulating actual company environments.</li>
+                <li><strong>1-on-1 Industry Mentorship:</strong> Direct guidance from developers and domain leads.</li>
+                <li><strong>ISO Certified Credentials:</strong> Verifiable course completion certificate recognized by companies nationwide.</li>
+                <li><strong>Letter of Recommendation (LOR):</strong> Awarded to top-performing interns.</li>
+                <li><strong>Flexible Scheduling:</strong> Online self-paced and weekend live cohorts suitable for college students.</li>
+            </ul>`,
+            links: [
+                { text: '📝 Apply for Internship', url: 'register.html' },
+                { text: '💼 View Projects', url: 'projects.html' }
+            ],
+            chips: ['Offer Plans', 'How to Register', 'Contact Us']
+        },
+        {
+            triggers: ['price', 'pricing', 'fee', 'fees', 'cost', 'offer', 'offers', 'discount', 'pack', 'tech pro', 'career pro', 'plan', 'plans', 'offline', 'offline program', 'offline pricing'],
+            reply: `<p><strong>💎 Special Offer Plans &amp; Offline Programs:</strong></p>
+            <p>Cogniza provides curated upskilling packs and intensive offline programs:</p>
+            <ul>
+                <li><strong>Cogniza TechPro Offline (IT):</strong> &#8377;20,000 &mdash; In-person training, 4 sessions/week, mentor support, offline internship &amp; placement assistance.</li>
+                <li><strong>Cogniza CareerPro Offline (Non-IT):</strong> &#8377;15,000 &mdash; Intensive offline corporate training, live projects &amp; 100% placement assistance.</li>
+                <li><strong>Tech Pro Pack:</strong> Technical bundle + cloud lab credits + verified dual certificates.</li>
+                <li><strong>Flexi Pro Pack:</strong> Flexible cohort-based track with 1:1 mentorship.</li>
+            </ul>`,
+            links: [
+                { text: '📍 Explore Offline Programs', url: 'offline-programs.html' },
+                { text: '🏷️ View Offer Plans', url: 'index.html#offers' },
+                { text: 'Tech Pro Pack', url: 'tech-pro-pack.html' }
+            ],
+            chips: ['Offline Programs', 'How to Register', 'Top Programs', 'Contact Us']
+        },
+        {
+            triggers: ['register', 'apply', 'admission', 'enroll', 'join', 'how to join', 'how to register', 'sign up', 'form', 'link'],
+            reply: `<p><strong>📝 Easy 3-Step Registration:</strong></p>
+            <ol>
+                <li>Click the <strong>Register</strong> button or open our registration portal.</li>
+                <li>Choose your desired domain track (e.g. AI, Web Dev, Clinical SAS, UI/UX).</li>
+                <li>Fill in your student details and our admissions mentor will connect with your onboarding pass and schedule!</li>
+            </ol>`,
+            links: [
+                { text: '👉 Open Registration Form', url: 'register.html' }
+            ],
+            chips: ['Top Programs', 'Offer Plans', 'Contact Support']
+        },
+        {
+            triggers: ['contact', 'phone', 'call', 'email', 'address', 'location', 'where are you', 'bangalore', 'office', 'number', 'whatsapp', 'support', 'help'],
+            reply: `<p><strong>📞 Contact & Office Information:</strong></p>
+            <ul>
+                <li><strong>📱 Phone / WhatsApp:</strong> +91 8884456745</li>
+                <li><strong>✉️ Email:</strong> operations@cogniza.in</li>
+                <li><strong>📍 Address:</strong> 2734, 2nd Floor, 16th Cross, 27th Main Road, Near NIFT College, HSR Layout, Sector 1, Bangalore - 560102.</li>
+                <li><strong>⏰ Support Hours:</strong> Monday – Saturday (9:30 AM – 6:30 PM IST)</li>
+            </ul>`,
+            links: [
+                { text: '💬 WhatsApp Us', url: 'https://wa.me/918884456745' },
+                { text: '📩 Send Enquiry', url: 'index.html#contact' }
+            ],
+            chips: ['How to Register', 'Top Programs', 'Highlights & Events']
+        },
+        {
+            triggers: ['ambassador', 'campus ambassador', 'college lead', 'representative'],
+            reply: `<p><strong>🌟 Become a Cogniza Campus Ambassador:</strong></p>
+            <p>Lead the tech revolution in your university! As an ambassador, you'll organize workshops, represent Cogniza, and earn attractive stipends and leadership credentials.</p>
+            <ul>
+                <li>Monthly performance stipends & rewards</li>
+                <li>Direct leadership certificate & CEO commendation</li>
+                <li>Free access to premium Cogniza upskilling tracks</li>
+            </ul>`,
+            links: [
+                { text: '🚀 Apply for Campus Ambassador', url: 'ambassador.html' }
+            ],
+            chips: ['Top Programs', 'How to Register', 'Contact Us']
+        },
+        {
+            triggers: ['blog', 'event', 'events', 'highlights', 'updates', 'happening', 'stories', 'news', 'gallery', 'photos', 'celebration', 'onam', 'award', 'awards', 'rewards', 'reward', 'happy moments', 'recognition'],
+            reply: `<p><strong>📰 Cogniza Highlights &amp; Events Hub:</strong></p>
+            <p>Explore what's happening at Cogniza! Discover our latest team stories, employee recognition, and celebrations:</p>
+            <ul>
+                <li><strong>Welcome to the Cogniza Team:</strong> Meet our new mentors &amp; leadership.</li>
+                <li><strong>Onam Celebration 2026:</strong> Grand floral Pookkalam &amp; festive team harmony.</li>
+                <li><strong>Rewards, Awards &amp; Happy Moments:</strong> Celebrating star mentors, student champions, and team milestones.</li>
+                <li><strong>Moments That Matter:</strong> Visual photo gallery of celebrations, workshops, and team culture.</li>
+            </ul>`,
+            links: [
+                { text: '✨ Visit Blog & Events', url: 'blog-events.html' },
+                { text: '🏆 Read Rewards & Awards', url: 'rewards-and-awards.html' },
+                { text: '🌸 Read Onam Story', url: 'onam-celebration-2026.html' }
+            ],
+            chips: ['Top Programs', 'Offer Plans', 'Contact Us']
+        },
+        {
+            triggers: ['about', 'who are you', 'what is cogniza', 'founder', 'company', 'mission', 'vision'],
+            reply: `<p><strong>✨ About Cogniza:</strong></p>
+            <p>Cogniza is a premier EdTech platform committed to <em>"Beyond Learning. Beyond Limits."</em></p>
+            <p>We bridge the gap between academia and corporate careers by delivering project-centric internships, mentorship from top tech giants (Google, Meta, Infosys, Wipro alumni), and verified credentials.</p>`,
+            links: [
+                { text: '📖 Read About Us', url: 'about.html' },
+                { text: '🎓 Explore Programs', url: 'index.html#programs' }
+            ],
+            chips: ['Top Programs', 'Internship Benefits', 'Contact Us']
+        },
+        {
+            triggers: ['hi', 'hello', 'hey', 'greetings', 'namaste', 'good morning', 'good afternoon', 'good evening'],
+            reply: `<p>Hello there! 👋 Welcome to <strong>Cogniza</strong>. I'm your AI career assistant!</p>
+            <p>I can help you explore 50+ programs, learn about our project internships, view offer plans, or help you register. What would you like to explore today?</p>`,
+            chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
+        },
+        {
+            triggers: ['thank', 'thanks', 'thank you', 'awesome', 'great', 'cool', 'good job', 'bye', 'ok'],
+            reply: `<p>You're very welcome! 😊 Feel free to ask anything else, or click below to start your journey with Cogniza.</p>`,
+            links: [
+                { text: '📝 Register Now', url: 'register.html' },
+                { text: '📞 Talk to a Mentor', url: 'https://wa.me/918884456745' }
+            ],
+            chips: ['Top Programs', 'Offer Plans', 'Contact Us']
         }
+    ];
+
+    function getLocalAIResponse(query) {
+        const cleanQuery = query.toLowerCase().trim();
+        
+        // Exact / keyword match
+        for (const item of KNOWLEDGE_BASE) {
+            for (const trigger of item.triggers) {
+                if (cleanQuery.includes(trigger)) {
+                    return item;
+                }
+            }
+        }
+
+        // Generic intelligent fallback
+        return {
+            reply: `<p>Thank you for asking about <strong>${escapeHtml(query)}</strong> at Cogniza!</p>
+            <p>Cogniza provides over 50+ industry-recognized internship programs across IT, Non-IT, Management, and Healthcare with live capstone projects and mentor support.</p>
+            <p>Would you like to explore our programs, check our offer plans, or talk with an admissions advisor?</p>`,
+            links: [
+                { text: '🎓 View Programs', url: 'index.html#programs' },
+                { text: '📝 Register Online', url: 'register.html' },
+                { text: '📞 Contact Support', url: 'index.html#contact' }
+            ],
+            chips: ['🎓 Top Programs', '💰 Offer Plans', '📝 How to Register', '📞 Contact Us']
+        };
+    }
+
+    function escapeHtml(str) {
+        return str.replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[m]);
+    }
+
+    function initChatGreeting() {
+        if (!aiChatMessages) return;
+        aiChatMessages.innerHTML = '';
+
+        const welcomeItem = {
+            reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Assistant</strong>.</p>
+            <p>How can I help shape your career today? Select a topic below or type any question:</p>`,
+            chips: ['🎓 Top Programs', '💼 Internship Info', '💰 Offers & Pricing', '📝 How to Register', '📞 Contact Us', '📰 Blog & Events']
+        };
+
+        renderAIMessage(welcomeItem);
+    }
+
+    function renderAIMessage(responseObj) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'ai-message ai';
+
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'msg-avatar';
+        avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
+
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'msg-bubble';
+        bubbleDiv.innerHTML = responseObj.reply;
+
+        // Render Action Links if present
+        if (responseObj.links && responseObj.links.length > 0) {
+            const linksWrap = document.createElement('div');
+            linksWrap.style.marginTop = '8px';
+            responseObj.links.forEach(l => {
+                const linkTag = document.createElement('a');
+                linkTag.href = l.url;
+                linkTag.className = 'chat-link';
+                linkTag.innerHTML = `${l.text} <i class="fas fa-arrow-right" style="font-size: 0.75rem;"></i>`;
+                linksWrap.appendChild(linkTag);
+            });
+            bubbleDiv.appendChild(linksWrap);
+        }
+
+        // Render Quick Chips if present
+        if (responseObj.chips && responseObj.chips.length > 0) {
+            const chipsWrap = document.createElement('div');
+            chipsWrap.className = 'ai-quick-chips';
+            responseObj.chips.forEach(chipText => {
+                const chipBtn = document.createElement('button');
+                chipBtn.className = 'ai-chip';
+                chipBtn.type = 'button';
+                chipBtn.textContent = chipText;
+                chipBtn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    sendUserQuery(chipText);
+                });
+                chipsWrap.appendChild(chipBtn);
+            });
+            bubbleDiv.appendChild(chipsWrap);
+        }
+
+        msgDiv.appendChild(avatarDiv);
+        msgDiv.appendChild(bubbleDiv);
+        aiChatMessages.appendChild(msgDiv);
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        return msgDiv;
+    }
+
+    function renderUserMessage(text) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'ai-message user';
+
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'msg-avatar';
+        avatarDiv.innerHTML = '<i class="far fa-user"></i>';
+
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'msg-bubble';
+        bubbleDiv.textContent = text;
+
+        msgDiv.appendChild(avatarDiv);
+        msgDiv.appendChild(bubbleDiv);
+        aiChatMessages.appendChild(msgDiv);
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+    }
+
+    function showTypingIndicator() {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = 'ai-message ai typing-indicator';
+
+        const avatarDiv = document.createElement('div');
+        avatarDiv.className = 'msg-avatar';
+        avatarDiv.innerHTML = '<i class="fas fa-comment-dots"></i>';
+
+        const bubbleDiv = document.createElement('div');
+        bubbleDiv.className = 'msg-bubble';
+        bubbleDiv.innerHTML = `
+            <div class="ai-typing-dots">
+                <span></span><span></span><span></span>
+            </div>
+        `;
+
+        msgDiv.appendChild(avatarDiv);
+        msgDiv.appendChild(bubbleDiv);
+        aiChatMessages.appendChild(msgDiv);
+        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
+        return msgDiv;
+    }
+
+    async function sendUserQuery(text) {
+        if (!text || !text.trim()) return;
+        const query = text.trim();
+
+        // Render user message
+        renderUserMessage(query);
+
         if (aiChatInput) {
             aiChatInput.value = '';
             aiChatInput.style.height = '20px';
         }
+
+        // Show typing indicator
+        const typingEl = showTypingIndicator();
+
+        // Check local intelligent knowledge engine
+        const localAnswer = getLocalAIResponse(query);
+
+        // Small realistic response delay (450ms) for smooth UX
+        setTimeout(() => {
+            if (typingEl && typingEl.parentNode) {
+                typingEl.remove();
+            }
+            renderAIMessage(localAnswer);
+        }, 450);
     }
 
     // Toggle Chat Widget
     if (aiBtn && aiChatWidget) {
         aiBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            if(aiGreetingBubble) aiGreetingBubble.classList.add('hidden');
-            aiChatWidget.classList.toggle('active');
-            if (aiChatWidget.classList.contains('active')) {
-                aiChatInput.focus();
-            } else {
-                clearChat();
+            if (aiGreetingBubble) aiGreetingBubble.classList.add('hidden');
+            const isActive = aiChatWidget.classList.toggle('active');
+            if (isActive) {
+                if (!aiChatMessages.children.length) {
+                    initChatGreeting();
+                }
+                if (aiChatInput) aiChatInput.focus();
             }
         });
     }
-    
-    if (aiCloseBtn) {
+
+    if (aiCloseBtn && aiChatWidget) {
         aiCloseBtn.addEventListener('click', () => {
             aiChatWidget.classList.remove('active');
-            clearChat();
         });
     }
-    
-    // Auto-resize textarea
+
+    // Auto-resize textarea & Enter key support
     if (aiChatInput) {
         aiChatInput.addEventListener('input', function() {
             this.style.height = '20px';
-            this.style.height = (this.scrollHeight - 20) + 'px';
+            this.style.height = Math.min(this.scrollHeight - 10, 100) + 'px';
         });
-        
+
         aiChatInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
-                sendMessage();
+                sendUserQuery(aiChatInput.value);
             }
         });
     }
-    
+
     if (aiSendBtn) {
         aiSendBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            sendMessage();
+            sendUserQuery(aiChatInput.value);
         });
     }
-    
-    function appendMessage(sender, text) {
-        const msgDiv = document.createElement('div');
-        msgDiv.className = `ai-message ${sender}`;
-        
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'msg-avatar';
-        avatarDiv.innerHTML = sender === 'ai' ? '<i class="fas fa-comment-dots"></i>' : '<i class="far fa-user"></i>';
-        
-        const bubbleDiv = document.createElement('div');
-        bubbleDiv.className = 'msg-bubble';
-        bubbleDiv.textContent = text;
-        
-        msgDiv.appendChild(avatarDiv);
-        msgDiv.appendChild(bubbleDiv);
-        
-        aiChatMessages.appendChild(msgDiv);
-        aiChatMessages.scrollTop = aiChatMessages.scrollHeight;
-        return msgDiv;
-    }
-    
-    async function sendMessage() {
-        const text = aiChatInput.value.trim();
-        if (!text) return;
-        
-        // Append user message
-        appendMessage('user', text);
-        aiChatInput.value = '';
-        aiChatInput.style.height = '20px';
-        
-        // Show typing indicator
-        const typingMsg = appendMessage('ai', '...');
-        
-        try {
-            // Provide context for the AI
-            const prompt = `You are a helpful and professional customer support AI for an edtech company named Cogniza. Keep your answers brief, polite, and helpful. The user says: ${text}`;
-            
-            // Using a free, keyless AI endpoint for live responses
-            const response = await fetch('https://text.pollinations.ai/' + encodeURIComponent(prompt));
-            
-            if (!response.ok) throw new Error('Network response was not ok');
-            
-            const aiText = await response.text();
-            
-            // Remove typing indicator and append real response
-            typingMsg.remove();
-            appendMessage('ai', aiText);
-            
-        } catch (error) {
-            typingMsg.remove();
-            appendMessage('ai', 'Sorry, I am having trouble connecting to my live servers right now. Please try again later.');
-        }
-    }
+
+    // Initialize greeting on load
+    initChatGreeting();
     
     // Testimonials Carousel Logic
     const testiCards = document.querySelectorAll('.testi-card');
