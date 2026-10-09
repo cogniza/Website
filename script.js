@@ -765,35 +765,164 @@ document.addEventListener("DOMContentLoaded", () => {
     // Initialize greeting on load
     initChatGreeting();
     
-    // Testimonials Carousel Logic
+    // Testimonials Interactive Carousel Logic
     const testiCards = document.querySelectorAll('.testi-card');
+    const testiDotsContainer = document.getElementById('testi-dots');
+    const testiPrevBtn = document.getElementById('testi-prev');
+    const testiNextBtn = document.getElementById('testi-next');
+    const testiRangeText = document.getElementById('testi-range-text');
+    const testiSection = document.getElementById('testimonials');
+
     if (testiCards.length > 0) {
-        const cardsPerPage = 3;
         let currentPage = 0;
-        const totalPages = Math.ceil(testiCards.length / cardsPerPage);
-        
+        let autoPlayTimer = null;
+        let isPaused = false;
+
+        function getCardsPerPage() {
+            if (window.innerWidth <= 600) return 1;
+            if (window.innerWidth <= 900) return 2;
+            return 3;
+        }
+
+        function renderDots(totalPages) {
+            if (!testiDotsContainer) return;
+            testiDotsContainer.innerHTML = '';
+            for (let i = 0; i < totalPages; i++) {
+                const dot = document.createElement('button');
+                dot.className = `testi-dot ${i === currentPage ? 'active' : ''}`;
+                dot.setAttribute('aria-label', `Go to testimonial page ${i + 1}`);
+                dot.addEventListener('click', () => {
+                    currentPage = i;
+                    showPage(currentPage);
+                    resetTimer();
+                });
+                testiDotsContainer.appendChild(dot);
+            }
+        }
+
         function showPage(pageIndex) {
+            const cardsPerPage = getCardsPerPage();
+            const totalCards = testiCards.length;
+            const totalPages = Math.ceil(totalCards / cardsPerPage);
+
+            // Bounds check
+            if (pageIndex >= totalPages) pageIndex = 0;
+            if (pageIndex < 0) pageIndex = totalPages - 1;
+            currentPage = pageIndex;
+
+            const startIndex = currentPage * cardsPerPage;
+            const endIndex = Math.min(startIndex + cardsPerPage, totalCards);
+
             testiCards.forEach((card, index) => {
-                // Calculate which page this card belongs to
-                const cardPage = Math.floor(index / cardsPerPage);
-                
-                if (cardPage === pageIndex) {
-                    card.style.display = 'block';
-                    card.style.animation = 'fadeIn 0.5s ease';
+                if (index >= startIndex && index < endIndex) {
+                    card.style.display = 'flex';
+                    card.style.animation = 'fadeIn 0.4s ease forwards';
                 } else {
                     card.style.display = 'none';
                 }
             });
+
+            // Update range text
+            if (testiRangeText) {
+                testiRangeText.textContent = `${startIndex + 1} - ${endIndex}`;
+            }
+
+            // Update dots
+            if (testiDotsContainer) {
+                const dots = testiDotsContainer.querySelectorAll('.testi-dot');
+                if (dots.length !== totalPages) {
+                    renderDots(totalPages);
+                } else {
+                    dots.forEach((dot, idx) => {
+                        dot.classList.toggle('active', idx === currentPage);
+                    });
+                }
+            }
         }
-        
-        // Show first page initially
-        showPage(0);
-        
-        // Auto-change every 5 seconds
-        setInterval(() => {
+
+        function nextPage() {
+            const cardsPerPage = getCardsPerPage();
+            const totalPages = Math.ceil(testiCards.length / cardsPerPage);
             currentPage = (currentPage + 1) % totalPages;
             showPage(currentPage);
-        }, 5000);
+        }
+
+        function prevPage() {
+            const cardsPerPage = getCardsPerPage();
+            const totalPages = Math.ceil(testiCards.length / cardsPerPage);
+            currentPage = (currentPage - 1 + totalPages) % totalPages;
+            showPage(currentPage);
+        }
+
+        function startTimer() {
+            if (autoPlayTimer) clearInterval(autoPlayTimer);
+            autoPlayTimer = setInterval(() => {
+                if (!isPaused) {
+                    nextPage();
+                }
+            }, 5500);
+        }
+
+        function resetTimer() {
+            startTimer();
+        }
+
+        // Event listeners
+        if (testiNextBtn) {
+            testiNextBtn.addEventListener('click', () => {
+                nextPage();
+                resetTimer();
+            });
+        }
+
+        if (testiPrevBtn) {
+            testiPrevBtn.addEventListener('click', () => {
+                prevPage();
+                resetTimer();
+            });
+        }
+
+        if (testiSection) {
+            testiSection.addEventListener('mouseenter', () => { isPaused = true; });
+            testiSection.addEventListener('mouseleave', () => { isPaused = false; });
+            
+            // Touch Swipe Support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            testiSection.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            testiSection.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0) {
+                        nextPage(); // swipe left -> next
+                    } else {
+                        prevPage(); // swipe right -> prev
+                    }
+                    resetTimer();
+                }
+            }, { passive: true });
+        }
+
+        // Window resize debounce
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                const totalPages = Math.ceil(testiCards.length / getCardsPerPage());
+                renderDots(totalPages);
+                showPage(currentPage);
+            }, 200);
+        });
+
+        // Initialize
+        const initialPages = Math.ceil(testiCards.length / getCardsPerPage());
+        renderDots(initialPages);
+        showPage(0);
+        startTimer();
     }
     // Mobile Menu Toggle Logic
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
