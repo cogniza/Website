@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -389,13 +389,13 @@
    IMAGE ENTERING FROM LEFT / RIGHT
    ========================================= */
 
-/* Veena + Logesh → LEFT */
+/* Veena + Logesh ? LEFT */
 .ldr-row:nth-child(odd) .ldr-photo-wrapper {
     transform: translateX(-120px);
 }
 
 
-/* Murugesan + Wasim → RIGHT */
+/* Murugesan + Wasim ? RIGHT */
 .ldr-row:nth-child(even) .ldr-photo-wrapper {
     transform: translateX(120px);
 }
@@ -823,7 +823,7 @@
     </footer>
 
     <!-- Floating AI Button -->
-    <a href="#" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant" onclick="if(window.toggleCognizaAIChat){window.toggleCognizaAIChat();return false;}">
+    <a href="javascript:void(0)" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant" onclick="window.toggleCognizaAIChat(event);return false;">
         <i class="fas fa-comment-dots"></i>
     </a>
 
@@ -883,6 +883,6 @@
         },{threshold:0.1}).observe(grid);
     })();
     </script>
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.2"></script>
 </body>
 </html>
