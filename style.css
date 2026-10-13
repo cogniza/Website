@@ -2382,44 +2382,13 @@ footer,
     position: fixed;
     bottom: 100px;
     right: 30px;
-    width: 350px;
-    height: 500px;
-    max-height: 80vh;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 99999 !important;
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(20px) scale(0.95);
-    transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s;
-    transform-origin: bottom right;
-}
-
-.ai-chat-widget.active {
-    opacity: 1 !important;
-    visibility: visible !important;
-    pointer-events: auto !important;
-    transform: translateY(0) scale(1) !important;
-    z-index: 99999 !important;
-}
-
-/* AI Chat Widget */
-.ai-chat-widget {
-    position: fixed;
-    bottom: 100px;
-    right: 30px;
     width: 360px;
     height: 520px;
     max-height: 82vh;
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0,0,0,0.18);
-    display: flex;
+    display: none;
     flex-direction: column;
     overflow: hidden;
     z-index: 99999 !important;
@@ -2427,11 +2396,12 @@ footer,
     visibility: hidden;
     pointer-events: none;
     transform: translateY(20px) scale(0.95);
-    transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), visibility 0.3s;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     transform-origin: bottom right;
 }
 
 .ai-chat-widget.active {
+    display: flex !important;
     opacity: 1 !important;
     visibility: visible !important;
     pointer-events: auto !important;
@@ -2714,86 +2684,6 @@ footer,
     transform: scale(1.08);
 }
 
-/* AI Settings Panel */
-.ai-settings-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-}
-
-.ai-settings-panel.active {
-    transform: translateX(0);
-}
-
-.ai-settings-header {
-    padding: 15px 20px;
-    border-bottom: 1px solid #eee;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.ai-settings-header h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: var(--dark-navy);
-}
-
-.ai-settings-header button {
-    background: none;
-    border: none;
-    color: #888;
-    cursor: pointer;
-    font-size: 1.1rem;
-}
-
-.ai-settings-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.ai-settings-body p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
-}
-
-.ai-settings-body input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-family: inherit;
-    outline: none;
-    box-sizing: border-box;
-}
-
-.ai-settings-body input:focus {
-    border-color: var(--primary-color);
-}
-
-.settings-msg {
-    font-size: 0.85rem !important;
-    text-align: center;
-    margin-top: 5px;
-}
-.settings-msg.success {
-    color: #28a745 !important;
-}
-.settings-msg.error {
-    color: #dc3545 !important;
-}
-
 @media (max-width: 480px) {
     .ai-chat-widget {
         width: 100%;
@@ -2891,6 +2781,12 @@ footer,
         right: 5% !important;
         border-radius: 20px !important;
         box-shadow: 0 10px 40px rgba(0,0,0,0.2) !important;
+    }
+    .ai-chat-widget.active {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
 }
 
@@ -3427,6 +3323,12 @@ footer,
         bottom: 85px !important;
         right: 4% !important;
         border-radius: 18px !important;
+    }
+    .ai-chat-widget.active {
+        display: flex !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
     }
 
     /* ---- Floating AI Button ---- */

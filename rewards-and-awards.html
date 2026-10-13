@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -327,29 +327,27 @@
         </div>
     </footer>
 
-    <!-- Cogniza Floating AI Chatbot Widget -->
-    <div id="aiChatWidget" class="ai-chat-widget">
-        <button id="aiChatToggleBtn" class="ai-chat-toggle-btn" aria-label="Open AI Career Assistant">
-            <i class="fas fa-comment-dots"></i>
-            <span class="chat-online-badge"></span>
-        </button>
-    </div>
+    <!-- Floating AI Button -->
+    <a href="javascript:void(0)" class="floating-ai-btn" id="aiBtn" title="Ask AI Assistant" onclick="window.toggleCognizaAIChat(event);return false;">
+        <i class="fas fa-comment-dots"></i>
+    </a>
 
-    <!-- AI Chat Window -->
-    <div id="aiChatWindow" class="ai-chat-window">
+    <!-- AI Chat Widget -->
+    <div class="ai-chat-widget" id="aiChatWidget">
         <div class="ai-chat-header">
-            <div class="ai-chat-header-info">
-                <div class="ai-avatar"><i class="fas fa-robot"></i></div>
-                <div>
-                    <h4>Cogniza AI Assistant</h4>
-                    <span class="status-online"><span class="status-dot"></span> Online • Instant Answers</span>
-                </div>
+            <div class="ai-chat-title">
+                <i class="fas fa-comment-dots"></i> Cogniza AI <span class="ai-status-indicator" title="Active Now"></span>
             </div>
-            <button id="aiChatCloseBtn" class="ai-chat-close" aria-label="Close chat"><i class="fas fa-times"></i></button>
+            <div class="ai-chat-actions">
+                <button id="aiCloseBtn" title="Close"><i class="fas fa-times"></i></button>
+            </div>
         </div>
-
-        <div id="aiChatMessages" class="ai-chat-messages">
-            <!-- Messages rendered dynamically -->
+        
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <div class="ai-message ai">
+                <div class="msg-avatar"><i class="fas fa-comment-dots"></i></div>
+                <div class="msg-bubble">Hello! I'm your Cogniza AI assistant. How can I help you shape your career today?</div>
+            </div>
         </div>
 
         <div class="ai-chat-input-area">
@@ -426,7 +424,7 @@
         }, 1600);
     })();
     </script>
-    <script src="script.js?v=3.0"></script>
+    <script src="script.js?v=3.2"></script>
     <script src="blog-events.js"></script>
 </body>
 </html>
