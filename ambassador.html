@@ -106,6 +106,8 @@
             <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(formSubmitted) { alert('Thank you! Your Campus Ambassador application has been submitted successfully.'); document.querySelector('form').reset(); }"></iframe>
             
             <form action="https://docs.google.com/forms/d/e/1FAIpQLSfZp3nnEOYrTXLeT8LTWFwPJu6XPjnl5oNgy6_ICQFJcNS-NQ/formResponse" method="POST" target="hidden_iframe" onsubmit="formSubmitted=true; setTimeout(() => this.reset(), 500);">
+                <input type="hidden" name="fvv" value="1">
+                <input type="hidden" name="pageHistory" value="0">
                 
                 <div style="margin-bottom: 20px;">
                     <label style="color: #444; font-size: 0.95rem; font-weight: 600; display: block; margin-bottom: 6px;">Full Name <span style="color: #d93025;">*</span></label>
