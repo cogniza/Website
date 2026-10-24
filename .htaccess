@@ -1,11 +1,15 @@
 RewriteEngine On
 
-# 1. Redirect .html URLs to clean URLs (removes .html from address bar)
+# 1. Redirect /index.html and /index directly to root / (prevents duplicate homepage)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index(\.html)?[\s?] [NC]
+RewriteRule ^index(\.html)?$ / [R=301,L]
+
+# 2. Redirect .html URLs to clean URLs (removes .html from address bar)
 #    e.g. /about.html -> /about
 RewriteCond %{THE_REQUEST} /([^.]+)\.html[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L,NE]
 
-# 2. Internally serve clean URLs from .html files
+# 3. Internally serve clean URLs from .html files
 #    e.g. /about -> serves about.html
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
