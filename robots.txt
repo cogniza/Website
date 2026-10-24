@@ -1,0 +1,37 @@
+# robots.txt for Cogniza Edutech (https://www.cogniza.in)
+User-agent: *
+Allow: /
+
+# Disallow utility, internal, and raw data dumps
+Disallow: /google_form.html
+Disallow: /form_data.json
+Disallow: /form_data.txt
+Disallow: /Flyers/
+
+# Crawlers & AI Search Bots (Explicitly welcomed for AI Overviews & SearchGPT)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Canonical XML Sitemap
+Sitemap: https://www.cogniza.in/sitemap.xml

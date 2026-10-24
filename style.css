@@ -87,7 +87,8 @@ header {
     justify-content: center;
 }
 
-.logo-text h1 {
+.logo-text h1,
+.logo-text .logo-name {
     margin: 0;
     margin-left: -2px; /* Slight negative margin just to tighten, no overlapping */
     font-size: 2.4rem; /* Match height better */
@@ -96,6 +97,7 @@ header {
     letter-spacing: -1.5px; /* Tighter spacing for a logo feel */
     line-height: 1;
     text-transform: uppercase;
+    display: block;
 }
 
 /* Stylized 'A' in logo */
@@ -2937,7 +2939,8 @@ footer,
         height: 40px;
         width: 40px;
     }
-    .logo-text h1 {
+    .logo-text h1,
+    .logo-text .logo-name {
         font-size: 1.8rem;
     }
     .slogan-gradient {
@@ -3349,5 +3352,5 @@ footer,
     .hero-title { font-size: 1.9rem; }
     .domains-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr; }
-    .logo-text h1 { font-size: 1.5rem; }
+    .logo-text h1, .logo-text .logo-name { font-size: 1.5rem; }
 }
