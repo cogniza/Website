@@ -2,13 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.cogniza.in/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/about</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -32,9 +32,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/android-app-development</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/app-development</loc>
@@ -116,7 +116,7 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/blog-events</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -236,9 +236,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/data-science</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/data-structures-algorithms</loc>
@@ -308,9 +308,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/finance</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/flexi-pro-pack</loc>
@@ -398,9 +398,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/machine-learning</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/manual-testing</loc>
@@ -410,9 +410,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/medical-coding</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/medical-sciences</loc>
@@ -476,9 +476,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/petroleum-engineering</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/pharmacovigilance</loc>
@@ -554,9 +554,9 @@
   </url>
   <url>
     <loc>https://www.cogniza.in/python-full-stack-development</loc>
-    <lastmod>2026-10-22</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.cogniza.in/quantum-computing</loc>
@@ -731,5 +731,17 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.cogniza.in/medical-coding-salary-in-india-freshers</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.cogniza.in/android-developer-salary-roadmap-india</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>

@@ -1392,6 +1392,14 @@ window.toggleCognizaAIChat = function(e) {
             const testiSection = document.getElementById('testimonials');
 
             if (testiCards.length > 0) {
+                const testiControls = document.querySelector('.testi-controls');
+                if (testiCards.length <= 1) {
+                    if (testiControls) testiControls.style.display = 'none';
+                    testiCards[0].style.display = 'flex';
+                    return;
+                }
+                if (testiControls) testiControls.style.display = 'flex';
+
                 let currentPage = 0;
                 let autoPlayTimer = null;
                 let isPaused = false;
@@ -1441,6 +1449,10 @@ window.toggleCognizaAIChat = function(e) {
 
                     if (testiRangeText) {
                         testiRangeText.textContent = `${startIndex + 1} - ${endIndex}`;
+                        const totalNumberEl = testiControls ? testiControls.querySelectorAll('.testi-counter strong')[1] : null;
+                        if (totalNumberEl) {
+                            totalNumberEl.textContent = `${totalCards}`;
+                        }
                     }
 
                     if (testiDotsContainer) {

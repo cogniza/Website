@@ -1136,6 +1136,17 @@ header {
     padding: 10px 5px;
     min-height: 290px;
 }
+.testi-grid.single-card,
+.testi-grid:has(.testi-card:only-child) {
+    display: flex;
+    justify-content: center;
+    min-height: auto;
+}
+.testi-grid.single-card .testi-card,
+.testi-grid:has(.testi-card:only-child) .testi-card {
+    max-width: 580px;
+    width: 100%;
+}
 .testi-card {
     background: #fff;
     border-radius: 16px;
@@ -1147,7 +1158,7 @@ header {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .testi-card::before {
     content: "\f10e";
