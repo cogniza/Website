@@ -1845,6 +1845,12 @@ footer,
     margin: 0 auto;
 }
 
+.packs-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 820px;
+    margin: 0 auto;
+}
+
 .pack-card {
     background: #fff;
     border-radius: 20px;
@@ -3173,6 +3179,7 @@ footer,
         font-size: 1.8rem;
     }
     .packs-grid,
+    .packs-grid-2,
     .packs-grid-3,
     .packs-grid-4 {
         grid-template-columns: 1fr;

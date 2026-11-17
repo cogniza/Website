@@ -379,7 +379,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["full stack", "fullstack", "web dev", "web development", "mern", "react", "node", "frontend", "backend", "javascript", "web devlopment", "mern stack"],
                     domain: "CSE / IT",
                     url: "full-stack-web-development.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks hands-on intensive training (or 3 months extended with placement prep)",
                     summary: "Production full-stack engineering covering React 18, Node.js, Express, MongoDB, PostgreSQL, REST APIs, Microservices, and state management.",
                     project: "Enterprise Multi-Tenant SaaS E-Commerce Platform with role-based auth, Razorpay/Stripe integration, and live WebSocket notifications.",
@@ -391,7 +391,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["python", "python programming", "django", "fastapi", "dsa with python", "python full stack", "pythn"],
                     domain: "CSE / IT",
                     url: "programming-in-python.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "4 to 6 weeks core track (or 8 weeks full stack with Django/FastAPI)",
                     summary: "Foundational Python syntax, Object-Oriented Design, Data Structures, Django & FastAPI backend architectures, automated testing, and PostgreSQL integration.",
                     project: "High-Performance RESTful Microservice with automated JWT security, Redis caching, and Docker container deployment.",
@@ -403,7 +403,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["java", "java programming", "spring boot", "hibernate", "java full stack", "microservices"],
                     domain: "CSE / IT",
                     url: "java-full-stack-development.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks live bootcamp (with comprehensive Spring Boot project)",
                     summary: "Core Java, Enterprise Java, Spring Boot microservices, Hibernate ORM, JPA, Maven, Angular/React integration, and secure REST APIs.",
                     project: "Fintech Banking Transaction Ledger featuring distributed microservices, message queues, and bank-grade security protocols.",
@@ -415,7 +415,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["ai", "artificial intelligence", "machine learning", "ml", "deep learning", "neural networks", "scikit learn", "tensorflow"],
                     domain: "CSE / IT",
                     url: "artificial-intelligence-ai-machine-learning-ml.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks hands-on intensive curriculum",
                     summary: "End-to-end predictive modeling, regression, supervised & unsupervised machine learning, deep neural networks, computer vision, and NLP model training.",
                     project: "Autonomous Predictive Analytics Pipeline deployed as a live cloud API with real-time model inference and accuracy telemetry.",
@@ -427,7 +427,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["genai", "generative ai", "agentic", "agentic ai", "llm", "large language models", "rag", "langchain", "llamaindex", "prompt engineering", "gen ai"],
                     domain: "CSE / IT",
                     url: "ai-generative-agentic.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 weeks state-of-the-art masterclass",
                     summary: "LLM fine-tuning, RAG (Retrieval-Augmented Generation), LangChain, autonomous multi-agent task execution, prompt engineering, and vector databases (Pinecone/Chroma).",
                     project: "Autonomous Multi-Agent Enterprise Research Assistant using LangGraph, Vector Embeddings, and autonomous tool calling.",
@@ -439,7 +439,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["data science", "data scientist", "exploratory data analysis", "pandas", "numpy", "statistics for data science", "ds"],
                     domain: "CSE / IT",
                     url: "data-science.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks comprehensive project track",
                     summary: "Transform raw structured and unstructured data into strategic business intelligence using Python, Pandas, statistical modeling, feature engineering, and predictive ML.",
                     project: "Customer Churn & Lifetime Value Prediction System with dynamic interactive executive dashboard.",
@@ -451,7 +451,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["data analytics", "data analyst", "power bi", "business intelligence", "sql", "tableau", "bi dashboard", "analytics"],
                     domain: "CSE / IT & Management",
                     url: "data-analytics.html",
-                    pack: "Tech Pro Pack (₹9,999) / Career Pro Pack (₹7,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "4 to 6 weeks practical analytics track",
                     summary: "Advanced SQL querying, Power BI interactive DAX dashboards, business metrics modeling, automated ETL pipelines, and executive reporting in Tableau.",
                     project: "Executive E-Commerce Operations Dashboard tracking KPIs, revenue attribution, inventory turnover, and cohort retention.",
@@ -463,7 +463,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["cloud", "cloud computing", "aws", "azure", "devops", "docker", "kubernetes", "ci cd", "terraform"],
                     domain: "CSE / IT",
                     url: "cloud-computing.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks hands-on cloud deployment track",
                     summary: "Design scalable cloud infrastructure on AWS and Azure. Automate deployments with Docker containerization, Kubernetes orchestration, and GitHub Actions CI/CD pipelines.",
                     project: "High-Availability Microservices Infrastructure with auto-scaling, load balancing, and automated zero-downtime deployment.",
@@ -475,7 +475,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["cyber security", "cybersecurity", "ethical hacking", "penetration testing", "network security", "soc", "kali linux"],
                     domain: "CSE / IT",
                     url: "cyber-security-ethical-hacking.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 weeks practical security lab track",
                     summary: "Vulnerability assessment, network penetration testing, web application security (OWASP Top 10), cryptographic protocols, and SOC incident analysis.",
                     project: "Enterprise Vulnerability Assessment and Penetration Testing (VAPT) Audit with comprehensive mitigation blueprint.",
@@ -487,7 +487,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["vlsi", "vlsi design", "verilog", "semiconductor", "chip design", "fpga", "rtl", "sta", "systemverilog"],
                     domain: "ECE / EEE",
                     url: "vlsi-design.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks hands-on RTL & synthesis track",
                     summary: "RTL design using Verilog HDL, digital logic synthesis, Static Timing Analysis (STA), ASIC design flows, simulation testbenches, and FPGA implementation.",
                     project: "Pipelined 32-bit RISC Processor core modeled in Verilog with RTL verification and timing constraint sign-off.",
@@ -499,7 +499,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["embedded", "embedded systems", "iot", "internet of things", "arm", "stm32", "microcontroller", "arduino", "raspberry pi"],
                     domain: "ECE / EEE",
                     url: "embedded-systems.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 weeks firmware & telemetry bootcamp",
                     summary: "C/Embedded C programming, STM32 ARM Cortex-M firmware development, peripheral drivers (UART, SPI, I2C), RTOS fundamentals, and IoT MQTT cloud telemetry.",
                     project: "Industrial Smart Edge Telemetry Node streaming sensor diagnostics to AWS IoT Core over MQTT.",
@@ -511,19 +511,19 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["autocad", "catia", "cad", "3d modeling", "surface design", "drafting", "car design", "mechanical design"],
                     domain: "Mechanical",
                     url: "autocad.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "4 to 6 weeks industrial design track",
                     summary: "Industry 2D engineering drafting, 3D parametric solid modeling, advanced Generative Shape Design (GSD) surfacing, GD&T tolerancing, and assembly modeling.",
                     project: "Complete Automotive BIW (Body In White) Sheet Metal Assembly with GD&T manufacturing drawings.",
                     careers: ["CAD Design Engineer", "Mechanical Product Modeler", "Automotive Styling Specialist"],
-                    chips: ["Mechanical CAD Syllabus", "Course Fees", "Career Pro Pack", "Register Now"]
+                    chips: ["Mechanical CAD Syllabus", "Course Fees", "Curriculum", "Register Now"]
                 },
                 {
                     name: "Electric Vehicle (EV) Technology",
                     aliases: ["ev", "electric vehicle", "hybrid ev", "bms", "battery management", "ev powertrain", "motor design"],
                     domain: "Mechanical & EEE",
                     url: "hybrid-electric-vehicle-technology.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "6 weeks EV engineering track",
                     summary: "EV powertrain architecture, battery chemistry and thermal modeling, Battery Management System (BMS) simulation, inverter motor control, and regenerative braking.",
                     project: "MATLAB/Simulink EV Powertrain and Lithium-Ion BMS Thermal Simulation under WLTP drive cycles.",
@@ -535,7 +535,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["revit", "bim", "civil", "construction planning", "primavera", "staad pro", "structural analysis", "civil engineering"],
                     domain: "Civil",
                     url: "revit-bim.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "6 weeks architectural & planning track",
                     summary: "BIM 3D architectural modeling, structural coordination, MEP clash detection, Primavera P6 project scheduling, critical path analysis, and STAAD.Pro structural loading.",
                     project: "Multi-Storey Commercial Complex BIM Model with 4D schedule simulation in Primavera P6.",
@@ -547,7 +547,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["clinical sas", "sas", "biostatistics", "sdtm", "adam", "tfl", "clinical trials", "cdisc"],
                     domain: "Medical / Pharma",
                     url: "clinical-sas.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "6 to 8 weeks pharmaceutical analytics track",
                     summary: "CDISC standards implementation, SDTM mapping, ADaM analysis dataset creation, Tables, Figures, and Listings (TFLs) generation, and clinical trial reporting.",
                     project: "Phase III Oncology Clinical Trial Data Transformation adhering to CDISC SDTM IG 3.3 standards.",
@@ -559,7 +559,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["pharmacovigilance", "pv", "cdm", "clinical data management", "icsr", "meddra", "drug safety", "argus"],
                     domain: "Medical / Pharma",
                     url: "pharmacovigilance.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "4 to 6 weeks drug safety track",
                     summary: "Adverse event reporting, ICSR processing, MedDRA coding, case narrative writing, signal detection, eCRF design, and clinical data validation.",
                     project: "Comprehensive Post-Marketing Drug Safety Case Evaluation and Periodic Safety Update Report (PSUR).",
@@ -571,7 +571,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["medical coding", "icd 10", "cpt", "hcpcs", "medical billing", "healthcare administration"],
                     domain: "Medical / Pharma",
                     url: "medical-coding.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "4 to 6 weeks certified coding track",
                     summary: "ICD-10-CM diagnosis coding, CPT procedural coding, HCPCS modifiers, human anatomy & pathophysiology, and medical claim auditing.",
                     project: "Complex Inpatient Multi-Specialty Medical Chart Coding & Audit Review.",
@@ -583,7 +583,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["investment banking", "financial modeling", "finance", "dcf", "valuation", "m&a", "equity research", "corporate finance"],
                     domain: "Management & Finance",
                     url: "investment-banking.html",
-                    pack: "Career Pro Pack (₹7,999)",
+                    pack: "Specialization Track / Offline Program",
                     duration: "6 weeks financial modeling bootcamp",
                     summary: "Discounted Cash Flow (DCF) modeling, Comparable Company Analysis (CCA), leveraged buyouts (LBO), pitchbook preparation, and M&A valuation.",
                     project: "Comprehensive 3-Statement Dynamic Valuation Model and M&A pitch deck for a listed tech company.",
@@ -595,7 +595,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["sap", "sap fico", "sap mm", "sap grc", "sap security", "sap erp", "fiori", "s/4hana"],
                     domain: "Management / IT",
                     url: "sap-fico.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "6 to 8 weeks enterprise configuration track",
                     summary: "SAP S/4HANA enterprise configuration: General Ledger, Accounts Payable/Receivable, Asset Accounting, Materials Management (Procurement/Inventory), and GRC Access Control.",
                     project: "End-to-End Enterprise SAP S/4HANA Business Blueprint Configuration for a multinational enterprise.",
@@ -607,7 +607,7 @@ window.toggleCognizaAIChat = function(e) {
                     aliases: ["ui ux", "ui/ux", "ux design", "ui design", "figma", "wireframing", "prototyping", "user research"],
                     domain: "Design & IT",
                     url: "uiux-design.html",
-                    pack: "Tech Pro Pack (₹9,999)",
+                    pack: "Tech Pro Pack (₹15,000)",
                     duration: "4 to 6 weeks design portfolio track",
                     summary: "Design thinking, user journey mapping, information architecture, wireframing, high-fidelity Figma components, design systems, and usability testing.",
                     project: "Complete Mobile & Web Design System and interactive prototype for an on-demand logistics service.",
@@ -710,7 +710,7 @@ window.toggleCognizaAIChat = function(e) {
                                 name: rawName,
                                 domain: "Specialization Track",
                                 url: "projects.html",
-                                pack: "Tech Pro Pack / Career Pro Pack",
+                                pack: "Tech Pro Pack (₹15,000) / Offline Program",
                                 duration: "4 to 8 weeks hands-on training",
                                 summary: `Comprehensive curriculum covering modern toolkits, real-world case studies, and production capstone deployments.`,
                                 project: `Production-ready capstone project verified with ISO 9001:2015 and MSME credentials.`,
@@ -800,9 +800,8 @@ window.toggleCognizaAIChat = function(e) {
                             reply: `<p><strong>💰 Fee &amp; Investment for ${escapeHtml(currentCourse.name)}:</strong></p>
                             <p>You can enroll through our value-packed <strong>Elite Packs</strong> or single specialization track:</p>
                             <ul>
-                                <li><strong>🌟 Tech Pro Pack (&#8377;9,999):</strong> Best choice for IT tracks! Choose ${escapeHtml(currentCourse.name)} <em>plus any 2 other IT domains</em> of your choice.</li>
-                                <li><strong>🎯 Career Pro Pack (&#8377;7,999):</strong> Best for core &amp; non-IT engineering tracks (AutoCAD, EV, Civil, Medical/Pharma, Management) — choose any 3 domains.</li>
-                                <li><strong>🔄 Flexi Pro Pack (&#8377;8,999):</strong> Choose any 3 domains mixing IT and Non-IT tracks.</li>
+                                <li><strong>🌟 Tech Pro Pack (&#8377;15,000):</strong> Best choice for IT tracks! Choose ${escapeHtml(currentCourse.name)} <em>plus any 2 other IT domains</em> of your choice.</li>
+                                <li><strong>🚀 Advance Program (&#8377;25,000):</strong> Next-gen master tracks in AI, GenAI, Agentic AI, Data Science, Full Stack &amp; SAP.</li>
                                 <li><strong>🏢 In-Person Offline Batch:</strong> &#8377;15,000+ with intensive classroom labs at our Bengaluru center.</li>
                             </ul>
                             <p><strong>What is Included:</strong> Live mentor sessions, real production capstone, lifetime LMS recording access, resume review, and ISO/MSME verified certificate.</p>
@@ -812,7 +811,7 @@ window.toggleCognizaAIChat = function(e) {
                                 { text: '🏷️ View All Offer Plans', url: 'index.html#offers' },
                                 { text: '📝 Apply for Enrollment', url: 'register.html' }
                             ],
-                            chips: ['Tech Pro Pack (₹9,999)', 'Career Pro Pack (₹7,999)', 'Installment Options', 'Register Online']
+                            chips: ['Tech Pro Pack (₹15,000)', 'Advance Program (₹25,000)', 'Offline Programs', 'Register Online']
                         };
                     }
 
@@ -820,16 +819,13 @@ window.toggleCognizaAIChat = function(e) {
                         reply: `<p><strong>💰 Cogniza Elite Learning Bundles &amp; Pricing Structure:</strong></p>
                         <p>We provide industry-leading value with transparent pricing and zero hidden fees:</p>
                         <ul>
-                            <li><strong>🌟 TECH PRO PACK — &#8377;9,999:</strong>
+                            <li><strong>🌟 TECH PRO PACK — &#8377;15,000:</strong>
                                 <br>• Choose <strong>any 3 IT Domains</strong> (e.g., Python, Full Stack, AI/ML, Cloud DevOps).
                                 <br>• Live mentor sessions, 3 capstone projects, resume overhaul, and mock interviews.
                             </li>
-                            <li><strong>🚀 CAREER PRO PACK — &#8377;7,999:</strong>
-                                <br>• Choose <strong>any 3 Non-IT / Core Domains</strong> (CAD, EV, Civil BIM, Clinical SAS, Finance).
-                                <br>• Complete career roadmap, placement assistance, and internship credentials.
-                            </li>
-                            <li><strong>🔄 FLEXI PRO PACK — &#8377;8,999:</strong>
-                                <br>• Mix &amp; match any 3 domains across IT and Non-IT.
+                            <li><strong>🚀 ADVANCE PROGRAM — &#8377;25,000:</strong>
+                                <br>• Specialized master tracks across AI, Generative AI, Agentic AI, Data Science, Full Stack &amp; SAP.
+                                <br>• Live mentor-led masterclasses, production capstones, and placement support.
                             </li>
                             <li><strong>🏢 OFFLINE PROGRAMS — &#8377;15,000+:</strong>
                                 <br>• In-person classroom training with 4 lab sessions/week at our Bengaluru center.
@@ -838,9 +834,10 @@ window.toggleCognizaAIChat = function(e) {
                         <p><em>💡 Installment and EMI options are supported so finance is never a barrier to your learning!</em></p>`,
                         links: [
                             { text: '🏷️ Compare Elite Packs', url: 'index.html#offers' },
+                            { text: '🚀 View Advance Programs', url: 'advance-programs.html' },
                             { text: '📝 Enroll Online Now', url: 'register.html' }
                         ],
-                        chips: ['Tech Pro Pack (₹9,999)', 'Career Pro Pack (₹7,999)', 'Payment in Installments', 'Talk to Counselor']
+                        chips: ['Tech Pro Pack (₹15,000)', 'Advance Program (₹25,000)', 'Offline Programs', 'Talk to Counselor']
                     };
                 }
 
@@ -899,10 +896,10 @@ window.toggleCognizaAIChat = function(e) {
                             <li><strong>💰 Salary Packages:</strong> Freshers typically secure offers between <strong>3.6 LPA to 8.5 LPA</strong>, while lateral professionals secure up to <strong>12+ LPA</strong>.</li>
                         </ul>`,
                         links: [
-                            { text: '🚀 Career Pro Pack Details', url: 'career-pro-pack.html' },
+                            { text: '🏷️ View Offer Plans', url: 'index.html#offers' },
                             { text: '📝 Apply for Placement Program', url: 'register.html' }
                         ],
-                        chips: ['Career Pro Pack', 'Mock Interviews', 'Course Fees', 'Speak to Counselor']
+                        chips: ['Placement Assistance', 'Mock Interviews', 'Course Fees', 'Speak to Counselor']
                     };
                 }
 
@@ -1139,7 +1136,7 @@ window.toggleCognizaAIChat = function(e) {
                     <p>To help guide you directly, here are our most popular options across Cogniza's 107+ programs:</p>
                     <ul>
                         <li><strong>Specialization Tracks:</strong> Comprehensive live programs in Full Stack, AI/ML, Cloud, VLSI, EV, Clinical SAS, and Finance.</li>
-                        <li><strong>Affordable Bundles:</strong> Tech Pro Pack (&#8377;9,999) for 3 IT domains and Career Pro Pack (&#8377;7,999) for 3 Non-IT domains.</li>
+                        <li><strong>Affordable Bundles:</strong> Tech Pro Pack (&#8377;15,000), Advance Program (&#8377;25,000), and intensive Offline Programs (&#8377;15,000+).</li>
                         <li><strong>Placement &amp; Credentials:</strong> ISO 9001:2015 &amp; MSME certified certificates plus dedicated resume review and mock interviews.</li>
                     </ul>
                     <p>Select what you'd like to check next:</p>`,
