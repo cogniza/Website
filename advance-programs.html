@@ -16,7 +16,370 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=3.5">
+    <link rel="stylesheet" href="style.css?v=3.6">
+    <style>
+        /* Responsive Overrides & Guarantees for Advance Programs */
+        .advance-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31104b 100%);
+            padding: 75px 20px 55px;
+            text-align: center;
+            color: #ffffff;
+        }
+        .advance-hero-title {
+            font-size: clamp(1.75rem, 4.2vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 15px;
+            line-height: 1.25;
+        }
+        .advance-hero-title span {
+            background: linear-gradient(135deg, #a855f7, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .advance-hero-desc {
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            color: #cbd5e1;
+            max-width: 750px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+        .advance-hero-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .advance-btn-explore {
+            background: #9d4edd;
+            color: #ffffff !important;
+            padding: 13px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.98rem;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(157,78,221,0.4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .advance-btn-explore:hover {
+            background: #8b3ac9;
+            transform: translateY(-2px);
+        }
+        .advance-btn-enroll {
+            background: transparent;
+            color: #ffffff !important;
+            border: 2px solid #ffffff;
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 0.98rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .advance-btn-enroll:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        .advance-programs-section {
+            padding: 60px 20px;
+        }
+        .advance-section-header {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        .advance-section-tag {
+            color: #9d4edd;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 6px;
+        }
+        .advance-section-title {
+            font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+            color: #0f172a;
+            font-weight: 800;
+            margin: 5px 0 10px;
+            line-height: 1.25;
+        }
+        .advance-section-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+
+        /* Card Improvements & Alignment */
+        .domain-card {
+            border-radius: 14px;
+            overflow: hidden;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            padding: 0 !important;
+        }
+        .domain-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+        }
+        .domain-image {
+            width: 100%;
+            height: 160px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+        .domain-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .domain-content {
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .domain-content h3 {
+            font-size: 1.15rem;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            line-height: 1.3;
+            font-weight: 700;
+        }
+        .card-desc {
+            font-size: 0.86rem;
+            color: #64748b;
+            line-height: 1.45;
+            margin-bottom: 14px;
+            flex-grow: 1;
+        }
+        .card-tags {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            font-size: 0.82rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+        .card-actions {
+            display: flex !important;
+            gap: 10px !important;
+            margin-top: auto;
+            width: 100%;
+        }
+        .card-actions .btn-explore,
+        .card-actions .btn-register {
+            flex: 1;
+            min-width: 0;
+            padding: 10px 8px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-align: center;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            white-space: nowrap;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+        .card-actions .btn-explore {
+            background: #4f6bff;
+            color: #ffffff !important;
+            border: 1.5px solid #4f6bff;
+        }
+        .card-actions .btn-explore:hover {
+            background: #3a54d6;
+            border-color: #3a54d6;
+        }
+        .card-actions .btn-register {
+            background: #ffffff;
+            color: #4f6bff !important;
+            border: 1.5px solid #4f6bff;
+            gap: 6px;
+        }
+        .card-actions .btn-register:hover {
+            background: #f0f4ff;
+        }
+
+        /* Inclusions Card */
+        .advance-inclusions-section {
+            padding: 0 20px 70px;
+        }
+        .advance-inclusions-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+        .advance-inclusions-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .advance-inclusions-title {
+            font-size: clamp(1.35rem, 3vw, 1.8rem);
+            color: #0f172a;
+            margin-top: 5px;
+            font-weight: 800;
+            line-height: 1.3;
+        }
+        .advance-inclusions-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            text-align: center;
+        }
+        .advance-inclusion-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .advance-inclusion-icon {
+            font-size: 2rem;
+            color: #9d4edd;
+            margin-bottom: 10px;
+        }
+        .advance-inclusion-item h4 {
+            font-size: 1.05rem;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .advance-inclusion-item p {
+            font-size: 0.88rem;
+            color: #64748b;
+            margin: 0;
+            line-height: 1.45;
+        }
+        .advance-inclusions-cta {
+            text-align: center;
+            margin-top: 35px;
+        }
+        .advance-enroll-cta-btn {
+            background: #9d4edd;
+            color: #ffffff !important;
+            padding: 14px 35px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(157,78,221,0.4);
+            transition: transform 0.2s, background 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+        .advance-enroll-cta-btn:hover {
+            background: #8b3ac9;
+            transform: translateY(-2px);
+        }
+
+        /* Tablet Media Queries (641px - 1024px) */
+        @media (max-width: 1024px) {
+            .domains-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 20px !important;
+            }
+            .advance-inclusions-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 25px;
+            }
+        }
+
+        /* Mobile Media Queries (<= 640px) */
+        @media (max-width: 640px) {
+            .advance-hero {
+                padding: 50px 16px 36px;
+            }
+            .advance-hero-desc {
+                margin-bottom: 22px;
+            }
+            .advance-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                max-width: 340px;
+                margin: 0 auto;
+                gap: 12px;
+            }
+            .advance-btn-explore,
+            .advance-btn-enroll {
+                width: 100%;
+                padding: 12px 18px;
+                font-size: 0.95rem;
+                box-sizing: border-box;
+            }
+            .advance-programs-section {
+                padding: 35px 15px;
+            }
+            .advance-section-header {
+                margin-bottom: 25px;
+            }
+            .domains-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+                max-width: 440px;
+                margin: 0 auto;
+            }
+            .domain-image {
+                height: 180px;
+            }
+            .advance-inclusions-section {
+                padding: 0 15px 45px;
+            }
+            .advance-inclusions-card {
+                padding: 24px 16px;
+                border-radius: 16px;
+            }
+            .advance-inclusions-header {
+                margin-bottom: 20px;
+            }
+            .advance-inclusions-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .advance-inclusions-cta {
+                margin-top: 25px;
+            }
+            .advance-enroll-cta-btn {
+                width: 100%;
+                max-width: 340px;
+                padding: 12px 18px;
+                font-size: 0.95rem;
+                box-sizing: border-box;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -63,23 +426,23 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="pack-hero" style="background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31104b 100%); padding: 80px 20px 60px; text-align: center; color: white;">
+        <section class="advance-hero">
             <div class="container">
-                <h1 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px; line-height: 1.2;">Advance Program <span style="background: linear-gradient(135deg, #a855f7, #6366f1); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Specializations</span></h1>
-                <p style="font-size: 1.15rem; color: #cbd5e1; max-width: 750px; margin: 0 auto 30px; line-height: 1.6;">Unlock career-defining mastery across Artificial Intelligence, Generative &amp; Agentic AI, Data Science, Full Stack, and SAP. Gain live mentorship, enterprise capstones, and dedicated placement support.</p>
-                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
-                    <a href="#program-list" class="btn" style="background: #9d4edd; color: white; padding: 12px 28px; border-radius: 10px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 15px rgba(157,78,221,0.4);">Explore All 8 Programs &darr;</a>
-                    <a href="register.html" class="btn btn-outline" style="background: transparent; color: white; border: 2px solid white; padding: 12px 28px; border-radius: 10px; font-weight: 700; text-decoration: none;">Enroll in Advance Program (&#8377;25,000)</a>
+                <h1 class="advance-hero-title">Advance Program <span>Specializations</span></h1>
+                <p class="advance-hero-desc">Unlock career-defining mastery across Artificial Intelligence, Generative &amp; Agentic AI, Data Science, Full Stack, and SAP. Gain live mentorship, enterprise capstones, and dedicated placement support.</p>
+                <div class="advance-hero-actions">
+                    <a href="#program-list" class="advance-btn-explore">Explore All 8 Programs &darr;</a>
+                    <a href="register.html" class="advance-btn-enroll">Enroll in Advance Program (&#8377;25,000)</a>
                 </div>
             </div>
         </section>
 
         <!-- Programs Grid Section -->
-        <section class="container" id="program-list" style="padding: 60px 20px;">
-            <div style="text-align: center; margin-bottom: 45px;">
-                <span style="color: #9d4edd; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Curated Industry Curriculum</span>
-                <h2 style="font-size: 2.2rem; color: #0f172a; margin-top: 5px; font-weight: 800;">High-Demand Advanced Programs</h2>
-                <p style="color: #64748b; font-size: 1rem; max-width: 650px; margin: 10px auto 0;">Select any program to review detailed module breakdowns, tools covered, production capstone workflows, and placement career paths.</p>
+        <section class="advance-programs-section container" id="program-list">
+            <div class="advance-section-header">
+                <span class="advance-section-tag">Curated Industry Curriculum</span>
+                <h2 class="advance-section-title">High-Demand Advanced Programs</h2>
+                <p class="advance-section-subtitle">Select any program to review detailed module breakdowns, tools covered, production capstone workflows, and placement career paths.</p>
             </div>
             
             <div class="domains-grid">
@@ -103,8 +466,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="artificial-intelligence.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="artificial-intelligence.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -129,8 +492,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="artificial-intelligence-ai-machine-learning-ml.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="artificial-intelligence-ai-machine-learning-ml.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -155,8 +518,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="ai-generative-agentic.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="ai-generative-agentic.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -181,8 +544,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="ai-generative-agentic.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="ai-generative-agentic.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -207,8 +570,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="data-science.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="data-science.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -233,8 +596,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="data-analytics.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="data-analytics.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -259,8 +622,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="full-stack-web-development.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="full-stack-web-development.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -285,8 +648,8 @@
                         </div>
                         
                         <div class="card-actions">
-                            <a href="sap.html" class="btn-explore" style="text-decoration:none; text-align:center; display:flex; align-items:center; justify-content:center;">Explore</a>
-                            <a href="register.html" class="btn-register" style="text-decoration: none;"><i class="fas fa-user-plus"></i> Register</a>
+                            <a href="sap.html" class="btn-explore">Explore</a>
+                            <a href="register.html" class="btn-register"><i class="fas fa-user-plus"></i> Register</a>
                         </div>
                     </div>
                 </div>
@@ -294,36 +657,36 @@
         </section>
 
         <!-- Highlights & Value Proposition -->
-        <section class="container" style="padding: 0 20px 70px;">
-            <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: 1px solid #e2e8f0; border-radius: 20px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.04);">
-                <div style="text-align: center; margin-bottom: 30px;">
-                    <span style="color: #9d4edd; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Advance Program Inclusions</span>
-                    <h3 style="font-size: 1.8rem; color: #0f172a; margin-top: 5px; font-weight: 800;">What You Get in Advance Program (&#8377;25,000)</h3>
+        <section class="advance-inclusions-section container">
+            <div class="advance-inclusions-card">
+                <div class="advance-inclusions-header">
+                    <span class="advance-section-tag">Advance Program Inclusions</span>
+                    <h3 class="advance-inclusions-title">What You Get in Advance Program (&#8377;25,000)</h3>
                 </div>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; text-align: center;">
-                    <div>
-                        <div style="font-size: 2rem; color: #9d4edd; margin-bottom: 8px;"><i class="fas fa-chalkboard-teacher"></i></div>
-                        <h4 style="font-size: 1.1rem; color: #0f172a; font-weight: 700; margin-bottom: 6px;">Live Mentor-Led Sessions</h4>
-                        <p style="font-size: 0.88rem; color: #64748b; margin: 0;">Learn interactively from seasoned industry leads and veterans.</p>
+                <div class="advance-inclusions-grid">
+                    <div class="advance-inclusion-item">
+                        <div class="advance-inclusion-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h4>Live Mentor-Led Sessions</h4>
+                        <p>Learn interactively from seasoned industry leads and veterans.</p>
                     </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #9d4edd; margin-bottom: 8px;"><i class="fas fa-laptop-code"></i></div>
-                        <h4 style="font-size: 1.1rem; color: #0f172a; font-weight: 700; margin-bottom: 6px;">Production Capstones</h4>
-                        <p style="font-size: 0.88rem; color: #64748b; margin: 0;">Build and deploy production-grade software and enterprise models.</p>
+                    <div class="advance-inclusion-item">
+                        <div class="advance-inclusion-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h4>Production Capstones</h4>
+                        <p>Build and deploy production-grade software and enterprise models.</p>
                     </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #9d4edd; margin-bottom: 8px;"><i class="fas fa-briefcase"></i></div>
-                        <h4 style="font-size: 1.1rem; color: #0f172a; font-weight: 700; margin-bottom: 6px;">100% Placement Support</h4>
-                        <p style="font-size: 0.88rem; color: #64748b; margin: 0;">1-on-1 resume rebuilding, mock technical rounds, and interview referrals.</p>
+                    <div class="advance-inclusion-item">
+                        <div class="advance-inclusion-icon"><i class="fas fa-briefcase"></i></div>
+                        <h4>100% Placement Support</h4>
+                        <p>1-on-1 resume rebuilding, mock technical rounds, and interview referrals.</p>
                     </div>
-                    <div>
-                        <div style="font-size: 2rem; color: #9d4edd; margin-bottom: 8px;"><i class="fas fa-certificate"></i></div>
-                        <h4 style="font-size: 1.1rem; color: #0f172a; font-weight: 700; margin-bottom: 6px;">ISO &amp; MSME Credentials</h4>
-                        <p style="font-size: 0.88rem; color: #64748b; margin: 0;">Globally recognized internship certificate with verifiable serial numbers.</p>
+                    <div class="advance-inclusion-item">
+                        <div class="advance-inclusion-icon"><i class="fas fa-certificate"></i></div>
+                        <h4>ISO &amp; MSME Credentials</h4>
+                        <p>Globally recognized internship certificate with verifiable serial numbers.</p>
                     </div>
                 </div>
-                <div style="text-align: center; margin-top: 35px;">
-                    <a href="register.html" class="btn" style="background: #9d4edd; color: white; padding: 14px 35px; border-radius: 12px; font-weight: 700; font-size: 1.05rem; text-decoration: none; display: inline-block; box-shadow: 0 4px 15px rgba(157,78,221,0.4);">Enroll in Advance Program — &#8377;25,000 &rarr;</a>
+                <div class="advance-inclusions-cta">
+                    <a href="register.html" class="advance-enroll-cta-btn">Enroll in Advance Program — &#8377;25,000 &rarr;</a>
                 </div>
             </div>
         </section>
@@ -422,6 +785,6 @@
         </div>
     </div>
 
-    <script src="script.js?v=3.5"></script>
+    <script src="script.js?v=3.6"></script>
 </body>
 </html>

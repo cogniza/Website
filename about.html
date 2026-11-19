@@ -16,7 +16,7 @@
     <link rel="manifest" href="site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3.6">
     
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
@@ -387,30 +387,184 @@
             transform: translateY(-8px);
             box-shadow: 0 25px 50px rgba(26, 115, 232, 0.12);
         }
-        .ldr-row:nth-child(even) { flex-direction: row-reverse; }
-        .ldr-photo { width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform 0.4s ease; display: block; }
+        .ldr-row:nth-child(even) { 
+            flex-direction: row-reverse; 
+        }
 
-        .ldr-info { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; text-align: left; }
-        .ldr-badge { background: #e8f0fe; color: #1a73e8; padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; display: inline-block; align-self: flex-start; margin-bottom: 20px; }
-        .ldr-name { font-size: 2.2rem; font-weight: 800; color: #000; margin: 0 0 15px 0; }
-        .ldr-divider { width: 60px; height: 4px; background: linear-gradient(90deg, #1a73e8, #8b5cf6); border-radius: 2px; margin-bottom: 25px; }
-        .ldr-bio { font-size: 1.05rem; color: #555; line-height: 1.7; margin: 0 0 35px 0; }
+        .ldr-photo-wrapper {
+            width: 450px;
+            height: 350px;
+            border-radius: 35px;
+            flex-shrink: 0;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+            opacity: 0;
+            transition: opacity 0.8s ease, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+
+        /* Desktop entry animation */
+        .ldr-row:nth-child(odd) .ldr-photo-wrapper {
+            transform: translateX(-120px);
+        }
+        .ldr-row:nth-child(even) .ldr-photo-wrapper {
+            transform: translateX(120px);
+        }
+        .ldr-row.visible .ldr-photo-wrapper {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .ldr-photo { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            object-position: center top; 
+            transition: transform 0.5s ease; 
+            display: block; 
+        }
+        .ldr-photo-wrapper:hover .ldr-photo {
+            transform: scale(1.05);
+        }
+        .ldr-row:hover .ldr-photo-wrapper {
+            box-shadow: 0 25px 50px rgba(0,0,0,0.18);
+        }
+
+        .ldr-info { 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            text-align: left; 
+        }
+        .ldr-badge { 
+            background: #e8f0fe; 
+            color: #1a73e8; 
+            padding: 8px 16px; 
+            border-radius: 20px; 
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            display: inline-block; 
+            align-self: flex-start; 
+            margin-bottom: 20px; 
+        }
+        .ldr-name { 
+            font-size: 2.2rem; 
+            font-weight: 800; 
+            color: #000; 
+            margin: 0 0 15px 0; 
+        }
+        .ldr-divider { 
+            width: 60px; 
+            height: 4px; 
+            background: linear-gradient(90deg, #1a73e8, #8b5cf6); 
+            border-radius: 2px; 
+            margin-bottom: 25px; 
+        }
+        .ldr-bio { 
+            font-size: 1.05rem; 
+            color: #555; 
+            line-height: 1.7; 
+            margin: 0 0 35px 0; 
+        }
         
-        .ldr-profile-block { display: flex; align-items: center; justify-content: flex-start; gap: 15px; }
-        .ldr-profile-icon { width: 48px; height: 48px; background: #0077b5; color: white; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; text-decoration: none; transition: transform 0.3s ease, box-shadow 0.3s ease; flex-shrink: 0; box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2); }
-        .ldr-profile-icon:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0, 119, 181, 0.35); color: white; }
-        .ldr-profile-icon.no-link { pointer-events: none; opacity: 0.5; filter: grayscale(100%); }
-        .ldr-profile-text { display: flex; flex-direction: column; }
-        .ldr-profile-name { font-size: 1rem; font-weight: 700; color: #000; line-height: 1.2; margin-bottom: 4px; }
-        .ldr-profile-role { font-size: 0.85rem; color: #64748b; line-height: 1.2; }
+        .ldr-profile-block { 
+            display: flex; 
+            align-items: center; 
+            justify-content: flex-start; 
+            gap: 15px; 
+        }
+        .ldr-profile-icon { 
+            width: 48px; 
+            height: 48px; 
+            background: #0077b5; 
+            color: white; 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.3rem; 
+            text-decoration: none; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            flex-shrink: 0; 
+            box-shadow: 0 4px 12px rgba(0, 119, 181, 0.2); 
+        }
+        .ldr-profile-icon:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 8px 20px rgba(0, 119, 181, 0.35); 
+            color: white; 
+        }
+        .ldr-profile-icon.no-link { 
+            pointer-events: none; 
+            opacity: 0.5; 
+            filter: grayscale(100%); 
+        }
+        .ldr-profile-text { 
+            display: flex; 
+            flex-direction: column; 
+        }
+        .ldr-profile-name { 
+            font-size: 1rem; 
+            font-weight: 700; 
+            color: #000; 
+            line-height: 1.2; 
+            margin-bottom: 4px; 
+        }
+        .ldr-profile-role { 
+            font-size: 0.85rem; 
+            color: #64748b; 
+            line-height: 1.2; 
+        }
 
+        @supports (-webkit-touch-callout: none) {
+            .leadership-section-header h3 { background-clip: text; }
+        }
+
+        /* Responsive Tablet & Mobile Media Queries (Placed at bottom to guarantee overrides) */
         @media (max-width: 900px) {
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .mission-grid { grid-template-columns: 1fr; }
             .why-grid { grid-template-columns: 1fr; }
             .values-grid { grid-template-columns: 1fr 1fr; }
-            .ldr-row, .ldr-row:nth-child(even) { flex-direction: column; align-items: flex-start; gap: 30px; text-align: left; }
+            
+            /* Both odd and even leadership rows stack vertically on mobile */
+            .ldr-row, 
+            .ldr-row:nth-child(even),
+            .ldr-row:nth-child(odd) { 
+                flex-direction: column !important; 
+                align-items: stretch !important; 
+                gap: 25px !important; 
+                text-align: left; 
+                padding: 26px 20px !important;
+                border-radius: 22px !important;
+            }
+
+            .ldr-photo-wrapper,
+            .ldr-row:nth-child(even) .ldr-photo-wrapper,
+            .ldr-row:nth-child(odd) .ldr-photo-wrapper {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: 280px !important;
+                border-radius: 18px !important;
+                transform: translateY(20px) !important;
+            }
+
+            .ldr-row.visible .ldr-photo-wrapper {
+                transform: translateY(0) !important;
+                opacity: 1 !important;
+            }
+
+            .ldr-info {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+
+            .ldr-bio {
+                font-size: 0.96rem;
+                line-height: 1.6;
+                margin: 0 0 24px 0;
+            }
         }
+
         @media (max-width: 768px) {
             .page-hero { padding: 40px 15px 30px; }
             .page-hero h2 { font-size: 1.8rem; }
@@ -422,134 +576,63 @@
             .mission-card { padding: 25px; }
             .mission-card h3 { font-size: 1.2rem; }
             .ldr-name { font-size: 1.6rem; }
-            .ldr-badge { font-size: 0.78rem; padding: 6px 12px; }
-            .ldr-bio { font-size: 0.95rem; margin-bottom: 25px; }
-            .leadership-section { padding: 50px 0; }
+            .ldr-badge { font-size: 0.78rem; padding: 6px 12px; margin-bottom: 14px; }
+            .ldr-bio { font-size: 0.94rem; margin-bottom: 24px; }
+            .leadership-section { padding: 45px 0; }
             .leadership-section-header h3 { font-size: 1.8rem; }
-            .ldr-grid { gap: 40px; }
+            .ldr-grid { gap: 35px; }
         }
+
         @media (max-width: 600px) {
             .stats-grid { grid-template-columns: 1fr 1fr; }
             .values-grid { grid-template-columns: 1fr; }
+            
+            .ldr-row, 
+            .ldr-row:nth-child(even),
+            .ldr-row:nth-child(odd) {
+                padding: 20px 16px !important;
+                border-radius: 18px !important;
+                gap: 18px !important;
+            }
+            .ldr-photo-wrapper,
+            .ldr-row:nth-child(even) .ldr-photo-wrapper,
+            .ldr-row:nth-child(odd) .ldr-photo-wrapper {
+                height: 240px !important;
+                border-radius: 16px !important;
+            }
+            .ldr-name { font-size: 1.45rem; margin-bottom: 10px; }
+            .ldr-badge { font-size: 0.74rem; padding: 5px 10px; margin-bottom: 12px; }
+            .ldr-divider { margin-bottom: 16px; }
+            .ldr-bio { font-size: 0.9rem; margin-bottom: 20px; line-height: 1.55; }
         }
-        
-        @supports (-webkit-touch-callout: none) {
-            .leadership-section-header h3 { background-clip: text; }
-        }
-        .ldr-row:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-/* =========================================
-   LEADERSHIP IMAGE
-   ========================================= */
-
-.ldr-photo-wrapper {
-    width: 450px;
-    height: 350px;
-    border-radius: 35px;
-    flex-shrink: 0;
-    overflow: hidden;
-
-    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-
-    /* Hidden before scrolling into view */
-    opacity: 0;
-
-    transition:
-        opacity 0.8s ease,
-        transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
-        box-shadow 0.4s ease;
-}
-
-
-/* =========================================
-   IMAGE ENTERING FROM LEFT / RIGHT
-   ========================================= */
-
-/* Odd items (Veena, Wasim) -> LEFT */
-.ldr-row:nth-child(odd) .ldr-photo-wrapper {
-    transform: translateX(-120px);
-}
-
-
-/* Even items (Murugesan) -> RIGHT */
-.ldr-row:nth-child(even) .ldr-photo-wrapper {
-    transform: translateX(120px);
-}
-
-
-/* =========================================
-   WHEN USER SCROLLS TO THE PERSON
-   ========================================= */
-
-.ldr-row.visible .ldr-photo-wrapper {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-/* =========================================
-   IMAGE
-   ========================================= */
-
-.ldr-photo {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-    display: block;
-
-    transition: transform 0.5s ease;
-}
-
-
-/* Image zoom on hover */
-.ldr-photo-wrapper:hover .ldr-photo {
-    transform: scale(1.05);
-}
-
-
-/* Shadow on hover */
-.ldr-row:hover .ldr-photo-wrapper {
-    box-shadow: 0 25px 50px rgba(0,0,0,0.18);
-}
  
     </style>
 
         <script>
                 document.addEventListener("DOMContentLoaded", function () {
-
                     const leadershipRows = document.querySelectorAll(".ldr-row");
-
-                    const observer = new IntersectionObserver(
-                        function (entries) {
-
-                            entries.forEach(function (entry) {
-
-                                if (entry.isIntersecting) {
-
-                                    entry.target.classList.add("visible");
-
-                                } else {
-
-                                    entry.target.classList.remove("visible");
-
-                                }
-
-                            });
-
-                        },
-                        {
-                            threshold: 0.25
-                        }
-                    );
-
-
-                    leadershipRows.forEach(function (row) {
-                        observer.observe(row);
-                    });
-
+                    if ("IntersectionObserver" in window) {
+                        const observer = new IntersectionObserver(
+                            function (entries) {
+                                entries.forEach(function (entry) {
+                                    if (entry.isIntersecting) {
+                                        entry.target.classList.add("visible");
+                                        observer.unobserve(entry.target);
+                                    }
+                                });
+                            },
+                            {
+                                threshold: 0.12
+                            }
+                        );
+                        leadershipRows.forEach(function (row) {
+                            observer.observe(row);
+                        });
+                    } else {
+                        leadershipRows.forEach(function (row) {
+                            row.classList.add("visible");
+                        });
+                    }
                 });
         </script>
 </head>
@@ -937,6 +1020,6 @@
         },{threshold:0.1}).observe(grid);
     })();
     </script>
-    <script src="script.js?v=3.2"></script>
+    <script src="script.js?v=3.6"></script>
 </body>
 </html>
