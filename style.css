@@ -866,42 +866,47 @@ header {
 }
 
 .card-actions {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+    display: flex;
+    gap: 10px;
     margin-top: auto;
+    width: 100%;
+}
+
+.btn-explore,
+.btn-register {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 10px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.92rem;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn-explore {
     background: #4f6bff;
     color: white;
-    border: none;
-    padding: 8px 10px;
-    border-radius: 10px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    cursor: pointer;
-    transition: background 0.3s;
+    border: 1.5px solid #4f6bff;
 }
 
 .btn-explore:hover {
     background: #3a54d6;
+    border-color: #3a54d6;
 }
 
 .btn-register {
     background: white;
     color: #4f6bff;
-    border: 1px solid #4f6bff;
-    padding: 12px 10px;
-    border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 1.5px solid #4f6bff;
     gap: 6px;
-    cursor: pointer;
-    transition: all 0.3s;
 }
 
 .btn-register:hover {
@@ -3036,12 +3041,12 @@ footer,
 
     /* ---- Trending Programs (Domains) ---- */
     .domains-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
-        padding: 0 5px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        padding: 0;
     }
     .domain-card {
-        padding: 16px 10px;
+        padding: 0;
     }
 
     /* ---- Educational Approach ---- */
@@ -3365,10 +3370,264 @@ footer,
     * { box-sizing: border-box; }
 }
 
-/* Extra-small phones */
-@media (max-width: 400px) {
+/* Mobile & Small Screen Media Queries */
+@media (max-width: 640px) {
+    .domains-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 440px;
+        margin: 0 auto;
+    }
+    .domain-image img {
+        height: 170px;
+    }
+}
+
+@media (max-width: 480px) {
     .hero-title { font-size: 1.9rem; }
     .domains-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr; }
     .logo-text h1, .logo-text .logo-name { font-size: 1.5rem; }
+}
+
+/* ==========================================================================
+   ADVANCE PROGRAMS PAGE STYLES (advance-programs.html)
+   ========================================================================== */
+.advance-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31104b 100%);
+    padding: 75px 20px 55px;
+    text-align: center;
+    color: #ffffff;
+}
+.advance-hero-title {
+    font-size: clamp(1.8rem, 4.2vw, 2.8rem);
+    font-weight: 800;
+    margin-bottom: 15px;
+    line-height: 1.25;
+}
+.advance-hero-title span {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.advance-hero-desc {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #cbd5e1;
+    max-width: 750px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
+}
+.advance-hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.advance-btn-explore {
+    background: #9d4edd;
+    color: #ffffff !important;
+    padding: 13px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    box-shadow: 0 4px 15px rgba(157,78,221,0.4);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s, background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.advance-btn-explore:hover {
+    background: #8b3ac9;
+    transform: translateY(-2px);
+}
+.advance-btn-enroll {
+    background: transparent;
+    color: #ffffff !important;
+    border: 2px solid #ffffff;
+    padding: 12px 28px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.advance-btn-enroll:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.advance-programs-section {
+    padding: 60px 20px;
+}
+.advance-section-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+.advance-section-tag {
+    color: #9d4edd;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+.advance-section-title {
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    color: #0f172a;
+    font-weight: 800;
+    margin: 5px 0 10px;
+    line-height: 1.25;
+}
+.advance-section-subtitle {
+    color: #64748b;
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Inclusions Card */
+.advance-inclusions-section {
+    padding: 0 20px 70px;
+}
+.advance-inclusions-card {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border: 1px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+}
+.advance-inclusions-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.advance-inclusions-title {
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    color: #0f172a;
+    margin-top: 5px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+.advance-inclusions-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    text-align: center;
+}
+.advance-inclusion-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.advance-inclusion-icon {
+    font-size: 2rem;
+    color: #9d4edd;
+    margin-bottom: 10px;
+}
+.advance-inclusion-item h4 {
+    font-size: 1.05rem;
+    color: #0f172a;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+.advance-inclusion-item p {
+    font-size: 0.88rem;
+    color: #64748b;
+    margin: 0;
+    line-height: 1.45;
+}
+.advance-inclusions-cta {
+    text-align: center;
+    margin-top: 35px;
+}
+.advance-enroll-cta-btn {
+    background: #9d4edd;
+    color: #ffffff !important;
+    padding: 14px 35px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(157,78,221,0.4);
+    transition: transform 0.2s, background 0.2s;
+    border: none;
+    cursor: pointer;
+}
+.advance-enroll-cta-btn:hover {
+    background: #8b3ac9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+    .advance-inclusions-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+}
+
+@media (max-width: 768px) {
+    .advance-hero {
+        padding: 55px 16px 40px;
+    }
+    .advance-hero-desc {
+        margin-bottom: 24px;
+    }
+    .advance-programs-section {
+        padding: 40px 15px;
+    }
+    .advance-section-header {
+        margin-bottom: 30px;
+    }
+    .advance-inclusions-section {
+        padding: 0 15px 50px;
+    }
+    .advance-inclusions-card {
+        padding: 28px 18px;
+        border-radius: 16px;
+    }
+    .advance-inclusions-header {
+        margin-bottom: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .advance-hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        gap: 12px;
+    }
+    .advance-btn-explore,
+    .advance-btn-enroll {
+        width: 100%;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+    }
+    .advance-inclusions-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .advance-enroll-cta-btn {
+        width: 100%;
+        max-width: 340px;
+        padding: 12px 18px;
+        font-size: 0.95rem;
+        box-sizing: border-box;
+    }
 }
