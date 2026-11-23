@@ -618,6 +618,10 @@ window.toggleCognizaAIChat = function(e) {
 
             // Intent Definitions with Weighted Keyword Matching
             const INTENTS = {
+                STIPEND: {
+                    weight: 16,
+                    keywords: ["stipend", "stipends", "internship stipend", "paid internship", "do you pay stipend", "does cogniza pay", "does cogniza provide a proper internship", "performance based stipend", "offline stipend", "stipend amount", "how much stipend", "proper internship", "intern stipend", "pay stipend", "performance-based stipend"]
+                },
                 FEE: {
                     weight: 12,
                     keywords: ["fee", "fees", "cost", "costs", "price", "pricing", "charge", "charges", "pay", "payment", "emi", "installment", "installments", "rupees", "rs", "inr", "how much", "kitna", "amount", "budget", "affordable", "discount", "offer pack", "rate"]
@@ -792,6 +796,29 @@ window.toggleCognizaAIChat = function(e) {
                 }
 
                 // ----------------------------------------------------
+                // STIPEND & INTERNSHIP INQUIRIES
+                // ----------------------------------------------------
+                if (intent === 'STIPEND') {
+                    return {
+                        reply: `<p><strong>💼 Cogniza Internship &amp; Stipend Structure:</strong></p>
+                        <p>Cogniza Edutech offers a proper, structured internship in Bangalore with live projects, mentor support and an internship certificate. In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.</p>
+                        <!-- [CONFIRM: the stipend is per month, and it applies only to the Offline Internship Program] -->
+                        <ul>
+                            <li><strong>🏢 Offline Internship Track:</strong> Classroom training, hands-on lab infrastructure, and live industry capstone projects at our Bengaluru center.</li>
+                            <li><strong>💰 Performance-Based Stipend:</strong> &#8377;15,000 to &#8377;20,000 per month (varies with evaluated performance).</li>
+                            <li><strong>🏷️ Program Fee:</strong> Labeled separately as the one-time training fee (&#8377;15,000+).</li>
+                            <li><strong>📜 Verifiable Certificate:</strong> ISO 9001:2015 &amp; MSME certified credential accepted for college submission and employment.</li>
+                        </ul>`,
+                        links: [
+                            { text: '📍 View Offline Programs', url: 'offline-programs.html' },
+                            { text: '📝 Register for Internship', url: 'register.html' },
+                            { text: '💬 WhatsApp Admissions', url: 'https://wa.me/918884456745' }
+                        ],
+                        chips: ['Offline Programs', 'Batch Timings', 'Talk to Counselor', 'Course Fees']
+                    };
+                }
+
+                // ----------------------------------------------------
                 // 2. FEE & PRICING INQUIRIES
                 // ----------------------------------------------------
                 if (intent === 'FEE') {
@@ -802,7 +829,7 @@ window.toggleCognizaAIChat = function(e) {
                             <ul>
                                 <li><strong>🌟 Tech Pro Pack (&#8377;15,000):</strong> Best choice for IT tracks! Choose ${escapeHtml(currentCourse.name)} <em>plus any 2 other IT domains</em> of your choice.</li>
                                 <li><strong>🚀 Advance Program (&#8377;25,000):</strong> Next-gen master tracks in AI, GenAI, Agentic AI, Data Science, Full Stack &amp; SAP.</li>
-                                <li><strong>🏢 In-Person Offline Batch:</strong> &#8377;15,000+ with intensive classroom labs at our Bengaluru center.</li>
+                                <li><strong>🏢 In-Person Offline Batch (Program Fee: &#8377;15,000+):</strong> Intensive classroom labs at our Bengaluru center. Offline interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month based on performance.</li>
                             </ul>
                             <p><strong>What is Included:</strong> Live mentor sessions, real production capstone, lifetime LMS recording access, resume review, and ISO/MSME verified certificate.</p>
                             <p><em>*Convenient 2-part installment / EMI options are available upon request during enrollment.</em></p>`,
@@ -827,8 +854,9 @@ window.toggleCognizaAIChat = function(e) {
                                 <br>• Specialized master tracks across AI, Generative AI, Agentic AI, Data Science, Full Stack &amp; SAP.
                                 <br>• Live mentor-led masterclasses, production capstones, and placement support.
                             </li>
-                            <li><strong>🏢 OFFLINE PROGRAMS — &#8377;15,000+:</strong>
+                            <li><strong>🏢 OFFLINE PROGRAMS (Program Fee: &#8377;15,000+):</strong>
                                 <br>• In-person classroom training with 4 lab sessions/week at our Bengaluru center.
+                                <br>• In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.
                             </li>
                         </ul>
                         <p><em>💡 Installment and EMI options are supported so finance is never a barrier to your learning!</em></p>`,
@@ -1155,8 +1183,10 @@ window.toggleCognizaAIChat = function(e) {
 
                 const welcomeItem = {
                     reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Career Advisor</strong>.</p>
-                    <p>How can I help shape your career today? Ask me about our 107+ specializations, course fees, batch schedules, placement assistance, or certifications:</p>`,
-                    chips: ['🎓 All Courses (107+)', '💰 Pricing & Offers', '⏱️ Course Duration', '💼 Placement Support', '📞 Talk to Mentor']
+                    <p>Cogniza Edutech offers a proper, structured internship in Bangalore with live projects, mentor support and an internship certificate. In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.</p>
+                    <!-- [CONFIRM: the stipend is per month, and it applies only to the Offline Internship Program] -->
+                    <p>How can I help you today? Ask me about our 107+ specializations, stipend structure, batch schedules, or placement support:</p>`,
+                    chips: ['💼 Internship Stipend', '🎓 All Courses (107+)', '🏢 Offline Programs', '💰 Pricing & Fees', '📞 Talk to Mentor']
                 };
 
                 renderAIMessage(welcomeItem);
