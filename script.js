@@ -800,18 +800,12 @@ window.toggleCognizaAIChat = function(e) {
                 // ----------------------------------------------------
                 if (intent === 'STIPEND') {
                     return {
-                        reply: `<p><strong>💼 Cogniza Internship &amp; Stipend Structure:</strong></p>
-                        <p>Cogniza Edutech offers a proper, structured internship in Bangalore with live projects, mentor support and an internship certificate. In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.</p>
-                        <!-- [CONFIRM: the stipend is per month, and it applies only to the Offline Internship Program] -->
-                        <ul>
-                            <li><strong>🏢 Offline Internship Track:</strong> Classroom training, hands-on lab infrastructure, and live industry capstone projects at our Bengaluru center.</li>
-                            <li><strong>💰 Performance-Based Stipend:</strong> &#8377;15,000 to &#8377;20,000 per month (varies with evaluated performance).</li>
-                            <li><strong>🏷️ Program Fee:</strong> Labeled separately as the one-time training fee (&#8377;15,000+).</li>
-                            <li><strong>📜 Verifiable Certificate:</strong> ISO 9001:2015 &amp; MSME certified credential accepted for college submission and employment.</li>
-                        </ul>`,
+                        reply: `<p><strong>💼 Cogniza Internship Structure &amp; Policies:</strong></p>
+                        <p>Cogniza Edutech offers structured internships in Bangalore with live capstone projects, expert mentor guidance, and verified certificates across IT, Non-IT, Pharmacy, and Engineering tracks.</p>
+                        <p>Terms and conditions regarding our offline internship programs and performance-based stipend policies are documented in our official <a href="privacy-policy.html" target="_blank" style="color:#5a78ff;text-decoration:underline;font-weight:600;">Privacy Policy</a>. You can also connect with our admissions counselors for specific program guidelines.</p>`,
                         links: [
+                            { text: '📜 View Privacy Policy', url: 'privacy-policy.html' },
                             { text: '📍 View Offline Programs', url: 'offline-programs.html' },
-                            { text: '📝 Register for Internship', url: 'register.html' },
                             { text: '💬 WhatsApp Admissions', url: 'https://wa.me/918884456745' }
                         ],
                         chips: ['Offline Programs', 'Batch Timings', 'Talk to Counselor', 'Course Fees']
@@ -829,7 +823,7 @@ window.toggleCognizaAIChat = function(e) {
                             <ul>
                                 <li><strong>🌟 Tech Pro Pack (&#8377;15,000):</strong> Best choice for IT tracks! Choose ${escapeHtml(currentCourse.name)} <em>plus any 2 other IT domains</em> of your choice.</li>
                                 <li><strong>🚀 Advance Program (&#8377;25,000):</strong> Next-gen master tracks in AI, GenAI, Agentic AI, Data Science, Full Stack &amp; SAP.</li>
-                                <li><strong>🏢 In-Person Offline Batch (Program Fee: &#8377;15,000+):</strong> Intensive classroom labs at our Bengaluru center. Offline interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month based on performance.</li>
+                                <li><strong>🏢 In-Person Offline Batch (Program Fee: &#8377;15,000+):</strong> Intensive classroom labs at our Bengaluru center, hands-on capstone projects, and dedicated mentorship.</li>
                             </ul>
                             <p><strong>What is Included:</strong> Live mentor sessions, real production capstone, lifetime LMS recording access, resume review, and ISO/MSME verified certificate.</p>
                             <p><em>*Convenient 2-part installment / EMI options are available upon request during enrollment.</em></p>`,
@@ -856,7 +850,7 @@ window.toggleCognizaAIChat = function(e) {
                             </li>
                             <li><strong>🏢 OFFLINE PROGRAMS (Program Fee: &#8377;15,000+):</strong>
                                 <br>• In-person classroom training with 4 lab sessions/week at our Bengaluru center.
-                                <br>• In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.
+                                <br>• Dedicated lab facilities, expert mentor reviews, and verified internship credentials.
                             </li>
                         </ul>
                         <p><em>💡 Installment and EMI options are supported so finance is never a barrier to your learning!</em></p>`,
@@ -1183,10 +1177,9 @@ window.toggleCognizaAIChat = function(e) {
 
                 const welcomeItem = {
                     reply: `<p>Hello! 👋 I'm your <strong>Cogniza AI Career Advisor</strong>.</p>
-                    <p>Cogniza Edutech offers a proper, structured internship in Bangalore with live projects, mentor support and an internship certificate. In the Offline Internship Program, interns receive a performance-based stipend of &#8377;15,000 to &#8377;20,000 per month, depending on their performance.</p>
-                    <!-- [CONFIRM: the stipend is per month, and it applies only to the Offline Internship Program] -->
-                    <p>How can I help you today? Ask me about our 107+ specializations, stipend structure, batch schedules, or placement support:</p>`,
-                    chips: ['💼 Internship Stipend', '🎓 All Courses (107+)', '🏢 Offline Programs', '💰 Pricing & Fees', '📞 Talk to Mentor']
+                    <p>I can help you explore our 107+ career specializations, learning tracks, batch timings, fees, and enrollment details.</p>
+                    <p>How can I help you today? Ask me about our courses, offline programs, batch schedules, or placement support:</p>`,
+                    chips: ['🎓 All Courses (107+)', '🏢 Offline Programs', '💰 Pricing & Fees', '⏱️ Program Duration', '📞 Talk to Mentor']
                 };
 
                 renderAIMessage(welcomeItem);
